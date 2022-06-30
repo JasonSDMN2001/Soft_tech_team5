@@ -14,7 +14,6 @@
                 <hr />
                 <asp:Label ID="Label1" runat="server"></asp:Label>
                 <hr />
-                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
             </center>
         </div>
     </form>

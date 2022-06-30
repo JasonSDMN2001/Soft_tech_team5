@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Npgsql;
 using System.Data;
+using System.Data.SQLite;
+using System.Text;
 
 namespace WebApplication3
 {
@@ -15,25 +17,25 @@ namespace WebApplication3
         {
             try
             {
-                Label1.Text = "Postgre";
-                NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=hire_dev_db;User Id=getdevadmin;Password=getdev");
+                SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "bin\\hire_dev.client.db;Version=3;");
                 conn.Open();
-                NpgsqlCommand comm = new NpgsqlCommand();
-                comm.Connection = conn;
-                comm.CommandType = CommandType.Text;
-                comm.CommandText = "select * from hire_dev.client";
-                NpgsqlDataAdapter nda = new NpgsqlDataAdapter(comm);
-                DataTable dt = new DataTable();
-                nda.Fill(dt);
-                comm.Dispose();
+                String query1 = "Select * from client";
+                SQLiteCommand cmd = new SQLiteCommand(query1, conn);
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                StringBuilder builder = new StringBuilder();
+                while (reader.Read())              
+                {
+                    builder.Append(reader.GetString(0) + "  ").Append(reader.GetString(1) + "  ").Append(reader.GetString(2) + "  ").Append(reader.GetString(3) + "  ");  
+                }
                 conn.Close();
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
+                Label1.Text = builder.ToString();
             }
+
             catch (Exception)
             {
                 Label1.Text = "fail";
             }
+            
         }
     }
 }
