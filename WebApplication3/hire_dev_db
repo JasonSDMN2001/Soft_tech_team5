@@ -1,3 +1,0 @@
-select * from hire_dev.client
-CREATE SCHEMA hire_dev
-    AUTHORIZATION getdevadmin;
