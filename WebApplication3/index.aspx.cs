@@ -27,6 +27,7 @@ namespace WebApplication3
                 {
                     builder.Append(reader.GetString(0) + "  ").Append(reader.GetString(1) + "  ").Append(reader.GetString(2) + "  ").Append(reader.GetString(3) + "  ");  
                 }
+                //Label1.Text= AppDomain.CurrentDomain.BaseDirectory;
                 conn.Close();
                 Label1.Text = builder.ToString();
             }
