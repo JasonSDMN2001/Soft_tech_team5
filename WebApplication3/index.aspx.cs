@@ -17,7 +17,7 @@ namespace WebApplication3
         {
             try
             {
-                SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "bin\\hire_dev.client.db;Version=3;");
+                SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
                 conn.Open();
                 String query1 = "Select * from client";
                 SQLiteCommand cmd = new SQLiteCommand(query1, conn);
