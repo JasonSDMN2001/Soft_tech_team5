@@ -185,7 +185,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ClassDiagram1.cd" />
-    <Content Include="index2.aspx" />
+    <Content Include="index.html" />
     <Content Include="register.html" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="index.aspx" />
