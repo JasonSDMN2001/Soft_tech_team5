@@ -1,33 +1,43 @@
-﻿<html>
-<head>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="WebApplication3.Register" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
     <link rel="stylesheet"href="style.css">
     <title>Register</title>
 </head>
 <body>
-<form style="background-color: slategray" action="login.html">
-    <fieldset>
+    <form id="register" runat="server" style="background-color: slategray">
+        <div>
+            <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="True">
+            </asp:ScriptManager>
+            <fieldset>
         <table>
             <tr><td style="background-color:orange; border:1px solid orange"><h3 style="text-align:center">
                 Registration form</h3></td><td style="background-color:orange"></td></tr>
 
-            <tr><td><label>Username</label></td><td><input
-                    type="text" id="uname1!" name="uname1"
-                    placeholder="State your username"></td></tr>
+            <tr><td><asp:label runat="server" Text="Username"></asp:label></td>
+                <td><asp:TextBox runat="server" ID="username"
+                    placeholder="State your username"></asp:TextBox></td></tr>
 
-            <tr><td><label>Password
-            </label></td><td><input type="text" id="pwd1!"
-                                    name="pwd1" placeholder=""></td></tr>
-            <tr><td><label>Confirm Password
-            </label></td><td><input type="password" id="pwd2!" name="pwd2"></td></tr>
-            <tr><td><label >E-mail
-            </label></td><td><input type="E-mail" id="email!" name="email"
-                                    placeholder="E-mail"></td></tr>
-            <tr><td><label>Name
-            </label></td><td><input type="text" id=name!"
-                                    name="name1" placeholder="Name"></td></tr>
-            <tr><td><label>Surname
-            </label></td><td><input type="text" id=surname!"
-                                    name="surname1" placeholder="Surname"></td></tr>
+            <tr><td><asp:label runat="server" Text="Password"></asp:label></td>
+                <td><asp:TextBox runat="server" ID="pass" TextMode="Password"></asp:TextBox></td></tr>
+
+            <tr><td><asp:label runat="server" Text="Confirm Password"></asp:label></td>
+                <td><asp:TextBox runat="server" ID="pass2" TextMode="Password"></asp:TextBox></td></tr>
+            
+            <tr><td><asp:label runat="server" Text="E-mail"></asp:label></td>
+                <td><asp:TextBox runat="server" ID="email"
+                    placeholder="E-mail"></asp:TextBox></td></tr>
+
+            <tr><td><asp:label runat="server" Text="Name"></asp:label></td>
+                <td><asp:TextBox runat="server" ID="firstname"
+                    placeholder="Name"></asp:TextBox></td></tr>
+
+            <tr><td><<asp:label runat="server" Text="Surname"></asp:label></td>
+                <td><asp:TextBox runat="server" ID="lastname"
+                    placeholder="Surname"></asp:TextBox></td></tr>
             <tr><td><label>Date of Birth</label></td><td><select name="day" id="day!"><option select name="imera">Day
                 <option value="1">1</option>
                 <option value="2">2</option><option value="3">3</option><option value="4">4</option>
@@ -69,12 +79,13 @@
                 <label>I agree with the user terms</label></td></tr>
 
 
-            <tr><td></td><td style="background-color:orange"><input style="background-color:red;color:white;"type="reset" value="Cancel">
-                <input style="background-color:green;color:white;"type="submit" value="Confirm"></td>
+            <tr><td>&nbsp;</td><td style="background-color:orange"><input style="background-color:red;color:white;"type="reset" value="Cancel">
+                <asp:Button style="background-color:green;color:white;" id="makeUser" runat="server" Text="Confirm" OnClick="makeUser_Click" /></td>
 
-        </table><br><br>
+        </table>
     </fieldset><br><br>
-
-</form>
+        </div>
+    </form>
 </body>
 </html>
+ 
