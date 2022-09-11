@@ -21,7 +21,7 @@ namespace WebApplication3
                 if (client.Checked) {
                     Client c0 = new Client();
                     c0.profileCreate(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text);
-                    Response.Redirect("indexing.aspx");
+                    Response.Redirect("index.aspx");
                 }
                 else
                 {
@@ -40,9 +40,9 @@ namespace WebApplication3
                 {
                     script = "Not a valid email address";
                 }
-                else if (pass.Text.Length < 5)
+                else if (pass.Text.Length < 6)
                 {
-                    script = "Password cannot be less than 5 chars";
+                    script = "Password cannot be less than 6 chars";
                 }
                 else if (username.Text.Length < 3)
                 {
