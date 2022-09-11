@@ -35,7 +35,7 @@
                 <td><asp:TextBox runat="server" ID="firstname"
                     placeholder="Name"></asp:TextBox></td></tr>
 
-            <tr><td><<asp:label runat="server" Text="Surname"></asp:label></td>
+            <tr><td><asp:label runat="server" Text="Surname"></asp:label></td>
                 <td><asp:TextBox runat="server" ID="lastname"
                     placeholder="Surname"></asp:TextBox></td></tr>
             <tr><td><label>Date of Birth</label></td><td><select name="day" id="day!"><option select name="imera">Day
@@ -77,8 +77,8 @@
                 <label>I agree with the user terms</label></td></tr>
 
 
-            <tr><td>&nbsp;</td><td style="background-color:orange"><input style="background-color:red;color:white;"type="reset" value="Cancel">
-                <asp:Button style="background-color:green;color:white;" id="makeUser" runat="server" Text="Confirm" OnClick="makeUser_Click" /></td>
+            <tr><td>&nbsp;</td><td><input style="background-color:red;color:white;"type="reset" value="Cancel">
+                <asp:Button style="background-color:green;color:white;" id="makeUser" runat="server" Text="Confirm" OnClick="makeUser_Click" /></td></tr>
 
         </table>
     </fieldset><br><br>
