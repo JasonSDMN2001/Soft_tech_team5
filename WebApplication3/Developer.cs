@@ -47,7 +47,7 @@ namespace WebApplication3
         {
         }
 
-        public void profileCreate()
+        public void profileCreate(String email, String username, String pass, String firstname, String lastname)
         {
         }
 

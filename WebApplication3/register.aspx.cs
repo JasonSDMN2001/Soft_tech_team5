@@ -19,9 +19,16 @@ namespace WebApplication3
         {
             try
             {
-                User u0 = new User();
-                u0.profileCreate(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text);
-                Response.Redirect("index.aspx");
+                if (client.Checked) {
+                    Client c0 = new Client();
+                    c0.profileCreate(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text);
+                    Response.Redirect("index.aspx");
+                }
+                else
+                {
+                    Developer d0 = new Developer();
+                    d0.profileCreate(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text);
+                }
             }
             catch
             {

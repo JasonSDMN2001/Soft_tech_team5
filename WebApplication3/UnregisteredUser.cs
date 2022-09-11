@@ -16,7 +16,7 @@ namespace WebApplication3
 
         void profileShow();
 
-        void profileCreate();
+        void profileCreate(String email, String username, String pass, String firstname, String lastname);
 
         void searchClient();
     }

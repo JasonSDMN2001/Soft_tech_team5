@@ -68,10 +68,8 @@
                     <option value="2000">2000</option><option value="2001">2001</option>
                     <option value="2002">2002</option></select></td>
             </tr>
-            <tr><td>User Type Selection</td><td style="text-align:left"><input type="radio" name="cl" id="cl">
-                <label>Client</label>
-                <input type="radio" name="dev" id="dev">
-                <label>Developer</label></tr></td>
+            <tr><td>User Type Selection</td><td style="text-align:left"><asp:RadioButton runat="server" Text="Client" GroupName="RG1" id="client" Checked="True"/>
+                <asp:RadioButton runat="server" Text="Developer" GroupName="RG1" id="developer"/></tr></td>
 
 
 
