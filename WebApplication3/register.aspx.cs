@@ -21,7 +21,7 @@ namespace WebApplication3
                 if (client.Checked) {
                     Client c0 = new Client();
                     c0.profileCreate(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text);
-                    Response.Redirect("index.aspx");
+                    Response.Redirect("indexing.aspx");
                 }
                 else
                 {

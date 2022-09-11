@@ -69,7 +69,7 @@
                     <option value="2002">2002</option></select></td>
             </tr>
             <tr><td>User Type Selection</td><td style="text-align:left"><asp:RadioButton runat="server" Text="Client" GroupName="RG1" id="client" Checked="True"/>
-                <asp:RadioButton runat="server" Text="Developer" GroupName="RG1" id="developer"/></tr></td>
+                <asp:RadioButton runat="server" Text="Developer" GroupName="RG1" id="developer"/></td></tr>
 
 
 
@@ -77,7 +77,7 @@
                 <label>I agree with the user terms</label></td></tr>
 
 
-            <tr><td>&nbsp;</td><td><input style="background-color:red;color:white;"type="reset" value="Cancel">
+            <tr><td>&nbsp;</td><td><asp:Button runat="server" style="background-color:red;color:white;" Text="Cancel" />
                 <asp:Button style="background-color:green;color:white;" id="makeUser" runat="server" Text="Confirm" OnClick="makeUser_Click" /></td></tr>
 
         </table>
