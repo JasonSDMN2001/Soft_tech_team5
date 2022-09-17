@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
-using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -19,12 +18,16 @@ namespace WebApplication3
             String query1 = "Select * from client where username='"+user+"'";
             SQLiteCommand cmd = new SQLiteCommand(query1, conn);
             SQLiteDataReader reader = cmd.ExecuteReader();
-            StringBuilder builder = new StringBuilder();
             while (reader.Read())
             {
                 email.Text = reader.GetString(0);
                 username.Text = reader.GetString(1);
-                fullname.Text = reader.GetString(3) + " " + reader.GetString(4);
+                fullname.Text = "   " + reader.GetString(3) + " " + reader.GetString(4);
+                gender.Text = "     " + reader.GetString(5);
+                birthdate.Text = "     " + reader.GetString(6);
+                //ImageID.ImageUrl = reader.GetString(7);
+                description.Text = reader.GetString(8);
+                pagelink.NavigateUrl = reader.GetString(9);
             }
             conn.Close();
         }

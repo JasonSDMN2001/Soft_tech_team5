@@ -11,9 +11,13 @@
         <table>
             <tr><td><asp:Image ID="ImageID" runat="server" Height="100px" Width="100px" /></td>
                 <td><asp:Label ID="fullname" runat="server" Text="Full name:"></asp:Label></td>
+                <td><asp:Table runat="server"><asp:TableHeaderRow><asp:TableHeaderCell id="gender" Text="♀ ♂"/></asp:TableHeaderRow>
+                    <asp:TableFooterRow><asp:TableCell id="birthdate" Text="Birthdate"/></asp:TableFooterRow></asp:Table></td>
             </tr>
-            <tr><td><asp:Label ID="username" runat="server" Text="Username"></asp:Label></td></tr>
-            <tr><td><asp:Label ID="email" runat="server" Text="Email"></asp:Label></td></tr>
+            <tr><td><asp:Label ID="username" runat="server" Text="Username" /></td>
+            <td><asp:Label ID="email" runat="server" Text="Email" /></td>
+            <td><asp:HyperLink ID="pagelink" runat="server" Text="Find me elsewhere" NavigateUrl="."></asp:HyperLink></td></tr>
+            <tr><td><asp:Label ID="description" runat="server" Text="Description" /></td></tr>
         </table>
     </form>
 </body>
