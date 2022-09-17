@@ -167,6 +167,7 @@
     <Content Include="About.aspx" />
     <Content Include="admintLogIn.html" />
     <Content Include="clientMainPage.aspx" />
+    <Content Include="clientProfile.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -246,6 +247,13 @@
     </Compile>
     <Compile Include="clientMainPage.aspx.designer.cs">
       <DependentUpon>clientMainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="clientProfile.aspx.cs">
+      <DependentUpon>clientProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="clientProfile.aspx.designer.cs">
+      <DependentUpon>clientProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
