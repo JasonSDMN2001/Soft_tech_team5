@@ -1,14 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="WebApplication3.Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registerdev.aspx.cs" Inherits="WebApplication3.Registerdev" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet"href="style.css">
-    <title>Register</title>
+    <title></title>
 </head>
 <body>
-    <form id="register" runat="server" style="background-color: slategray">
+    <form id="registerdev" runat="server" style="background-color: slategray">
         <div style="height: 386px">
             <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="True">
             </asp:ScriptManager>
@@ -17,25 +16,25 @@
             <tr><td style="background-color:orange; border:1px solid orange"><h3 style="text-align:center">
                 Registration form</h3></td><td style="background-color:orange"></td></tr>
 
-            <tr><td><asp:label runat="server" Text="Username"></asp:label></td>
+            <tr><td><asp:label runat="server" Text="Username" ID="label1"></asp:label></td>
                 <td><asp:TextBox runat="server" ID="username"
                     placeholder="State your username"></asp:TextBox></td></tr>
 
-            <tr><td><asp:label runat="server" Text="Password"></asp:label></td>
+            <tr><td><asp:label runat="server" Text="Password" ID="label2"></asp:label></td>
                 <td><asp:TextBox runat="server" ID="pass" TextMode="Password"></asp:TextBox></td></tr>
 
-            <tr><td><asp:label runat="server" Text="Confirm Password"></asp:label></td>
+            <tr><td><asp:label runat="server" Text="Confirm Password" ID="label3"></asp:label></td>
                 <td><asp:TextBox runat="server" ID="pass2" TextMode="Password"></asp:TextBox></td></tr>
             
-            <tr><td><asp:label runat="server" Text="E-mail"></asp:label></td>
+            <tr><td><asp:label runat="server" Text="E-mail" ID="label4"></asp:label></td>
                 <td><asp:TextBox runat="server" ID="email"
                     placeholder="E-mail"></asp:TextBox></td></tr>
 
-            <tr><td><asp:label runat="server" Text="Name"></asp:label></td>
+            <tr><td><asp:label runat="server" Text="Name" ID="label5"></asp:label></td>
                 <td><asp:TextBox runat="server" ID="firstname"
                     placeholder="Name"></asp:TextBox></td></tr>
 
-            <tr><td><asp:label runat="server" Text="Surname"></asp:label></td>
+            <tr><td><asp:label runat="server" Text="Surname" ID="label6"></asp:label></td>
                 <td><asp:TextBox runat="server" ID="lastname"
                     placeholder="Surname"></asp:TextBox></td></tr>
             <tr><td><label>Date of Birth</label></td><td><select name="day" id="day!"><option select name="imera">Day
@@ -76,13 +75,16 @@
                 <label>I agree with the user terms</label></td></tr>
 
 
-            <tr><td>&nbsp;</td><td><asp:Button runat="server" style="background-color:red;color:white;" Text="Cancel" />
-                <asp:Button style="background-color:green;color:white;" id="makeUser" runat="server" Text="Confirm" OnClick="makeUser_Click" /></td></tr>
+            <tr><td>&nbsp;</td><td><asp:Button runat="server" style="background-color:red;color:white;" Text="Cancel" ID="Button1" />
+                <asp:Button style="background-color:green;color:white;" id="makeDev" runat="server" Text="Confirm" OnClick="makeDev_Click" /></td></tr>
 
         </table>
     </fieldset><br><br>
         </div>
     </form>
+    <form id="form2" runat="server">
+        <div>
+        </div>
+    </form>
 </body>
 </html>
- 

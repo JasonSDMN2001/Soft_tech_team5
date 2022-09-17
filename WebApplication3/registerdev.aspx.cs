@@ -7,14 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication3
 {
-    public partial class Register : System.Web.UI.Page
+    public partial class Registerdev : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
 
-        protected void makeUser_Click(object sender, EventArgs e)
+        }
+        protected void makeDev_Click(object sender, EventArgs e)
         {
             bool bol = true;
             string script = "alert(\"There is already an account with that E-mail address\");";
@@ -22,7 +21,7 @@ namespace WebApplication3
             {
                 script = "alert(\"Email Address cannot be blank\");";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
-                bol= false;
+                bol = false;
             }
             else if (!email.Text.Contains(".") || !email.Text.Contains("@")) //some other basic checks
             {
@@ -42,13 +41,13 @@ namespace WebApplication3
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
                 bol = false;
             }
-            if (bol) {
-                Client c0 = new Client();
-                c0.profileCreate(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text);
+            if (bol)
+            {
+                Developer d0 = new Developer();
+                d0.profileCreate(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text);
                 Response.Redirect("index.aspx");
             }
-            
-            
+
         }
     }
 }

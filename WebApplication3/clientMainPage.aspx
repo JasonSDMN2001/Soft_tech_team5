@@ -29,7 +29,7 @@
                     <td><asp:Button runat="server" Text="Search another User" ID="searchClient" class="opt" /></td>
                 <td><asp:Button runat="server" Text="Search a Project" ID="searchProject" class="opt" /></td></tr>
             </table>
-            <iframe runat="server" id="clientframe" src="indexing.aspx" width="100%"></iframe>
+            <iframe runat="server" id="clientframe" width="100%"></iframe>
     </form>
 </body>
 </html>
