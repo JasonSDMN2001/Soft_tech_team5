@@ -190,6 +190,8 @@
     <Content Include="index.aspx" />
     <Content Include="login.aspx" />
     <Content Include="register.aspx" />
+    <Content Include="mode_registration.aspx" />
+    <Content Include="registerdev.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="indexing.aspx" />
     <Content Include="projectsite.html" />
@@ -325,6 +327,20 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="mode_registration.aspx.cs">
+      <DependentUpon>mode_registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mode_registration.aspx.designer.cs">
+      <DependentUpon>mode_registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registerdev.aspx.cs">
+      <DependentUpon>registerdev.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registerdev.aspx.designer.cs">
+      <DependentUpon>registerdev.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

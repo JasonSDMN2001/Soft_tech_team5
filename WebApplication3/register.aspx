@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="register" runat="server" style="background-color: slategray">
-        <div>
+        <div style="height: 386px">
             <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="True">
             </asp:ScriptManager>
             <fieldset>
@@ -68,8 +68,7 @@
                     <option value="2000">2000</option><option value="2001">2001</option>
                     <option value="2002">2002</option></select></td>
             </tr>
-            <tr><td>User Type Selection</td><td style="text-align:left"><asp:RadioButton runat="server" Text="Client" GroupName="RG1" id="client" Checked="True"/>
-                <asp:RadioButton runat="server" Text="Developer" GroupName="RG1" id="developer"/></td></tr>
+            <tr><td>&nbsp;</td><td style="text-align:left">&nbsp;</td></tr>
 
 
 

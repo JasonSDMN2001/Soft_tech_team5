@@ -18,7 +18,7 @@
             </tr>
         </table>
     </form>
-    <form action="register.aspx">
+    <form action="mode_registration.aspx">
         <table class="table1">
             <tr>
                 <td>
