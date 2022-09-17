@@ -13,9 +13,10 @@ namespace WebApplication3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string user = Session["Username"].ToString();
             SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
             conn.Open();
-            String query1 = "Select * from client where username='Rom'";
+            String query1 = "Select * from client where username='"+user+"'";
             SQLiteCommand cmd = new SQLiteCommand(query1, conn);
             SQLiteDataReader reader = cmd.ExecuteReader();
             StringBuilder builder = new StringBuilder();

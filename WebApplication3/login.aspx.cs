@@ -36,6 +36,7 @@ namespace WebApplication3
                 }
                 else
                 {
+                Session["Username"] = name1.Text;
                     Response.Redirect("clientMainPage.aspx");
                 }
           

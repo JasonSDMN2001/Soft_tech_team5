@@ -16,7 +16,7 @@ namespace WebApplication3
 
         protected void profileShow_Click(object sender, EventArgs e)
         {
-            clientframe.Src = "login.aspx";
+            clientframe.Src = "clientProfile.aspx";
         }
     }
 }
