@@ -16,8 +16,7 @@ namespace WebApplication3
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
                 conn.Open();
                 String query1 = "Select * from client where username='"+name1.Text+"' and pass='"+pwd.Text+"'";
@@ -26,16 +25,20 @@ namespace WebApplication3
                 System.Text.StringBuilder builder = new System.Text.StringBuilder();
                 while (reader.Read())
                 {
-                    builder.Append(reader.GetString(0) + "  ").Append(reader.GetString(1) + "  ").Append(reader.GetString(2) + "  ").Append(reader.GetString(3) + "  ");
+                    builder.Append(reader.GetString(1) + "/").Append(reader.GetString(2));
                 }
                 conn.Close();
-            }
-
-            catch (Exception)
-            {
-                string script = "alert(\"Incorrect username/password\")";
-                ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
-            }
+                if (builder.ToString()=="")
+                {
+                    
+                    string script = "alert(\"Incorrect username/password\")";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                }
+                else
+                {
+                    Response.Redirect("clientMainPage.aspx");
+                }
+          
         }
     }
 }
