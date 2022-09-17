@@ -9,7 +9,7 @@
 </head>
 <body>
     <img width="120px" height="100px" src="getDev.png">
-    <form action="login.aspx>
+    <form action="login.aspx">
         <table class="table1">
             <tr>
                 <td>

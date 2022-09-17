@@ -191,7 +191,6 @@
     <Content Include="register.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="indexing.aspx" />
-    <Content Include="login.html" />
     <Content Include="projectsite.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
