@@ -82,9 +82,6 @@
     </fieldset><br><br>
         </div>
     </form>
-    <form id="form2" runat="server">
-        <div>
-        </div>
-    </form>
+    
 </body>
 </html>
