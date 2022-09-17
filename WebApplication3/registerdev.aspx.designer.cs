@@ -24,13 +24,13 @@ namespace WebApplication3
         protected global::System.Web.UI.HtmlControls.HtmlForm registerdev;
 
         /// <summary>
-        /// ScriptManager1 control.
+        /// ScriptManager2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.ScriptManager ScriptManager2;
 
         /// <summary>
         /// label1 control.
@@ -42,13 +42,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Label label1;
 
         /// <summary>
-        /// username control.
+        /// username1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox username;
+        protected global::System.Web.UI.WebControls.TextBox username1;
 
         /// <summary>
         /// label2 control.
@@ -60,13 +60,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Label label2;
 
         /// <summary>
-        /// pass control.
+        /// pass1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pass;
+        protected global::System.Web.UI.WebControls.TextBox pass1;
 
         /// <summary>
         /// label3 control.
@@ -78,13 +78,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Label label3;
 
         /// <summary>
-        /// pass2 control.
+        /// passw2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pass2;
+        protected global::System.Web.UI.WebControls.TextBox passw2;
 
         /// <summary>
         /// label4 control.
@@ -96,13 +96,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Label label4;
 
         /// <summary>
-        /// email control.
+        /// email1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email;
+        protected global::System.Web.UI.WebControls.TextBox email1;
 
         /// <summary>
         /// label5 control.
@@ -114,13 +114,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Label label5;
 
         /// <summary>
-        /// firstname control.
+        /// firstname1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox firstname;
+        protected global::System.Web.UI.WebControls.TextBox firstname1;
 
         /// <summary>
         /// label6 control.
@@ -132,13 +132,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Label label6;
 
         /// <summary>
-        /// lastname control.
+        /// lastname1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lastname;
+        protected global::System.Web.UI.WebControls.TextBox lastname1;
 
         /// <summary>
         /// Button1 control.
