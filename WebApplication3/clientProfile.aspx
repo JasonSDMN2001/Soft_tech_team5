@@ -13,7 +13,9 @@
                 <td><asp:Label ID="fullname" runat="server" Text="Full name:"></asp:Label></td>
                 <td><asp:Table runat="server"><asp:TableHeaderRow><asp:TableHeaderCell id="gender" Text="♀ ♂"/></asp:TableHeaderRow>
                     <asp:TableFooterRow><asp:TableCell id="birthdate" Text="Birthdate"/></asp:TableFooterRow></asp:Table></td>
-            </tr>
+            <td>
+                <asp:Button ID="Button1" runat="server" BackColor="#99FFCC" BorderStyle="None" OnClick="Button1_Click" Text="Change your Profile" />
+                </td></tr>
             <tr><td><asp:Label ID="username" runat="server" Text="Username" />
                 <asp:Label ID="email" runat="server" Text="Email" /></td><td></td>
             <td><asp:HyperLink ID="pagelink" runat="server" Text="Find me elsewhere" NavigateUrl="."></asp:HyperLink></td></tr>
