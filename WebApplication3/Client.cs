@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
+
 
 namespace WebApplication3
 {
@@ -11,6 +13,7 @@ namespace WebApplication3
         private DateTime birthdate;
         private String description;
         private Uri link;
+        private Image image;
 
         public Client()
         {
@@ -55,8 +58,11 @@ namespace WebApplication3
         public void profileShow()
         {
         }
+        public void profileCreate(String email,String username,String pass,String firstname,String lastname)
+        {
 
-        public void profileCreate(String email, String username, String pass, String firstname, String lastname)
+        }
+        public void profileCreateClient(String email, String username, String pass, String firstname, String lastname,Image image)
         {
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
@@ -68,7 +74,7 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@lastname", lastname);
             profileCreatecmd.Parameters.AddWithValue("@gender", "");
             profileCreatecmd.Parameters.AddWithValue("@birthdate", "");
-            profileCreatecmd.Parameters.AddWithValue("@pic", "");
+            profileCreatecmd.Parameters.AddWithValue("@pic", image);
             profileCreatecmd.Parameters.AddWithValue("@description", "");
             profileCreatecmd.Parameters.AddWithValue("@pagelink", "");
             profileCreatecmd.ExecuteNonQuery();

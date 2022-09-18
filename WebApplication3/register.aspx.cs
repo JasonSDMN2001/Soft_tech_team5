@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+
 
 namespace WebApplication3
 {
@@ -15,7 +17,7 @@ namespace WebApplication3
         }
         protected void cancelBack(object sender, EventArgs e)
         {
-            //Response.Redirect("mode_registration.aspx");
+            Response.Redirect("mode_registration.aspx");
         }
         protected void makeUser_Click(object sender, EventArgs e)
         {
@@ -47,11 +49,28 @@ namespace WebApplication3
             }
             if (bol) {
                 Client c0 = new Client();
-                c0.profileCreate(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text);
+                c0.profileCreateClient(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text,image);
                 Response.Redirect("index.aspx");
             }
             
             
+        }
+        protected void UploadFile(object sender, EventArgs e)
+        {
+            string folderPath = Server.MapPath("~/Images/");
+
+            //Check whether Directory (Folder) exists.
+            if (!Directory.Exists(folderPath))
+            {
+                //If Directory (Folder) does not exists Create it.
+                Directory.CreateDirectory(folderPath);
+            }
+
+            //Save the File to the Directory (Folder).
+            FileUpload1.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
+
+            //Display the Picture in Image control.
+            image.ImageUrl = "~/Images/" + Path.GetFileName(FileUpload1.FileName);
         }
     }
 }

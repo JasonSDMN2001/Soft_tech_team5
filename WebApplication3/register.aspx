@@ -6,6 +6,15 @@
 <head runat="server">
     <link rel="stylesheet"href="style.css">
     <title>Register</title>
+    <style type="text/css">
+
+        .auto-style3 {
+            height: 96px;
+        }
+        .auto-style4 {
+            margin-left: 0px;
+        }
+    </style>
 </head>
 <body>
     <form id="register" runat="server" style="background-color: slategray">
@@ -15,7 +24,7 @@
             <fieldset>
         <table>
             <tr><td style="background-color:orange; border:1px solid orange"><h3 style="text-align:center">
-                Registration form</h3></td><td style="background-color:orange"></td></tr>
+                Registration form</h3></td><td style="background-color:orange">as a client</td></tr>
 
             <tr><td><asp:label runat="server" Text="Username"></asp:label></td>
                 <td><asp:TextBox runat="server" ID="username"
@@ -68,7 +77,11 @@
                     <option value="2000">2000</option><option value="2001">2001</option>
                     <option value="2002">2002</option></select></td>
             </tr>
-            <tr><td>&nbsp;</td><td style="text-align:left">&nbsp;</td></tr>
+            <tr><td class="auto-style3">Profile Image</td><td style="text-align:left">
+                <asp:FileUpload ID="FileUpload1" runat="server" CssClass="auto-style4" />
+                
+              <asp:Button ID="Button2" runat="server" Text="Upload File" OnClick="UploadFile" /><br/>
+            <asp:Image ID="image" runat="server" Height="92px" Width="176px"  /></td></tr>
 
 
 
