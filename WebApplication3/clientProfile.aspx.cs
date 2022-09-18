@@ -21,11 +21,12 @@ namespace WebApplication3
             while (reader.Read())
             {
                 email.Text = reader.GetString(0);
-                username.Text = reader.GetString(1);
+                username.Text = reader.GetString(1)+"    ";
                 fullname.Text = "   " + reader.GetString(3) + " " + reader.GetString(4);
                 gender.Text = "     " + reader.GetString(5);
                 birthdate.Text = "     " + reader.GetString(6);
-                //ImageID.ImageUrl = reader.GetString(7);
+                byte[] bytes = (byte[])reader["pic"];
+                ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
                 description.Text = reader.GetString(8);
                 pagelink.NavigateUrl = reader.GetString(9);
             }
