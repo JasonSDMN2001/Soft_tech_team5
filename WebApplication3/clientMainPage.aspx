@@ -14,7 +14,8 @@
             font-weight: bold;
         }
         #clientframe {
-            height: 204px;
+            height: 371px;
+            margin-bottom: 109px;
         }
     </style>
 </head>
