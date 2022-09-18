@@ -14,11 +14,17 @@
         .auto-style4 {
             margin-left: 0px;
         }
+        .auto-style5 {
+            height: 536px;
+        }
+        .auto-style6 {
+            height: 26px;
+        }
     </style>
 </head>
 <body>
     <form id="register" runat="server" style="background-color: slategray">
-        <div style="height: 386px">
+        <div class="auto-style5">
             <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="True">
             </asp:ScriptManager>
             <fieldset>
@@ -82,10 +88,14 @@
                 
               <asp:Button ID="Button2" runat="server" Text="Upload File" OnClick="UploadFile" /><br/>
             <asp:Image ID="image" runat="server" Height="92px" Width="176px"  /></td></tr>
+            <tr><td>Descreption</td><td><asp:TextBox runat="server" ID="desc"
+                    placeholder="state something" Height="70px"></asp:TextBox></td></tr>
+            <tr><td>Link</td><td><asp:TextBox runat="server" ID="link"
+                    placeholder="link"></asp:TextBox></td></tr>
 
 
 
-            <tr><td></td><td><input type="checkbox" name="term" id="term">
+            <tr><td class="auto-style6"></td><td class="auto-style6"><input type="checkbox" name="term" id="term">
                 <label>I agree with the user terms</label></td></tr>
 
 
