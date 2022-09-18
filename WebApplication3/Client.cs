@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
@@ -64,6 +66,7 @@ namespace WebApplication3
         }
         public void profileCreateClient(String email, String username, String pass, String firstname, String lastname,Image image)
         {
+            
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
             SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into client(email,username,pass,firstname,lastname,gender,birthdate,pic,description,pagelink) Values(@email,@username,@pass,@firstname,@lastname,@gender,@birthdate,@pic,@description,@pagelink)", conn);

@@ -7,13 +7,14 @@ using System.Web.UI.WebControls;
 using System.IO;
 
 
+
 namespace WebApplication3
 {
     public partial class Register : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
         protected void cancelBack(object sender, EventArgs e)
         {
@@ -27,7 +28,7 @@ namespace WebApplication3
             {
                 script = "alert(\"Email Address cannot be blank\");";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
-                bol= false;
+                bol = false;
             }
             else if (!email.Text.Contains(".") || !email.Text.Contains("@")) //some other basic checks
             {
@@ -49,11 +50,11 @@ namespace WebApplication3
             }
             if (bol) {
                 Client c0 = new Client();
-                c0.profileCreateClient(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text,image);
+                c0.profileCreateClient(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text, image);
                 Response.Redirect("index.aspx");
             }
-            
-            
+
+
         }
         protected void UploadFile(object sender, EventArgs e)
         {
@@ -71,6 +72,20 @@ namespace WebApplication3
 
             //Display the Picture in Image control.
             image.ImageUrl = "~/Images/" + Path.GetFileName(FileUpload1.FileName);
+            //string img = (string)image;
         }
+        public byte[] ImageToByteArray(string sPath)
+        {
+            byte[] data = null;
+            FileInfo fInfo = new FileInfo(sPath);
+            long numBytes = fInfo.Length;
+            FileStream fStream = new FileStream(sPath, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fStream);
+            data = br.ReadBytes((int)numBytes);
+            
+            return data;
+        }
+        
+            
     }
 }

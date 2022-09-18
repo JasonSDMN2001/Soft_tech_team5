@@ -19,11 +19,14 @@
         .auto-style4 {
             margin-left: 0px;
         }
+        .auto-style5 {
+            height: 619px;
+        }
     </style>
 </head>
 <body>
-    <form id="registerdev" runat="server" style="background-color: slategray">
-        <div style="height: 386px">
+    <form id="registerdev" runat="server" style="background-color: slategray" enctype="multipart/form-data">
+        <div class="auto-style5">
             <asp:ScriptManager ID="ScriptManager2" runat="server" EnablePageMethods="True">
             </asp:ScriptManager>
             <fieldset>
@@ -60,7 +63,14 @@
               <asp:Button ID="Button2" runat="server" Text="Upload File" OnClick="UploadFile" /><br/>
             <asp:Image ID="image" runat="server" Height="92px" Width="176px"  /></td></tr>
 
-
+            <tr><td>Skills</td><td><asp:TextBox runat="server" ID="skills"
+                    placeholder="state your skills" Height="90px"></asp:TextBox></td></tr>
+            <tr><td>CV</td><td>
+                <asp:FileUpload ID="FileUpload2" runat="server" CssClass="auto-style4" />
+                
+                </td></tr>
+            <tr><td>Portfolio</td><td>   <asp:TextBox runat="server" ID="port"
+                    placeholder="example.com"></asp:TextBox>   </td></tr>
             <tr><td class="auto-style2">
                 <br />
                 </td><td class="auto-style2"><input type="checkbox" name="term" id="term">
