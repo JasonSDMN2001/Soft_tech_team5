@@ -6,6 +6,20 @@
 <head runat="server">
     <link rel="stylesheet"href="style.css">
     <title>Register Developer</title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 29px;
+        }
+        .auto-style2 {
+            height: 26px;
+        }
+        .auto-style3 {
+            height: 96px;
+        }
+        .auto-style4 {
+            margin-left: 0px;
+        }
+    </style>
 </head>
 <body>
     <form id="registerdev" runat="server" style="background-color: slategray">
@@ -15,7 +29,7 @@
             <fieldset>
         <table>
             <tr><td style="background-color:orange; border:1px solid orange"><h3 style="text-align:center">
-                Registration form</h3></td><td style="background-color:orange"></td></tr>
+                Registration form</h3></td><td style="background-color:orange">as a developer</td></tr>
 
             <tr><td><asp:label runat="server" Text="Username" ID="label1"></asp:label></td>
                 <td><asp:TextBox runat="server" ID="username1"
@@ -35,14 +49,21 @@
                 <td><asp:TextBox runat="server" ID="firstname1"
                     placeholder="Name"></asp:TextBox></td></tr>
 
-            <tr><td><asp:label runat="server" Text="Surname" ID="label6"></asp:label></td>
-                <td><asp:TextBox runat="server" ID="lastname1"
+            <tr><td class="auto-style1"><asp:label runat="server" Text="Surname" ID="label6"></asp:label></td>
+                <td class="auto-style1"><asp:TextBox runat="server" ID="lastname1"
                     placeholder="Surname"></asp:TextBox></td></tr>
-            <tr><td>&nbsp;</td><td style="text-align:left">&nbsp;</td></tr>
+            <tr><td class="auto-style1">Gender</td><td style="text-align:left" class="auto-style1"><asp:TextBox runat="server" ID="gender"
+                    placeholder="Gender ♀ ♂"></asp:TextBox></td></tr>
+            <tr><td class="auto-style3">Profile Image</td><td class="auto-style3">
+                <asp:FileUpload ID="FileUpload1" runat="server" CssClass="auto-style4" />
+                
+              <asp:Button ID="Button2" runat="server" Text="Upload File" OnClick="UploadFile" /><br/>
+            <asp:Image ID="image" runat="server" Height="92px" Width="176px"  /></td></tr>
 
 
-
-            <tr><td></td><td><input type="checkbox" name="term" id="term">
+            <tr><td class="auto-style2">
+                <br />
+                </td><td class="auto-style2"><input type="checkbox" name="term" id="term">
                 <label>I agree with the user terms</label></td></tr>
 
 

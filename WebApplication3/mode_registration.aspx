@@ -19,8 +19,7 @@
         </div>
         <div>
         <p>
-            <asp:Label ID="Label2" runat="server" style="text-align:center" Font-Bold="True" Font-Size="XX-Large" Text="" Width="100%" ></asp:Label>
-        </p>
+            &nbsp;</p>
         </div>
         <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
@@ -28,7 +27,6 @@
             <asp:Button ID="Button3" runat="server" Font-Bold="True" Font-Size="Large" Height="63px" style="margin-left: 251px" Text="Client" Width="195px" OnClick="Button3_Click" />
             <asp:Button ID="Button4" runat="server" Font-Bold="True" Font-Size="Large" Height="59px" style="margin-left: 488px" Text="Developer" Width="185px" OnClick="Button4_Click" />
         </p>
-     <iframe runat="server" id="clientframe" width="100%"></iframe>   
     </form>
 </body>
 </html>
