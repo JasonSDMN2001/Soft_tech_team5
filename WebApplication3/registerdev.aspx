@@ -46,7 +46,7 @@
                 <label>I agree with the user terms</label></td></tr>
 
 
-            <tr><td>&nbsp;</td><td><asp:Button runat="server" style="background-color:red;color:white;" Text="Cancel" ID="Button1" />
+            <tr><td>&nbsp;</td><td><asp:Button runat="server" style="background-color:red;color:white;" Text="Cancel" ID="Button1" OnClick="cancelBack" />
                 <asp:Button style="background-color:green;color:white;" id="makeDev" runat="server" Text="Confirm" OnClick="makeDev_Click" /></td></tr>
 
         </table>

@@ -11,17 +11,22 @@ namespace WebApplication3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
             clientframe.Src = "register.aspx";
+            Button3.Visible = false;
+            Button4.Visible = false;
+            Label2.Text = "A Client";
         }
 
         protected void Button4_Click(object sender, EventArgs e)
         {
             clientframe.Src = "registerdev.aspx";
+            Button3.Visible = false;
+            Button4.Visible = false;
+            Label2.Text = "A Developer";
         }
     }
 }

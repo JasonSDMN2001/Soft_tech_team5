@@ -15,10 +15,13 @@
 <body>
     <form id="form1" runat="server" >
         <div>
-            <asp:Label ID="Label1" runat="server" BackColor="#33CCCC" BorderColor="#E1E1E1" Font-Bold="True" Font-Size="XX-Large" Height="68px" style="text-align:center" Text="Register as :" Width="1347px"></asp:Label>
+            <asp:Label ID="Label1" runat="server" BackColor="#33CCCC" BorderColor="#E1E1E1" Font-Bold="True" Font-Size="XX-Large" Height="68px" style="text-align:center" Text="Registering as :" Width="100%"></asp:Label>
         </div>
+        <div>
         <p>
-            &nbsp;</p>
+            <asp:Label ID="Label2" runat="server" style="text-align:center" Font-Bold="True" Font-Size="XX-Large" Text="" Width="100%" ></asp:Label>
+        </p>
+        </div>
         <p>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
         <p>
