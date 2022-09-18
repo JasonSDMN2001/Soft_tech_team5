@@ -189,6 +189,7 @@
     <Content Include="ClassDiagram1.cd" />
     <Content Include="index.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="profileEdit.aspx" />
     <Content Include="register.aspx" />
     <Content Include="mode_registration.aspx" />
     <Content Include="registerdev.aspx" />
@@ -295,6 +296,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profileEdit.aspx.cs">
+      <DependentUpon>profileEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profileEdit.aspx.designer.cs">
+      <DependentUpon>profileEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
