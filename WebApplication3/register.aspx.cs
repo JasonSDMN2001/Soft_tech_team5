@@ -12,6 +12,7 @@ namespace WebApplication3
 {
     public partial class Register : System.Web.UI.Page
     {
+        String Gender;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -36,6 +37,12 @@ namespace WebApplication3
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
                 bol = false;
             }
+            else if (pass != pass2)
+            {
+                script = "alert(\"Passwords are not identical\");";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                bol = false;
+            }
             else if (pass.Text.Length < 6)
             {
                 script = "alert(\"Password cannot be less than 6 chars\");";
@@ -50,7 +57,7 @@ namespace WebApplication3
             }
             if (bol) {
                 Client c0 = new Client();
-                c0.profileCreateClient(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text, image);
+                c0.profileCreateClient(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text, FileUpload1);
                 Response.Redirect("index.aspx");
             }
 
@@ -68,7 +75,9 @@ namespace WebApplication3
             }
 
             //Save the File to the Directory (Folder).
-            FileUpload1.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
+            //FileUpload1.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
+            FileUpload1.SaveAs(folderPath + FileUpload1.FileName);
+            Response.Write("File Uploaded Successfully!");
 
             //Display the Picture in Image control.
             image.ImageUrl = "~/Images/" + Path.GetFileName(FileUpload1.FileName);
@@ -85,7 +94,17 @@ namespace WebApplication3
             
             return data;
         }
-        
+
+        protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            Gender = "Male";
             
+        }
+
+        protected void RadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            Gender = "Female";
+            
+        }
     }
 }

@@ -35,6 +35,12 @@ namespace WebApplication3
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
                 bol = false;
             }
+            else if (pass1 != passw2)
+            {
+                script = "alert(\"Passwords are not identical\");";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                bol = false;
+            }
             else if (pass1.Text.Length < 6)
             {
                 script = "alert(\"Password cannot be less than 6 chars\");";
