@@ -122,7 +122,7 @@
                 
                 <br/>
                 </td></tr>
-            <tr><td class="auto-style10">Descreption</td><td><asp:TextBox runat="server" ID="desc"
+            <tr><td class="auto-style10">Description</td><td><asp:TextBox runat="server" ID="desc"
                     placeholder="state something" Height="70px"></asp:TextBox></td></tr>
             <tr><td class="auto-style10">Link</td><td><asp:TextBox runat="server" ID="link"
                     placeholder="link"></asp:TextBox></td></tr>
