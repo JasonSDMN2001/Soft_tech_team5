@@ -35,7 +35,7 @@ namespace WebApplication3
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
                 bol = false;
             }
-            else if (pass1 != passw2)
+            else if (pass1.Text != passw2.Text)
             {
                 script = "alert(\"Passwords are not identical\");";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);

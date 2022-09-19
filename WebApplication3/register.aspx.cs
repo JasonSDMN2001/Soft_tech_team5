@@ -12,7 +12,7 @@ namespace WebApplication3
 {
     public partial class Register : System.Web.UI.Page
     {
-        String Gender;
+        string Gender;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -37,7 +37,7 @@ namespace WebApplication3
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
                 bol = false;
             }
-            else if (pass != pass2)
+            else if (pass.Text != pass2.Text)
             {
                 script = "alert(\"Passwords are not identical\");";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
@@ -57,7 +57,7 @@ namespace WebApplication3
             }
             if (bol) {
                 Client c0 = new Client();
-                c0.profileCreateClient(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text, FileUpload1);
+                c0.profileCreateClient(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text, FileUpload1,Gender,image, desc.Text,link.Text);
                 Response.Redirect("index.aspx");
             }
 

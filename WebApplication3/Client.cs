@@ -14,7 +14,7 @@ namespace WebApplication3
     {
         private DateTime birthdate;
         private String description;
-        private Uri link;
+        private String link;
         private Image image;
 
         public Client()
@@ -64,7 +64,7 @@ namespace WebApplication3
         {
 
         }
-        public void profileCreateClient(String email, String username, String pass, String firstname, String lastname,FileUpload FileUpload1)
+        public void profileCreateClient(String email, String username, String pass, String firstname, String lastname,FileUpload FileUpload1,String Gender,Image image,String desc,String link)
         {
             
             SQLiteConnection conn = new SQLiteConnection(db);
@@ -75,11 +75,11 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@pass", pass);
             profileCreatecmd.Parameters.AddWithValue("@firstname", firstname);
             profileCreatecmd.Parameters.AddWithValue("@lastname", lastname);
-            profileCreatecmd.Parameters.AddWithValue("@gender", "");
+            profileCreatecmd.Parameters.AddWithValue("@gender", Gender);
             profileCreatecmd.Parameters.AddWithValue("@birthdate", "");
             profileCreatecmd.Parameters.AddWithValue("@pic", FileUpload1);
-            profileCreatecmd.Parameters.AddWithValue("@description", "");
-            profileCreatecmd.Parameters.AddWithValue("@pagelink", "");
+            profileCreatecmd.Parameters.AddWithValue("@description", desc);
+            profileCreatecmd.Parameters.AddWithValue("@pagelink", link);
             profileCreatecmd.ExecuteNonQuery();
             conn.Close();
         }
