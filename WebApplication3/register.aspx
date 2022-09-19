@@ -120,8 +120,8 @@
             <tr><td class="auto-style3">Profile Image</td><td style="text-align:left">
                 <asp:FileUpload ID="FileUpload1" runat="server" CssClass="auto-style4" />
                 
-              <asp:Button ID="Button2" runat="server" Text="Upload File" OnClick="UploadFile" /><br/>
-            <asp:Image ID="image" runat="server" Height="92px" Width="176px"  /></td></tr>
+                <br/>
+                </td></tr>
             <tr><td class="auto-style10">Description</td><td><asp:TextBox runat="server" ID="desc"
                     placeholder="state something" Height="70px"></asp:TextBox></td></tr>
             <tr><td class="auto-style10">Link</td><td><asp:TextBox runat="server" ID="link"
