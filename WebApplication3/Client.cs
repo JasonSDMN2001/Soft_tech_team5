@@ -21,8 +21,26 @@ namespace WebApplication3
         {
         }
 
-        public void createProject()
+        public void createProject(string title,string description,string proj_type,string offer_show,string category,string subcategory,string payment_method,string max_price,string interval,string uptime,string rec_tech,string client_username)
         {
+            SQLiteConnection conn = new SQLiteConnection(db);
+            conn.Open();
+            SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into project(title,description,proj_type,offer_show,category,subcategory,payment_method,max_price,interval,uptime,rec_tech,client_username) Values("+
+                "@title,@description,@proj_type,@offer_show,@category,@subcategory,@payment_method,@max_price,@interval,@uptime,@rec_tech,@client_username)", conn);
+            profileCreatecmd.Parameters.AddWithValue("@title", title);
+            profileCreatecmd.Parameters.AddWithValue("@description", description);
+            profileCreatecmd.Parameters.AddWithValue("@proj_type", proj_type);
+            profileCreatecmd.Parameters.AddWithValue("@offer_show", offer_show);
+            profileCreatecmd.Parameters.AddWithValue("@category", category);
+            profileCreatecmd.Parameters.AddWithValue("@subcategory", subcategory);
+            profileCreatecmd.Parameters.AddWithValue("@payment_method", payment_method);
+            profileCreatecmd.Parameters.AddWithValue("@max_price", max_price);
+            profileCreatecmd.Parameters.AddWithValue("@interval,", interval);
+            profileCreatecmd.Parameters.AddWithValue("@uptime", uptime);
+            profileCreatecmd.Parameters.AddWithValue("@rec_tech", rec_tech);
+            profileCreatecmd.Parameters.AddWithValue("@client_username", client_username);
+            profileCreatecmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public void editProject()

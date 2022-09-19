@@ -24,7 +24,7 @@
         <div></div>
             <table width="100%" style="background-color:cornflowerblue">
                 <tr><td><asp:Button runat="server" Text="Your Profile" ID="profileShow" class="opt" OnClick="profileShow_Click" /></td>
-                <td><asp:Button runat="server" Text="Make a Project" ID="createProject" class="opt" /></td>
+                <td><asp:Button runat="server" Text="Make a Project" ID="createProject" class="opt" OnClick="createProject_Click" /></td>
                 <td><asp:Button runat="server" Text="Edit your Projects" ID="editProject" class="opt" /></td></tr>
                 <tr><td><asp:Button runat="server" Text="Search a Developer" ID="searchDev" class="opt" /></td>
                     <td><asp:Button runat="server" Text="Search another User" ID="searchClient" class="opt" /></td>
