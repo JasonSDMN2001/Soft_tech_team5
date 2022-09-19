@@ -64,7 +64,7 @@ namespace WebApplication3
         {
 
         }
-        public void profileCreateClient(String email, String username, String pass, String firstname, String lastname, Byte[] bytes, String Gender, Image image, String desc, String link)
+        public void profileCreateClient(String email, String username, String pass, String firstname, String lastname, Byte[] bytes, String Gender, String desc, String link)
         {
 
             SQLiteConnection conn = new SQLiteConnection(db);
@@ -77,7 +77,7 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@lastname", lastname);
             profileCreatecmd.Parameters.AddWithValue("@gender", Gender);
             profileCreatecmd.Parameters.AddWithValue("@birthdate", "");
-            profileCreatecmd.Parameters.AddWithValue("@pic", FileUpload1);
+            profileCreatecmd.Parameters.AddWithValue("@pic", bytes);
             profileCreatecmd.Parameters.AddWithValue("@description", desc);
             profileCreatecmd.Parameters.AddWithValue("@pagelink", link);
             profileCreatecmd.ExecuteNonQuery();
