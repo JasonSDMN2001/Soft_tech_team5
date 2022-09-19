@@ -57,7 +57,7 @@ namespace WebApplication3
         public void searchClient()
         {
         }
-        public void profileCreateDev(String email, String username, String pass, String firstname, String lastname, Byte[] bytes)
+        public void profileCreateDev(String email, String username, String pass, String firstname, String lastname, Byte[] bytes, Byte[] bytes2)
         {
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
@@ -70,7 +70,7 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@gender", "");
             profileCreatecmd.Parameters.AddWithValue("@pic", bytes);
             profileCreatecmd.Parameters.AddWithValue("@skills", "");
-            profileCreatecmd.Parameters.AddWithValue("@bio", "");
+            profileCreatecmd.Parameters.AddWithValue("@bio", bytes2);
             profileCreatecmd.Parameters.AddWithValue("@portfolio", "");
             profileCreatecmd.ExecuteNonQuery();
             conn.Close();

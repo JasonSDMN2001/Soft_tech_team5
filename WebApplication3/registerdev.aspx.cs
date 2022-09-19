@@ -13,6 +13,7 @@ namespace WebApplication3
     {
         
         Byte[] bytes;
+        Byte[] bytes2;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -25,6 +26,8 @@ namespace WebApplication3
         {
             
             bool bol = true;
+            bool bol1 = true;
+            bool bol2 = true;
             string script = "alert(\"There is already an account with that E-mail address\");";
             if (email1.Text.Length == 0)//Zero length check
             {
@@ -72,12 +75,31 @@ namespace WebApplication3
             {
                 script = "alert(\"File is not an accepted picture type\");";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
-                bol = false;
+                bol1 = false;
             }
-            if (bol)
+            HttpPostedFile postedFile2 = FileUpload2.PostedFile;
+            string filename2 = Path.GetFileName(postedFile2.FileName);
+            string fileExtension2 = Path.GetExtension(filename2);
+            int fileSize2 = postedFile2.ContentLength;
+
+            if (fileExtension2.ToLower() == ".pdf")
+            {
+                Stream stream2 = postedFile2.InputStream;
+                BinaryReader binaryReader2 = new BinaryReader(stream2);
+                bytes2 = binaryReader2.ReadBytes((int)stream2.Length);
+                
+            }
+            else
+            {
+                script = "alert(\"File is not an accepted type\");";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                
+                bol2 = false;
+            }
+            if (bol&&bol1&&bol2)
             {
                 Developer d0 = new Developer();
-                d0.profileCreateDev(email1.Text, username1.Text, pass1.Text, firstname1.Text, lastname1.Text, bytes);
+                d0.profileCreateDev(email1.Text, username1.Text, pass1.Text, firstname1.Text, lastname1.Text, bytes,bytes2);
                 Response.Redirect("index.aspx");
             }
 
