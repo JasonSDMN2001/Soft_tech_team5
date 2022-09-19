@@ -77,9 +77,9 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@lastname", lastname);
             profileCreatecmd.Parameters.AddWithValue("@gender", Gender);
             profileCreatecmd.Parameters.AddWithValue("@birthdate", "");
-            profileCreatecmd.Parameters.AddWithValue("@pic", bytes);
-            profileCreatecmd.Parameters.AddWithValue("@description", "");
-            profileCreatecmd.Parameters.AddWithValue("@pagelink", "");
+            profileCreatecmd.Parameters.AddWithValue("@pic", FileUpload1);
+            profileCreatecmd.Parameters.AddWithValue("@description", desc);
+            profileCreatecmd.Parameters.AddWithValue("@pagelink", link);
             profileCreatecmd.ExecuteNonQuery();
             conn.Close();
         }
