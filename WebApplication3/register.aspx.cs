@@ -77,7 +77,7 @@ namespace WebApplication3
             }
             if (bol) {
                 Client c0 = new Client();
-                c0.profileCreateClient(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text, bytes, Gender, desc.Text, link.Text);
+                c0.profileCreateClient(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text, bytes, Gender,TextBox1.Text, desc.Text, link.Text);
                 Response.Redirect("index.aspx");
             }
 
