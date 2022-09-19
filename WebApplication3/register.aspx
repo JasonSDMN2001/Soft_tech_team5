@@ -28,9 +28,6 @@
         .auto-style8 {
             height: 38px;
         }
-        .auto-style9 {
-            margin-left: 163px;
-        }
         .auto-style10 {
             width: 202px;
         }
@@ -82,8 +79,7 @@
             <tr><td class="auto-style10">Gender</td><td style="text-align:left" class="auto-style1">
                 <asp:RadioButton ID="RadioButton1" runat="server" OnCheckedChanged="RadioButton1_CheckedChanged" Text="Male" />
                 <asp:RadioButton ID="RadioButton2" runat="server" OnCheckedChanged="RadioButton2_CheckedChanged" Text="Female" />
-                <asp:TextBox runat="server" ID="gender"
-                    placeholder="Gender ♀ ♂" CssClass="auto-style9" Width="16px"></asp:TextBox></td></tr>
+                </td></tr>
             <tr><td class="auto-style11"><label>Date of Birth</label></td><td class="auto-style8"><select name="day" id="day!"><option select name="imera">Day
                 <option value="1">1</option>
                 <option value="2">2</option><option value="3">3</option><option value="4">4</option>
@@ -117,8 +113,8 @@
             <tr><td class="auto-style3">Profile Image</td><td style="text-align:left">
                 <asp:FileUpload ID="FileUpload1" runat="server" CssClass="auto-style4" />
                 
-              <asp:Button ID="Button2" runat="server" Text="Upload File" OnClick="UploadFile" /><br/>
-            <asp:Image ID="image" runat="server" Height="92px" Width="176px"  /></td></tr>
+                <br/>
+                </td></tr>
             <tr><td class="auto-style10">Descreption</td><td><asp:TextBox runat="server" ID="desc"
                     placeholder="state something" Height="70px"></asp:TextBox></td></tr>
             <tr><td class="auto-style10">Link</td><td><asp:TextBox runat="server" ID="link"

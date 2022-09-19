@@ -15,7 +15,7 @@ namespace WebApplication3
         private DateTime birthdate;
         private String description;
         private Uri link;
-        private Image image;
+        
 
         public Client()
         {
@@ -64,7 +64,7 @@ namespace WebApplication3
         {
 
         }
-        public void profileCreateClient(String email, String username, String pass, String firstname, String lastname,FileUpload FileUpload1)
+        public void profileCreateClient(String email, String username, String pass, String firstname, String lastname, Byte[] bytes)
         {
             
             SQLiteConnection conn = new SQLiteConnection(db);
@@ -77,7 +77,7 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@lastname", lastname);
             profileCreatecmd.Parameters.AddWithValue("@gender", "");
             profileCreatecmd.Parameters.AddWithValue("@birthdate", "");
-            profileCreatecmd.Parameters.AddWithValue("@pic", FileUpload1);
+            profileCreatecmd.Parameters.AddWithValue("@pic", bytes);
             profileCreatecmd.Parameters.AddWithValue("@description", "");
             profileCreatecmd.Parameters.AddWithValue("@pagelink", "");
             profileCreatecmd.ExecuteNonQuery();

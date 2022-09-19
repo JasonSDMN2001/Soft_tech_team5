@@ -11,6 +11,8 @@ namespace WebApplication3
 {
     public partial class Registerdev : System.Web.UI.Page
     {
+        
+        Byte[] bytes;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -21,6 +23,7 @@ namespace WebApplication3
         }
         protected void makeDev_Click(object sender, EventArgs e)
         {
+            
             bool bol = true;
             string script = "alert(\"There is already an account with that E-mail address\");";
             if (email1.Text.Length == 0)//Zero length check
@@ -35,7 +38,7 @@ namespace WebApplication3
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
                 bol = false;
             }
-            else if (pass1 != passw2)
+            else if (pass1.Text != passw2.Text)
             {
                 script = "alert(\"Passwords are not identical\");";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
@@ -53,32 +56,32 @@ namespace WebApplication3
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
                 bol = false;
             }
+            HttpPostedFile postedFile = FileUpload1.PostedFile;
+            string filename = Path.GetFileName(postedFile.FileName);
+            string fileExtension = Path.GetExtension(filename);
+            int fileSize = postedFile.ContentLength;
+
+            if (fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".gif"
+                || fileExtension.ToLower() == ".png" || fileExtension.ToLower() == ".bmp")
+            {
+                Stream stream = postedFile.InputStream;
+                BinaryReader binaryReader = new BinaryReader(stream);
+                bytes = binaryReader.ReadBytes((int)stream.Length);
+            }
+            else
+            {
+                script = "alert(\"File is not an accepted picture type\");";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                bol = false;
+            }
             if (bol)
             {
-                //byte[] bytes = (byte[])(new ).ConvertTo(image, typeof(byte[]));
-                //byte[] bytes = (byte[])image;
                 Developer d0 = new Developer();
-                d0.profileCreateDev(email1.Text, username1.Text, pass1.Text, firstname1.Text, lastname1.Text, image);
+                d0.profileCreateDev(email1.Text, username1.Text, pass1.Text, firstname1.Text, lastname1.Text, bytes);
                 Response.Redirect("index.aspx");
             }
 
         }
-        protected void UploadFile(object sender, EventArgs e)
-        {
-            string folderPath = Server.MapPath("~/Images/");
-
-            //Check whether Directory (Folder) exists.
-            if (!Directory.Exists(folderPath))
-            {
-                //If Directory (Folder) does not exists Create it.
-                Directory.CreateDirectory(folderPath);
-            }
-
-            //Save the File to the Directory (Folder).
-            FileUpload1.SaveAs(folderPath + Path.GetFileName(FileUpload1.FileName));
-
-            //Display the Picture in Image control.
-            image.ImageUrl = "~/Images/" + Path.GetFileName(FileUpload1.FileName);
-        }
+        
     }
 }

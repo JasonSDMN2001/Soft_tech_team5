@@ -13,7 +13,7 @@ namespace WebApplication3
         private String skills;
         private String bio;
         private Uri portfolio;
-        private Image image;
+        
         public Developer()
         {
         }
@@ -57,7 +57,7 @@ namespace WebApplication3
         public void searchClient()
         {
         }
-        public void profileCreateDev(String email, String username, String pass, String firstname, String lastname, Image image)
+        public void profileCreateDev(String email, String username, String pass, String firstname, String lastname, Byte[] bytes)
         {
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
@@ -68,7 +68,7 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@firstname", firstname);
             profileCreatecmd.Parameters.AddWithValue("@lastname", lastname);
             profileCreatecmd.Parameters.AddWithValue("@gender", "");
-            profileCreatecmd.Parameters.AddWithValue("@pic", image);
+            profileCreatecmd.Parameters.AddWithValue("@pic", bytes);
             profileCreatecmd.Parameters.AddWithValue("@skills", "");
             profileCreatecmd.Parameters.AddWithValue("@bio", "");
             profileCreatecmd.Parameters.AddWithValue("@portfolio", "");
