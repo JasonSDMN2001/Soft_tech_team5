@@ -42,6 +42,13 @@
         .auto-style13 {
             height: 665px;
         }
+        .auto-style14 {
+            width: 202px;
+            height: 29px;
+        }
+        .auto-style15 {
+            height: 29px;
+        }
     </style>
 </head>
 <body>
@@ -61,8 +68,8 @@
             <tr><td class="auto-style10"><asp:label runat="server" Text="Password"></asp:label>(*)</td>
                 <td><asp:TextBox runat="server" ID="pass" TextMode="Password"></asp:TextBox></td></tr>
 
-            <tr><td class="auto-style10"><asp:label runat="server" Text="Confirm Password"></asp:label>(*)</td>
-                <td><asp:TextBox runat="server" ID="pass2" TextMode="Password"></asp:TextBox></td></tr>
+            <tr><td class="auto-style14"><asp:label runat="server" Text="Confirm Password"></asp:label>(*)</td>
+                <td class="auto-style15"><asp:TextBox runat="server" ID="pass2" TextMode="Password"></asp:TextBox></td></tr>
             
             <tr><td class="auto-style10"><asp:label runat="server" Text="E-mail"></asp:label>(*)</td>
                 <td><asp:TextBox runat="server" ID="email"
