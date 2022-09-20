@@ -18,7 +18,9 @@ namespace WebApplication3
         {
             string user = Session["Username"].ToString();
             Client cproj = new Client();
-            //cproj.createProject(title.Text,proj_description.Text,publicity.Text,view_offer.Text,category.Text,"",payment_method.SelectedValue,maxprice.Text,devduration.Text,offerduration.Text,"",user);
+            //cproj.createProject(title.Text,proj_description.Text,publicity.SelectedItem.Text,view_offer.SelectedItem.Text,category.SelectedItem.Text,subcategory.SelectedItem.Text,payment_method.SelectedItem.Text,maxprice.Text,devduration.SelectedItem.Text,offerduration.SelectedItem.Text,"",user);
+            string script = "alert(\"Project has been submitted successfully\");";
+            ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
         }
 
         protected void category_SelectedIndexChanged(object sender,EventArgs e)
