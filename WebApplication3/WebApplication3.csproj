@@ -176,6 +176,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="createProject.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="devMainPage.aspx" />
+    <Content Include="devProfile.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -281,6 +283,20 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Developer.cs" />
+    <Compile Include="devMainPage.aspx.cs">
+      <DependentUpon>devMainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devMainPage.aspx.designer.cs">
+      <DependentUpon>devMainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="devProfile.aspx.cs">
+      <DependentUpon>devProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devProfile.aspx.designer.cs">
+      <DependentUpon>devProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
