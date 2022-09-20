@@ -10,28 +10,28 @@
     <form id="createProject" runat="server">
         <h2>Create your own Project</h2>
         <asp:Table runat="server">
-            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Title:"/></asp:TableCell><asp:TableCell><asp:TextBox runat="server" ID="title"/></asp:TableCell></asp:TableRow>
-            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Description:"/></asp:TableCell><asp:TableCell><asp:TextBox runat="server" ID="proj_description"/></asp:TableCell></asp:TableRow>
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Title:"/></asp:TableCell><asp:TableCell><asp:TextBox runat="server" ID="title"/></asp:TableCell></asp:TableRow>
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Description:"/></asp:TableCell><asp:TableCell><asp:TextBox runat="server" ID="proj_description"/></asp:TableCell></asp:TableRow>
             
-            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Visible by others:"/></asp:TableCell><asp:TableCell><asp:RadioButtonList runat="server" ID="publicity">
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Visible by others:"/></asp:TableCell><asp:TableCell><asp:RadioButtonList runat="server" ID="publicity">
                     <asp:ListItem>Public</asp:ListItem><asp:ListItem>Private</asp:ListItem>
                                </asp:RadioButtonList></asp:TableCell></asp:TableRow>
 
-            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Do you want to view prices offered by developers?"/></asp:TableCell><asp:TableCell><asp:RadioButtonList runat="server" ID="view_offer">
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Do you want to view prices offered by developers?"/></asp:TableCell><asp:TableCell><asp:RadioButtonList runat="server" ID="view_offer">
                     <asp:ListItem>Yes</asp:ListItem><asp:ListItem>No</asp:ListItem>
                                </asp:RadioButtonList></asp:TableCell></asp:TableRow>
 
-            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Category:"/></asp:TableCell><asp:TableCell><asp:DropDownList runat="server"  autopostback="true" onselectedindexchanged="category_SelectedIndexChanged" ID="category">
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Category:"/></asp:TableCell><asp:TableCell><asp:DropDownList runat="server"  autopostback="true" onselectedindexchanged="category_SelectedIndexChanged" ID="category">
                     <asp:ListItem>Web Site</asp:ListItem><asp:ListItem>Database</asp:ListItem>
                     <asp:ListItem>Mobile app</asp:ListItem><asp:ListItem>Security</asp:ListItem>
                                </asp:DropDownList></asp:TableCell></asp:TableRow>
 
-            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Subcategory:"/></asp:TableCell><asp:TableCell><asp:DropDownList runat="server" ID="subcategory">
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Subcategory:"/></asp:TableCell><asp:TableCell><asp:DropDownList runat="server" ID="subcategory">
                     <asp:ListItem>Blog</asp:ListItem><asp:ListItem>Corporate</asp:ListItem>
                     <asp:ListItem>Ecommerce</asp:ListItem><asp:ListItem>Portal</asp:ListItem><asp:ListItem>Video Streaming</asp:ListItem>
                                 </asp:DropDownList></asp:TableCell></asp:TableRow>
 
-            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Payment Method:"/></asp:TableCell><asp:TableCell><asp:RadioButtonList runat="server" ID="payment_method">
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Payment Method:"/></asp:TableCell><asp:TableCell><asp:RadioButtonList runat="server" ID="payment_method">
                     <asp:ListItem>Hourly</asp:ListItem><asp:ListItem>Salary</asp:ListItem>
                                </asp:RadioButtonList></asp:TableCell></asp:TableRow>
 
@@ -50,5 +50,6 @@
                                </asp:DropDownList></asp:TableCell></asp:TableRow>
 
         </asp:Table><asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" /></form>
+    <h6>* these fields must be filled in order for the project to be submitted</h6>
 </body>
 </html>
