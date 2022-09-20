@@ -79,10 +79,10 @@ namespace WebApplication3
             }
             HttpPostedFile postedFile2 = FileUpload2.PostedFile;
             string filename2 = Path.GetFileName(postedFile2.FileName);
-            string fileExtension2 = Path.GetExtension(filename2);
+            //string fileExtension2 = Path.GetExtension(filename2);
             int fileSize2 = postedFile2.ContentLength;
 
-            if (fileExtension2.ToLower() == ".pdf")
+            if (postedFile2.ContentType == "application/pdf")
             {
                 Stream stream2 = postedFile2.InputStream;
                 BinaryReader binaryReader2 = new BinaryReader(stream2);
