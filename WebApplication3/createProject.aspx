@@ -21,9 +21,15 @@
                     <asp:ListItem>Yes</asp:ListItem><asp:ListItem>No</asp:ListItem>
                                </asp:RadioButtonList></asp:TableCell></asp:TableRow>
 
-            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Category:"/></asp:TableCell><asp:TableCell><asp:DropDownList runat="server" ID="category">
-                    <asp:ListItem>Web Site</asp:ListItem>
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Category:"/></asp:TableCell><asp:TableCell><asp:DropDownList runat="server"  autopostback="true" onselectedindexchanged="category_SelectedIndexChanged" ID="category">
+                    <asp:ListItem>Web Site</asp:ListItem><asp:ListItem>Database</asp:ListItem>
+                    <asp:ListItem>Mobile app</asp:ListItem><asp:ListItem>Security</asp:ListItem>
                                </asp:DropDownList></asp:TableCell></asp:TableRow>
+
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Subcategory:"/></asp:TableCell><asp:TableCell><asp:DropDownList runat="server" ID="subcategory">
+                    <asp:ListItem>Blog</asp:ListItem><asp:ListItem>Corporate</asp:ListItem>
+                    <asp:ListItem>Ecommerce</asp:ListItem><asp:ListItem>Portal</asp:ListItem><asp:ListItem>Video Streaming</asp:ListItem>
+                                </asp:DropDownList></asp:TableCell></asp:TableRow>
 
             <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Payment Method:"/></asp:TableCell><asp:TableCell><asp:RadioButtonList runat="server" ID="payment_method">
                     <asp:ListItem>Hourly</asp:ListItem><asp:ListItem>Salary</asp:ListItem>
