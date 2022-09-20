@@ -40,17 +40,17 @@ namespace WebApplication3
                     Response.Redirect("clientMainPage.aspx");
                 }
                 SQLiteConnection conn2 = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
-                conn.Open();
+                conn2.Open();
                 String query2 = "Select * from dev where username='" + name1.Text + "' and pass='" + pwd.Text + "'";
                 SQLiteCommand cmd2 = new SQLiteCommand(query2, conn2);
                 SQLiteDataReader reader2 = cmd2.ExecuteReader();
                 System.Text.StringBuilder builder2 = new System.Text.StringBuilder();
-                while (reader.Read())
+                while (reader2.Read())
                 {
-                    builder.Append(reader.GetString(1) + "/").Append(reader.GetString(2));
+                    builder2.Append(reader2.GetString(1) + "/").Append(reader2.GetString(2));
                 }
-                conn.Close();
-                if (builder.ToString() == "")
+                conn2.Close();
+                if (builder2.ToString() == "")
                 {
 
                     string script = "alert(\"Incorrect username/password\")";
@@ -61,7 +61,7 @@ namespace WebApplication3
                     Session["Username"] = name1.Text;
                     Response.Redirect("devMainPage.aspx");
                 }
-
+                
         }
     }
 }

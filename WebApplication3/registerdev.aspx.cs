@@ -11,7 +11,7 @@ namespace WebApplication3
 {
     public partial class Registerdev : System.Web.UI.Page
     {
-        
+        string Gender;
         Byte[] bytes;
         Byte[] bytes2;
         protected void Page_Load(object sender, EventArgs e)
@@ -28,6 +28,23 @@ namespace WebApplication3
             bool bol = true;
             bool bol1 = true;
             bool bol2 = true;
+           
+            string skills = "";
+            for (int i = 0; i < CheckBoxList1.Items.Count; i++)
+            {
+                if (CheckBoxList1.Items[i].Selected)
+                {
+                    if (skills == "")
+                    {
+                        skills = CheckBoxList1.Items[i].Text;
+                    }
+                    else
+                    {
+                        skills += "," + CheckBoxList1.Items[i].Text;
+                    }
+                }
+            }
+            skills = skills + "," + TextBox3.Text;
             string script = "alert(\"There is already an account with that E-mail address\");";
             if (email1.Text.Length == 0)//Zero length check
             {
@@ -59,51 +76,77 @@ namespace WebApplication3
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
                 bol = false;
             }
-            HttpPostedFile postedFile = FileUpload1.PostedFile;
-            string filename = Path.GetFileName(postedFile.FileName);
-            string fileExtension = Path.GetExtension(filename);
-            int fileSize = postedFile.ContentLength;
+           
+            if (FileUpload1.HasFile)
+            {
+                HttpPostedFile postedFile = FileUpload1.PostedFile;
+                string filename = Path.GetFileName(postedFile.FileName);
+                string fileExtension = Path.GetExtension(filename);
+                int fileSize = postedFile.ContentLength;
 
-            if (fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".gif"
-                || fileExtension.ToLower() == ".png" || fileExtension.ToLower() == ".bmp")
-            {
-                Stream stream = postedFile.InputStream;
-                BinaryReader binaryReader = new BinaryReader(stream);
-                bytes = binaryReader.ReadBytes((int)stream.Length);
+                if (fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".gif"
+                    || fileExtension.ToLower() == ".png" || fileExtension.ToLower() == ".bmp")
+                {
+                    Stream stream = postedFile.InputStream;
+                    BinaryReader binaryReader = new BinaryReader(stream);
+                    bytes = binaryReader.ReadBytes((int)stream.Length);
+                }
+                else
+                {
+                    script = "alert(\"File is not an accepted picture type\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                    bol1 = false;
+                }
             }
-            else
-            {
-                script = "alert(\"File is not an accepted picture type\");";
-                ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
-                bol1 = false;
-            }
-            HttpPostedFile postedFile2 = FileUpload2.PostedFile;
-            string filename2 = Path.GetFileName(postedFile2.FileName);
-            string fileExtension2 = Path.GetExtension(filename2);
-            int fileSize2 = postedFile2.ContentLength;
 
-            if (fileExtension2.ToLower() == ".pdf")
+            if (FileUpload2.HasFile)
             {
-                Stream stream2 = postedFile2.InputStream;
-                BinaryReader binaryReader2 = new BinaryReader(stream2);
-                bytes2 = binaryReader2.ReadBytes((int)stream2.Length);
-                
+
+                HttpPostedFile postedFile2 = FileUpload2.PostedFile;
+                string filename2 = Path.GetFileName(postedFile2.FileName);
+                string fileExtension2 = Path.GetExtension(filename2);
+                int fileSize2 = postedFile2.ContentLength;
+
+                if (fileExtension2.ToLower() == ".pdf")
+                {
+                    Stream stream2 = postedFile2.InputStream;
+                    BinaryReader binaryReader2 = new BinaryReader(stream2);
+                    bytes2 = binaryReader2.ReadBytes((int)stream2.Length);
+
+                }
+                else
+                {
+                    script = "alert(\"File is not an accepted type\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+
+                    bol2 = false;
+                }
             }
-            else
-            {
-                script = "alert(\"File is not an accepted type\");";
-                ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
-                
-                bol2 = false;
-            }
-            if (bol&&bol1&&bol2)
+
+            if (bol && bol1 && bol2) 
             {
                 Developer d0 = new Developer();
-                d0.profileCreateDev(email1.Text, username1.Text, pass1.Text, firstname1.Text, lastname1.Text, bytes,bytes2);
+                d0.profileCreateDev(email1.Text, username1.Text, pass1.Text, firstname1.Text, lastname1.Text, bytes, bytes2, Gender, skills, port.Text);
                 Response.Redirect("index.aspx");
             }
 
         }
+
+        protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            Gender = "Male";
+            //RadioButton2.Checked = false;
+            //RadioButton2.Visible = false;
+            
+        }
+
+        protected void RadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            Gender = "Female";
+            //RadioButton1.Checked = false;
+        }
+
+
         
     }
 }
