@@ -27,7 +27,7 @@
                 <td><asp:Button runat="server" Text="Make a Project" ID="createProject" class="opt" OnClick="createProject_Click" /></td>
                 <td><asp:Button runat="server" Text="Edit your Projects" ID="editProject" class="opt" /></td></tr>
                 <tr><td><asp:Button runat="server" Text="Search a Developer" ID="searchDev" class="opt" /></td>
-                    <td><asp:Button runat="server" Text="Search another User" ID="searchClient" class="opt" /></td>
+                    <td><asp:Button runat="server" Text="Search another User" ID="searchClient" class="opt" OnClick="searchClient_Click" /></td>
                 <td><asp:Button runat="server" Text="Search a Project" ID="searchProject" class="opt" /></td></tr>
             </table>
             <iframe runat="server" id="clientframe" width="100%"></iframe>
