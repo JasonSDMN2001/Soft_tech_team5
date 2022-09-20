@@ -5,6 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Edit your Profile</title>
+    <style type="text/css">
+
+        .auto-style4 {
+            margin-left: 0px;
+        }
+        </style>
 </head>
 <body height="80%">
     <form id="profileEdit" runat="server">
@@ -16,7 +22,10 @@
             <tr><td><asp:Label runat="server" Text="Gender:"/></td><td><asp:TextBox id="gender" runat="server" placeholder="♀ ♂"/></td></tr>
             <tr><td><asp:Label runat="server" Text="Birth date:"/></td><td><asp:TextBox id="birthdate" runat="server" placeholder="Birthdate"/></td></tr>
             <tr><td width="40%"><asp:Image ID="ImageID" runat="server" Height="100px" Width="100%" /></td>
-                <td><asp:Button runat="server" Text="Insert new Image" ID="imagebtn" /></td></tr>
+                <td>
+                <asp:FileUpload ID="FileUpload2" runat="server" CssClass="auto-style4" />
+                
+                </td></tr>
             <tr><td><asp:Label runat="server" Text="Link of your page:"/></td><td><asp:TextBox ID="pagelink" runat="server" placeholder="example.com" /></td></tr>
             <tr><td><asp:Label runat="server" Text="Your description:"/></td><td><asp:TextBox ID="description" runat="server" placeholder="Description" /></td></tr>
             <tr><td><asp:Button runat="server" Text="Save changes" ID="savebtn" BackColor="#00CC00" OnClick="savebtn_Click" /></td>

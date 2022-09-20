@@ -11,9 +11,10 @@ namespace WebApplication3
 {
     public partial class Registerdev : System.Web.UI.Page
     {
-        string Gender;
+        
         Byte[] bytes;
         Byte[] bytes2;
+        string gender1;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -28,7 +29,7 @@ namespace WebApplication3
             bool bol = true;
             bool bol1 = true;
             bool bol2 = true;
-           
+            
             string skills = "";
             for (int i = 0; i < CheckBoxList1.Items.Count; i++)
             {
@@ -104,10 +105,10 @@ namespace WebApplication3
 
                 HttpPostedFile postedFile2 = FileUpload2.PostedFile;
                 string filename2 = Path.GetFileName(postedFile2.FileName);
-                string fileExtension2 = Path.GetExtension(filename2);
+                //string fileExtension2 = Path.GetExtension(filename2);
                 int fileSize2 = postedFile2.ContentLength;
 
-                if (fileExtension2.ToLower() == ".pdf")
+                if (postedFile2.ContentType == "application/pdf")
                 {
                     Stream stream2 = postedFile2.InputStream;
                     BinaryReader binaryReader2 = new BinaryReader(stream2);
@@ -126,7 +127,7 @@ namespace WebApplication3
             if (bol && bol1 && bol2) 
             {
                 Developer d0 = new Developer();
-                d0.profileCreateDev(email1.Text, username1.Text, pass1.Text, firstname1.Text, lastname1.Text, bytes, bytes2, Gender, skills, port.Text);
+                d0.profileCreateDev(email1.Text, username1.Text, pass1.Text, firstname1.Text, lastname1.Text, bytes, bytes2, gender1, skills, port.Text);
                 Response.Redirect("index.aspx");
             }
 
@@ -134,7 +135,7 @@ namespace WebApplication3
 
         protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            Gender = "Male";
+            gender1 = "Male";
             //RadioButton2.Checked = false;
             //RadioButton2.Visible = false;
             
@@ -142,7 +143,7 @@ namespace WebApplication3
 
         protected void RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            Gender = "Female";
+            gender1 = "Female";
             //RadioButton1.Checked = false;
         }
 

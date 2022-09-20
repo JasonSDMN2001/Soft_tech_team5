@@ -5,11 +5,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+using System.Linq;
+
+
 
 namespace WebApplication3
 {
     public partial class profileEdit : System.Web.UI.Page
     {
+        Byte[] bytes;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -44,6 +49,24 @@ namespace WebApplication3
 
         protected void savebtn_Click(object sender, EventArgs e)
         {
+            string script = "alert(\"\");";
+            HttpPostedFile postedFile = FileUpload2.PostedFile;
+            string filename = Path.GetFileName(postedFile.FileName);
+            string fileExtension = Path.GetExtension(filename);
+            int fileSize = postedFile.ContentLength;
+
+            if (fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".gif"
+                || fileExtension.ToLower() == ".png" || fileExtension.ToLower() == ".bmp")
+            {
+                Stream stream = postedFile.InputStream;
+                BinaryReader binaryReader = new BinaryReader(stream);
+                bytes = binaryReader.ReadBytes((int)stream.Length);
+            }
+            else
+            {
+                script = "alert(\"File is not an accepted picture type\");";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+            }
             string user = Session["Username"].ToString();
             SQLiteConnection conU = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
             conU.Open();
@@ -57,7 +80,7 @@ namespace WebApplication3
             cmd.Parameters.AddWithValue("@lastname", lastname.Text);
             cmd.Parameters.AddWithValue("@gender", gender.Text);
             cmd.Parameters.AddWithValue("@birthdate", birthdate.Text);
-            cmd.Parameters.AddWithValue("@pic", ImageID.ImageUrl);
+            cmd.Parameters.AddWithValue("@pic", bytes);
             cmd.Parameters.AddWithValue("@pagelink", pagelink.Text);
             cmd.Parameters.AddWithValue("@description", description.Text);
             Response.Write(firstname.Text);

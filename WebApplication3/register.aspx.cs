@@ -12,7 +12,7 @@ namespace WebApplication3
 {
     public partial class Register : System.Web.UI.Page
     {
-        string Gender;
+        string gender;
         Byte[] bytes;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -82,7 +82,7 @@ namespace WebApplication3
             }
             if (bol) {
                 Client c0 = new Client();
-                c0.profileCreateClient(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text, bytes, Gender,TextBox1.Text, desc.Text, link.Text);
+                c0.profileCreateClient(email.Text, username.Text, pass.Text, firstname.Text, lastname.Text, bytes, gender,TextBox1.Text, desc.Text, link.Text);
                 Response.Redirect("index.aspx");
             }
 
@@ -92,13 +92,13 @@ namespace WebApplication3
 
         protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            Gender = "Male";
+            gender = "Male";
             
         }
 
         protected void RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            Gender = "Female";
+            gender = "Female";
             
         }
 
