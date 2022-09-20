@@ -57,7 +57,7 @@ namespace WebApplication3
         public void searchClient()
         {
         }
-        public void profileCreateDev(String email, String username, String pass, String firstname, String lastname, Byte[] bytes, Byte[] bytes2, String Gender, String skills, String port)
+        public void profileCreateDev(String email, String username, String pass, String firstname, String lastname, Byte[] bytes, Byte[] bytes2, String gender, String skills, String port)
         {
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
@@ -67,7 +67,7 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@pass", pass);
             profileCreatecmd.Parameters.AddWithValue("@firstname", firstname);
             profileCreatecmd.Parameters.AddWithValue("@lastname", lastname);
-            profileCreatecmd.Parameters.AddWithValue("@gender", Gender);
+            profileCreatecmd.Parameters.AddWithValue("@gender", gender);
             profileCreatecmd.Parameters.AddWithValue("@pic", bytes);
             profileCreatecmd.Parameters.AddWithValue("@skills", skills);
             profileCreatecmd.Parameters.AddWithValue("@bio", bytes2);
