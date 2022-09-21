@@ -6,21 +6,29 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
+<<<<<<< HEAD
         #form1 {
             height: 355px;
         }
+=======
+>>>>>>> 5f315e930b24f53343aa94339652de4d6947955f
         .auto-style1 {
-            height: 33px;
-            width: 24%;
+            height: 465px;
         }
         .auto-style2 {
+<<<<<<< HEAD
             width: 24%;
         .auto-style1 {
             height: 26px;
+=======
+            height: 70px;
+>>>>>>> 5f315e930b24f53343aa94339652de4d6947955f
         }
-        .auto-style2 {
-            width: 160px;
+        .auto-style4 {
+            height: 70px;
+            width: 22%;
         }
+<<<<<<< HEAD
         .auto-style3 {
             height: 26px;
             width: 160px;
@@ -32,11 +40,32 @@
         .auto-style4 {
             width: 613px;
             height: 173px;
+=======
+        .auto-style7 {
+            height: 62px;
+            width: 9%;
+        }
+        .auto-style8 {
+            height: 62px;
+        }
+        .auto-style9 {
+            height: 164px;
+            width: 22%;
+        }
+        .auto-style10 {
+            height: 70px;
+            width: 9%;
+        }
+        .auto-style11 {
+            height: 164px;
+            width: 9%;
+>>>>>>> 5f315e930b24f53343aa94339652de4d6947955f
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
+<<<<<<< HEAD
         <table class="auto-style4">
             <tr><td class="auto-style2"><asp:Image ID="ImageID" runat="server" Height="100px" Width="100%" /></td>
                 <td>
@@ -75,6 +104,31 @@
           
         
         <iframe runat="server" id="devframe" width="100%"></iframe>
+=======
+       <table class="auto-style1">
+            <tr><td class="auto-style10"><asp:Image ID="ImageID" runat="server" Height="119px" Width="39%" /></td>
+             
+            <td class="auto-style2">
+                <asp:Button ID="Button1" runat="server" BackColor="#99FFCC" BorderStyle="None" OnClick="Button1_Click" Text="Change your Profile" />
+                </td></tr>
+            <tr><td class="auto-style10"><asp:Label ID="fullname" runat="server" Text="Full name:"></asp:Label></td>
+                <td class="auto-style4"> <asp:Label ID="fullname2" runat="server" Text="Full name"></asp:Label> </td>
+            </tr>
+            <tr><td class="auto-style7"><asp:Label ID="username" runat="server" Text="Username:" /></td>
+                <td class="auto-style8"><asp:Label ID="username2" runat="server" Text="Username:"  /></td></tr>
+            
+            <tr><td class="auto-style10"><asp:Label ID="Email" runat="server" Text="Email:" /></td>
+                <td class="auto-style4"><asp:Label ID="Email2" runat="server" Text="Email:" /></td>
+            </tr>
+                <tr><td class="auto-style10"><asp:Label ID="gend" runat="server" Text="Gender:" /></td>
+                <td class="auto-style4"><asp:Label ID="gender2" runat="server" Text="Gender:" /></td>
+            </tr>
+            <tr><td class="auto-style11"><asp:Label ID="skills" runat="server" Text="Skills:" /></td>
+                <td class="auto-style9"><asp:Label ID="skills2" runat="server" Text="Skills:" /></td>
+            </tr>
+        </table> 
+        
+>>>>>>> 5f315e930b24f53343aa94339652de4d6947955f
     </form>
 </body>
 </html>

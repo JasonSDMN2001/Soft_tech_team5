@@ -17,6 +17,9 @@
             height: 371px;
             margin-bottom: 109px;
         }
+        .auto-style1 {
+            height: 444px;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +33,7 @@
                     <td><asp:Button runat="server" Text="Search another User" ID="searchClient" class="opt" OnClick="searchClient_Click" /></td>
                 <td><asp:Button runat="server" Text="Search a Project" ID="searchProject" class="opt" /></td></tr>
             </table>
-            <iframe runat="server" id="clientframe" width="100%"></iframe>
+            <iframe runat="server" id="clientframe" width="100%" class="auto-style1"></iframe>
     </form>
 </body>
 </html>

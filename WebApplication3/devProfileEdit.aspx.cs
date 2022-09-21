@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.IO;
-using System.Linq;
-
-
 
 namespace WebApplication3
 {
-    public partial class profileEdit : System.Web.UI.Page
+    public partial class devProfileEdit : System.Web.UI.Page
     {
-        byte[] bytes;
+        Byte[] bytes;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -22,7 +19,7 @@ namespace WebApplication3
                 string user = Session["Username"].ToString();
                 SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
                 conn.Open();
-                String query1 = "Select * from client where username='" + user + "';";
+                String query1 = "Select * from dev where username='" + user + "';";
                 SQLiteCommand cmd = new SQLiteCommand(query1, conn);
                 SQLiteDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -32,7 +29,7 @@ namespace WebApplication3
                     firstname.Text = reader.GetString(3);
                     lastname.Text = reader.GetString(4);
                     gender.Text = reader.GetString(5);
-                    birthdate.Text = reader.GetString(6);
+                    skills.Text = reader.GetString(7);
                     if (reader["pic"].ToString() == "")
                     {
                         ImageID.ImageUrl = "";
@@ -42,8 +39,7 @@ namespace WebApplication3
                         byte[] bytes = (byte[])reader["pic"];
                         ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
                     }
-                    description.Text = reader.GetString(8);
-                    pagelink.Text = reader.GetString(9);
+                    
                 }
                 conn.Close();
             }
@@ -51,49 +47,50 @@ namespace WebApplication3
 
         protected void cancelbtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("clientProfile.aspx");
+            Response.Redirect("devProfile.aspx");
         }
 
         protected void savebtn_Click(object sender, EventArgs e)
         {
-            string script = "alert(\"\");";
-            HttpPostedFile postedFile = FileUpload2.PostedFile;
-            string filename = Path.GetFileName(postedFile.FileName);
-            string fileExtension = Path.GetExtension(filename);
-            int fileSize = postedFile.ContentLength;
+            if (FileUpload2.HasFile)
+            {
+                string script = "alert(\"\");";
+                HttpPostedFile postedFile = FileUpload2.PostedFile;
+                string filename = Path.GetFileName(postedFile.FileName);
+                string fileExtension = Path.GetExtension(filename);
+                int fileSize = postedFile.ContentLength;
 
-            if (fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".gif"
-                || fileExtension.ToLower() == ".png" || fileExtension.ToLower() == ".bmp")
-            {
-                Stream stream = postedFile.InputStream;
-                BinaryReader binaryReader = new BinaryReader(stream);
-                bytes = binaryReader.ReadBytes((int)stream.Length);
-            }
-            else
-            {
-                script = "alert(\"File is not an accepted picture type\");";
-                ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                if (fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".gif"
+                    || fileExtension.ToLower() == ".png" || fileExtension.ToLower() == ".bmp")
+                {
+                    Stream stream = postedFile.InputStream;
+                    BinaryReader binaryReader = new BinaryReader(stream);
+                    bytes = binaryReader.ReadBytes((int)stream.Length);
+                }
+                else
+                {
+                    script = "alert(\"File is not an accepted picture type\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                }
             }
             string user = Session["Username"].ToString();
             SQLiteConnection conU = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
             conU.Open();
-            String queryU = "UPDATE client SET username=@username, email=@email, firstname=@firstname, lastname=@lastname, "
-                + "gender=@gender, birthdate=@birthdate, pic=@pic, pagelink=@pagelink, description=@description"
-                +" where username='" + user + "';";
+            String queryU = "UPDATE dev SET username=@username, email=@email, firstname=@firstname, lastname=@lastname, "
+                + "gender=@gender, skills=@skills, pic=@pic"
+                + " where username='" + user + "';";
             SQLiteCommand cmd = new SQLiteCommand(queryU, conU);
             cmd.Parameters.AddWithValue("@username", username.Text);
             cmd.Parameters.AddWithValue("@email", email.Text);
             cmd.Parameters.AddWithValue("@firstname", firstname.Text);
             cmd.Parameters.AddWithValue("@lastname", lastname.Text);
             cmd.Parameters.AddWithValue("@gender", gender.Text);
-            cmd.Parameters.AddWithValue("@birthdate", birthdate.Text);
+            cmd.Parameters.AddWithValue("@skills", skills.Text);
             cmd.Parameters.AddWithValue("@pic", bytes);
-            cmd.Parameters.AddWithValue("@pagelink", pagelink.Text);
-            cmd.Parameters.AddWithValue("@description", description.Text);
             Response.Write(firstname.Text);
             cmd.ExecuteNonQuery();
             conU.Close();
-            Response.Redirect("clientProfile.aspx");
+            Response.Redirect("devProfile.aspx");
         }
     }
 }
