@@ -11,6 +11,7 @@
         <asp:Label ID="Label1" runat="server" Text="Search another Client:        "></asp:Label>
         <asp:TextBox ID="SearchBox" runat="server"></asp:TextBox>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Search" />
+        <asp:CheckBox ID="CheckBox1" runat="server" Text="Sort By Joined Date" />
         <asp:Panel ID="MotherPanel" runat="server" Height="248px">
             <asp:Table ID="TableShow" runat="server" Height="243px" Width="961px">
             </asp:Table>
