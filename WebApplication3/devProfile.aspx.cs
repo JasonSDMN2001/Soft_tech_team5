@@ -28,7 +28,6 @@ namespace WebApplication3
                 username2.Text = reader.GetString(1) + "    ";
                 fullname2.Text = "   " + reader.GetString(3) + " " + reader.GetString(4);
                 gender2.Text = "     " + reader.GetString(5);
-                //birthdate.Text = "     " + reader.GetString(6);
                 if (reader["pic"].ToString() == "")
                 {
                     ImageID.ImageUrl = "";
@@ -37,18 +36,14 @@ namespace WebApplication3
                 {
                     byte[] bytes = (byte[])reader["pic"];
                     ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
-                }
-
-
-
+                }   
                 skills2.Text = reader.GetString(7);
-                //pagelink.NavigateUrl = reader.GetString(9);
 
 
 
-                // description.Text = reader.GetString(7);
-                //byte[] byteArray = (byte[])reader["bio"];
-                //GetDocument(byteArray);
+                // description.Text = reader.GetString(8);
+                byte[] byteArray = (byte[])reader["bio"];
+                pdfframe.Src = GetDocument(byteArray).ToString();
                 //pagelink.NavigateUrl = reader.GetString(9);
             }
             conn.Close();
@@ -58,15 +53,9 @@ namespace WebApplication3
 
         public object GetDocument(byte[] byteArray)
         {
-            // Reads the PDF document data as byte array from the database
-            //byte[] byteArray = (byte[])reader["bio"];
-            //converts byte array into base64 string
             return "data:application/pdf;base64," + Convert.ToBase64String(byteArray);
-
-
-
         }
-
+        
 
 
         protected void Button1_Click(object sender, EventArgs e)

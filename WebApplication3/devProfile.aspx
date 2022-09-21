@@ -39,6 +39,9 @@
             height: 164px;
             width: 9%;
         }
+        .auto-style12 {
+            height: 935px;
+        }
     </style>
 </head>
 <body>
@@ -64,8 +67,14 @@
             <tr><td class="auto-style11"><asp:Label ID="skills" runat="server" Text="Skills:" /></td>
                 <td class="auto-style9"><asp:Label ID="skills2" runat="server" Text="Skills:" /></td>
             </tr>
+           <tr><td class="auto-style11"><asp:Label ID="Link1" runat="server" Text="Link:" /></td>
+                <td class="auto-style9"><asp:Label ID="pagelink" runat="server" Text="Link:" /></td>
+            </tr>
+           <tr><td class="auto-style11"><asp:Label ID="Label2" runat="server" Text="Bio" /></td></tr>
         </table>
         
+        
     </form>
+    <iframe runat="server" id="pdfframe" width="100%" class="auto-style12"></iframe>
 </body>
 </html>
