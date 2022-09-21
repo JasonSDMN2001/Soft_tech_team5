@@ -22,22 +22,28 @@ namespace WebApplication3
             SQLiteDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                email.Text = reader.GetString(0);
-                username.Text = reader.GetString(1) + "    ";
-                fullname.Text = "   " + reader.GetString(3) + " " + reader.GetString(4);
-                gender.Text = "     " + reader.GetString(5);
-               //birthdate.Text = "     " + reader.GetString(6);
-                byte[] bytes = (byte[])reader["pic"];
-                ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
-<<<<<<< HEAD
-                Skills.Text = reader.GetString(7);
+                Email2.Text = reader.GetString(0);
+                username2.Text = reader.GetString(1) + "    ";
+                fullname2.Text = "   " + reader.GetString(3) + " " + reader.GetString(4);
+                gender2.Text = "     " + reader.GetString(5);
+                //birthdate.Text = "     " + reader.GetString(6);
+                if (reader["pic"].ToString() == "")
+                {
+                    ImageID.ImageUrl = "";
+                }
+                else
+                {
+                    byte[] bytes = (byte[])reader["pic"];
+                    ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
+                }              
+
+                skills2.Text = reader.GetString(7);
                //pagelink.NavigateUrl = reader.GetString(9);
-=======
-                description.Text = reader.GetString(7);
+
+               // description.Text = reader.GetString(7);
                 //byte[] byteArray = (byte[])reader["bio"];
                 //GetDocument(byteArray);
-                pagelink.NavigateUrl = reader.GetString(9);
->>>>>>> 36f66eb73259a276003fa1cfde25aab95af40774
+                //pagelink.NavigateUrl = reader.GetString(9);
             }
             conn.Close();
         }

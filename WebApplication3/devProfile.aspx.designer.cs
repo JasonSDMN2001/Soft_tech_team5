@@ -33,15 +33,6 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Image ImageID;
 
         /// <summary>
-        /// gender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label gender;
-
-        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>
@@ -60,13 +51,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Label fullname;
 
         /// <summary>
-        /// Skills control.
+        /// fullname2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Skills;
+        protected global::System.Web.UI.WebControls.Label fullname2;
 
         /// <summary>
         /// username control.
@@ -78,60 +69,66 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Label username;
 
         /// <summary>
-        /// email control.
+        /// username2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label email;
-<<<<<<< HEAD
-=======
+        protected global::System.Web.UI.WebControls.Label username2;
 
         /// <summary>
-        /// pagelink control.
+        /// Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink pagelink;
+        protected global::System.Web.UI.WebControls.Label Email;
 
         /// <summary>
-        /// description control.
+        /// Email2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label description;
+        protected global::System.Web.UI.WebControls.Label Email2;
 
         /// <summary>
-        /// bio control.
+        /// gend control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label bio;
+        protected global::System.Web.UI.WebControls.Label gend;
 
         /// <summary>
-        /// bio1 control.
+        /// gender2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label bio1;
+        protected global::System.Web.UI.WebControls.Label gender2;
 
         /// <summary>
-        /// devframe control.
+        /// skills control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlIframe devframe;
->>>>>>> 36f66eb73259a276003fa1cfde25aab95af40774
+        protected global::System.Web.UI.WebControls.Label skills;
+
+        /// <summary>
+        /// skills2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label skills2;
     }
 }
