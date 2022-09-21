@@ -245,6 +245,8 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="searchingProfilePage.aspx" />
+    <Content Include="showClientProfile.aspx" />
     <Content Include="Site.Master" />
     <Content Include="style.css" />
     <Content Include="userprofile.html" />
@@ -354,6 +356,20 @@
     </Compile>
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="searchingProfilePage.aspx.cs">
+      <DependentUpon>searchingProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="searchingProfilePage.aspx.designer.cs">
+      <DependentUpon>searchingProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="showClientProfile.aspx.cs">
+      <DependentUpon>showClientProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="showClientProfile.aspx.designer.cs">
+      <DependentUpon>showClientProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

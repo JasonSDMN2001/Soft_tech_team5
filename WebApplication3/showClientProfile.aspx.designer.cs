@@ -11,7 +11,7 @@ namespace WebApplication3
 {
 
 
-    public partial class devProfile
+    public partial class showClientProfile
     {
 
         /// <summary>
@@ -33,24 +33,6 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Image ImageID;
 
         /// <summary>
-        /// gender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label gender;
-
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
         /// fullname control.
         /// </summary>
         /// <remarks>
@@ -60,13 +42,31 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Label fullname;
 
         /// <summary>
-        /// Skills control.
+        /// gender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Skills;
+        protected global::System.Web.UI.WebControls.TableHeaderCell gender;
+
+        /// <summary>
+        /// birthdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell birthdate;
+
+        /// <summary>
+        /// pagelink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink pagelink;
 
         /// <summary>
         /// username control.
@@ -86,16 +86,6 @@ namespace WebApplication3
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label email;
 
-
-        /// <summary>
-        /// pagelink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink pagelink;
-
         /// <summary>
         /// description control.
         /// </summary>
@@ -104,33 +94,5 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label description;
-
-        /// <summary>
-        /// bio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label bio;
-
-        /// <summary>
-        /// bio1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label bio1;
-
-        /// <summary>
-        /// devframe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlIframe devframe;
-
     }
 }
