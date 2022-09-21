@@ -86,9 +86,10 @@ namespace WebApplication3
         }
         public void profileCreateClient(String email, String username, String pass, String firstname, String lastname, Byte[] bytes, String gender, String birthdate, String desc, String link)
         {
+            string creation_date = DateTime.Now.ToString("dd-mm-yyyy");
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
-            SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into client(email,username,pass,firstname,lastname,gender,birthdate,pic,description,pagelink) Values(@email,@username,@pass,@firstname,@lastname,@gender,@birthdate,@pic,@description,@pagelink)", conn);
+            SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into client(email,username,pass,firstname,lastname,gender,birthdate,pic,description,pagelink,creation_date) Values(@email,@username,@pass,@firstname,@lastname,@gender,@birthdate,@pic,@description,@pagelink,@creation_date)", conn);
             profileCreatecmd.Parameters.AddWithValue("@email", email);
             profileCreatecmd.Parameters.AddWithValue("@username", username);
             profileCreatecmd.Parameters.AddWithValue("@pass", pass);
@@ -99,6 +100,7 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@pic", bytes);
             profileCreatecmd.Parameters.AddWithValue("@description", desc);
             profileCreatecmd.Parameters.AddWithValue("@pagelink", link);
+            profileCreatecmd.Parameters.AddWithValue("@creation_date", creation_date);
             profileCreatecmd.ExecuteNonQuery();
             conn.Close();
         }
