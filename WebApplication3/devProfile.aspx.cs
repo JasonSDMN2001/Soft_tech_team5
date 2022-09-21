@@ -22,21 +22,6 @@ namespace WebApplication3
             SQLiteDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-<<<<<<< HEAD
-                email.Text = reader.GetString(0);
-                username.Text = reader.GetString(1) + "    ";
-                fullname.Text = "   " + reader.GetString(3) + " " + reader.GetString(4);
-                gender.Text = "     " + reader.GetString(5);
-               //birthdate.Text = "     " + reader.GetString(6);
-                byte[] bytes = (byte[])reader["pic"];
-                ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
-                Skills.Text = reader.GetString(7);
-               //pagelink.NavigateUrl = reader.GetString(9);
-                description.Text = reader.GetString(7);
-                //byte[] byteArray = (byte[])reader["bio"];
-                //GetDocument(byteArray);
-                pagelink.NavigateUrl = reader.GetString(9);
-=======
                 Email2.Text = reader.GetString(0);
                 username2.Text = reader.GetString(1) + "    ";
                 fullname2.Text = "   " + reader.GetString(3) + " " + reader.GetString(4);
@@ -54,12 +39,12 @@ namespace WebApplication3
 
                 skills2.Text = reader.GetString(7);
                //pagelink.NavigateUrl = reader.GetString(9);
-
-               // description.Text = reader.GetString(7);
+=======
+                description.Text = reader.GetString(7);
                 //byte[] byteArray = (byte[])reader["bio"];
                 //GetDocument(byteArray);
-                //pagelink.NavigateUrl = reader.GetString(9);
->>>>>>> 5f315e930b24f53343aa94339652de4d6947955f
+                pagelink.NavigateUrl = reader.GetString(9);
+>>>>>>> 36f66eb73259a276003fa1cfde25aab95af40774
             }
             conn.Close();
         }
