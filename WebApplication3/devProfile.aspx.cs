@@ -54,7 +54,7 @@ namespace WebApplication3
             //byte[] byteArray = (byte[])reader["bio"];
             //converts byte array into base64 string 
             return "data:application/pdf;base64," + Convert.ToBase64String(byteArray);
-
+            //commit
         }
 
         protected void Button1_Click(object sender, EventArgs e)
