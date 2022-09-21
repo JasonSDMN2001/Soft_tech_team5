@@ -33,36 +33,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Image ImageID;
 
         /// <summary>
-        /// fullname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fullname;
-
-        /// <summary>
-<<<<<<< HEAD
         /// gender control.
-=======
-        /// fullname2 control.
->>>>>>> 5f315e930b24f53343aa94339652de4d6947955f
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-<<<<<<< HEAD
-        protected global::System.Web.UI.WebControls.TableHeaderCell gender;
-
-        /// <summary>
-        /// Skills control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Skills;
+        protected global::System.Web.UI.WebControls.Label gender;
 
         /// <summary>
         /// Button1 control.
@@ -71,10 +48,25 @@ namespace WebApplication3
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderCell gender;
+
+        /// <summary>
+        /// birthdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell birthdate;
+
+        /// <summary>
+        /// Skills control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-=======
-        protected global::System.Web.UI.WebControls.Label fullname2;
->>>>>>> 5f315e930b24f53343aa94339652de4d6947955f
 
         /// <summary>
         /// username control.
@@ -102,9 +94,6 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Skills;
-=======
-        protected global::System.Web.UI.WebControls.Label username2;
->>>>>>> 5f315e930b24f53343aa94339652de4d6947955f
 
         /// <summary>
         /// pagelink control.
@@ -150,17 +139,5 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlIframe devframe;
-=======
-        protected global::System.Web.UI.WebControls.Label skills;
-
-        /// <summary>
-        /// skills2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label skills2;
->>>>>>> 5f315e930b24f53343aa94339652de4d6947955f
     }
 }
