@@ -1,6 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="devMainPage.aspx.cs" Inherits="WebApplication3.devMainPage" %>
 
+
+
 <!DOCTYPE html>
+
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -14,8 +18,11 @@
             font-weight: bold;
         }
         #clientframe {
-            height: 371px;
+            height: 571px;
             margin-bottom: 109px;
+        }
+        .auto-style1 {
+            height: 475px;
         }
     </style>
 </head>
@@ -31,7 +38,7 @@
                     <td><asp:Button runat="server" Text="Search another User" ID="searchuser" class="opt" /></td>
                 <td><asp:Button runat="server" Text="Search a Project" ID="searchProject" class="opt" /></td></tr>
             </table>
-            <iframe runat="server" id="clientframe" width="100%"></iframe>
+            <iframe runat="server" id="clientframe" width="100%" class="auto-style1"></iframe>
     </form>
 </body>
 </html>

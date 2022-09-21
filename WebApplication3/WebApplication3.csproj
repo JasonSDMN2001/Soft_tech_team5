@@ -209,6 +209,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ClassDiagram1.cd" />
     <Content Include="index.aspx" />
+    <Content Include="devProfileEdit.aspx" />
     <Content Include="login.aspx" />
     <Content Include="profileEdit.aspx" />
     <Content Include="register.aspx" />
@@ -326,6 +327,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="devProfileEdit.aspx.cs">
+      <DependentUpon>devProfileEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devProfileEdit.aspx.designer.cs">
+      <DependentUpon>devProfileEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="indexing.aspx.cs">
       <DependentUpon>indexing.aspx</DependentUpon>
