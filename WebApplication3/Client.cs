@@ -21,12 +21,12 @@ namespace WebApplication3
         {
         }
 
-        public void createProject(string title,string description,string proj_type,string offer_show,string category,string subcategory,string payment_method,string max_price,string interval,string uptime,string rec_tech,string client_username)
+        public void createProject(string title,string description,string proj_type,string offer_show,string category,string subcategory,string payment_method,string max_price,string interval,string uptime,string rec_tech,string client_username,string creation_date)
         {
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
-            SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into project(title,description,proj_type,offer_show,category,subcategory,payment_method,max_price,interval,uptime,rec_tech,client_username) Values("+
-                "@title,@description,@proj_type,@offer_show,@category,@subcategory,@payment_method,@max_price,@interval,@uptime,@rec_tech,@client_username)", conn);
+            SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into project(title,description,proj_type,offer_show,category,subcategory,payment_method,max_price,interval,uptime,rec_tech,client_username,dev_username,creation_date) Values("+
+                "@title,@description,@proj_type,@offer_show,@category,@subcategory,@payment_method,@max_price,@interval,@uptime,@rec_tech,@client_username,@dev_username,@creation_date)", conn);
             profileCreatecmd.Parameters.AddWithValue("@title", title);
             profileCreatecmd.Parameters.AddWithValue("@description", description);
             profileCreatecmd.Parameters.AddWithValue("@proj_type", proj_type);
@@ -39,6 +39,8 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@uptime", uptime);
             profileCreatecmd.Parameters.AddWithValue("@rec_tech", rec_tech);
             profileCreatecmd.Parameters.AddWithValue("@client_username", client_username);
+            profileCreatecmd.Parameters.AddWithValue("@dev_username", "mitsos");
+            profileCreatecmd.Parameters.AddWithValue("@creation_date", creation_date);
             profileCreatecmd.ExecuteNonQuery();
             conn.Close();
         }
@@ -84,10 +86,10 @@ namespace WebApplication3
         }
         public void profileCreateClient(String email, String username, String pass, String firstname, String lastname, Byte[] bytes, String gender, String birthdate, String desc, String link)
         {
-
+            string creation_date = DateTime.Now.ToString("dd-mm-yyyy");
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
-            SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into client(email,username,pass,firstname,lastname,gender,birthdate,pic,description,pagelink) Values(@email,@username,@pass,@firstname,@lastname,@gender,@birthdate,@pic,@description,@pagelink)", conn);
+            SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into client(email,username,pass,firstname,lastname,gender,birthdate,pic,description,pagelink,creation_date) Values(@email,@username,@pass,@firstname,@lastname,@gender,@birthdate,@pic,@description,@pagelink,@creation_date)", conn);
             profileCreatecmd.Parameters.AddWithValue("@email", email);
             profileCreatecmd.Parameters.AddWithValue("@username", username);
             profileCreatecmd.Parameters.AddWithValue("@pass", pass);
@@ -98,6 +100,7 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@pic", bytes);
             profileCreatecmd.Parameters.AddWithValue("@description", desc);
             profileCreatecmd.Parameters.AddWithValue("@pagelink", link);
+            profileCreatecmd.Parameters.AddWithValue("@creation_date", creation_date);
             profileCreatecmd.ExecuteNonQuery();
             conn.Close();
         }

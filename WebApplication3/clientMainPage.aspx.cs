@@ -26,7 +26,7 @@ namespace WebApplication3
 
         protected void searchClient_Click(object sender, EventArgs e)
         {
-
+            clientframe.Src = "searchingProfilePage.aspx";
         }
     }
 }
