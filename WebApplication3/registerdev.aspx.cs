@@ -15,6 +15,10 @@ namespace WebApplication3
         Byte[] bytes;
         Byte[] bytes2;
         string gender1;
+        bool bol = true;
+        bool bol1 = true;
+        bool bol2 = true;
+        string skills = "";
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -25,12 +29,6 @@ namespace WebApplication3
         }
         protected void makeDev_Click(object sender, EventArgs e)
         {
-            
-            bool bol = true;
-            bool bol1 = true;
-            bool bol2 = true;
-            
-            string skills = "";
             for (int i = 0; i < CheckBoxList1.Items.Count; i++)
             {
                 if (CheckBoxList1.Items[i].Selected)
@@ -113,13 +111,12 @@ namespace WebApplication3
                     Stream stream2 = postedFile2.InputStream;
                     BinaryReader binaryReader2 = new BinaryReader(stream2);
                     bytes2 = binaryReader2.ReadBytes((int)stream2.Length);
-
+                    
                 }
                 else
                 {
                     script = "alert(\"File is not an accepted type\");";
                     ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
-
                     bol2 = false;
                 }
             }
