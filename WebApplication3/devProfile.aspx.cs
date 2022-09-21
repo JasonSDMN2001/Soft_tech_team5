@@ -29,15 +29,12 @@ namespace WebApplication3
                //birthdate.Text = "     " + reader.GetString(6);
                 byte[] bytes = (byte[])reader["pic"];
                 ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
-<<<<<<< HEAD
                 Skills.Text = reader.GetString(7);
                //pagelink.NavigateUrl = reader.GetString(9);
-=======
                 description.Text = reader.GetString(7);
                 //byte[] byteArray = (byte[])reader["bio"];
                 //GetDocument(byteArray);
                 pagelink.NavigateUrl = reader.GetString(9);
->>>>>>> 36f66eb73259a276003fa1cfde25aab95af40774
             }
             conn.Close();
         }
