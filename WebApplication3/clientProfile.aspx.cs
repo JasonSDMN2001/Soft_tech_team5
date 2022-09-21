@@ -25,16 +25,8 @@ namespace WebApplication3
                 fullname.Text = "   " + reader.GetString(3) + " " + reader.GetString(4);
                 gender.Text = "     " + reader.GetString(5);
                 birthdate.Text = "     " + reader.GetString(6);
-                
-                if(reader["pic"].ToString() == "")
-                {
-                    ImageID.ImageUrl = "";
-                }
-                else
-                {
-                    byte[] bytes = (byte[])reader["pic"];
-                    ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
-                }
+                byte[] bytes = (byte[])reader["pic"];
+                ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
                 description.Text = reader.GetString(8);
                 pagelink.NavigateUrl = reader.GetString(9);
             }

@@ -14,7 +14,7 @@ namespace WebApplication3
 {
     public partial class profileEdit : System.Web.UI.Page
     {
-        byte[] bytes;
+        Byte[] bytes;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -33,15 +33,8 @@ namespace WebApplication3
                     lastname.Text = reader.GetString(4);
                     gender.Text = reader.GetString(5);
                     birthdate.Text = reader.GetString(6);
-                    if (reader["pic"].ToString() == "")
-                    {
-                        ImageID.ImageUrl = "";
-                    }
-                    else
-                    {
-                        byte[] bytes = (byte[])reader["pic"];
-                        ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
-                    }
+                    byte[] bytes = (byte[])reader["pic"];
+                    ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
                     description.Text = reader.GetString(8);
                     pagelink.Text = reader.GetString(9);
                 }

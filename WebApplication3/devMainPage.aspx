@@ -14,11 +14,8 @@
             font-weight: bold;
         }
         #clientframe {
-            height: 571px;
+            height: 371px;
             margin-bottom: 109px;
-        }
-        .auto-style1 {
-            height: 475px;
         }
     </style>
 </head>
@@ -34,7 +31,7 @@
                     <td><asp:Button runat="server" Text="Search another User" ID="searchuser" class="opt" /></td>
                 <td><asp:Button runat="server" Text="Search a Project" ID="searchProject" class="opt" /></td></tr>
             </table>
-            <iframe runat="server" id="clientframe" width="100%" class="auto-style1"></iframe>
+            <iframe runat="server" id="clientframe" width="100%"></iframe>
     </form>
 </body>
 </html>
