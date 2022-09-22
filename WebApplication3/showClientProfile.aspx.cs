@@ -10,7 +10,7 @@ namespace WebApplication3
 {
     public partial class showClientProfile : System.Web.UI.Page
     {
-        public string emailID;
+        private string emailID;
         protected void Page_Load(object sender, EventArgs e)
         {
             emailID = Request.Params["emailID"];
