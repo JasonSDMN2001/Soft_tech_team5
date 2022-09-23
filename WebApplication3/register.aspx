@@ -67,7 +67,8 @@
             
             <tr><td class="auto-style10"><asp:label runat="server" Text="E-mail"></asp:label>(*)</td>
                 <td class="auto-style16"><asp:TextBox runat="server" ID="email"
-                    placeholder="E-mail"></asp:TextBox></td></tr>
+                    placeholder="E-mail"></asp:TextBox></td>
+                <td><asp:CheckBox runat="server" Text="Visible by others" Checked="true" ID="emailcheck"/></td></tr>
 
             <tr><td class="auto-style10"><asp:label runat="server" Text="Name"></asp:label></td>
                 <td class="auto-style16"><asp:TextBox runat="server" ID="firstname"
@@ -75,16 +76,17 @@
 
             <tr><td class="auto-style10"><asp:label runat="server" Text="Surname"></asp:label></td>
                 <td class="auto-style16"><asp:TextBox runat="server" ID="lastname"
-                    placeholder="Surname"></asp:TextBox></td></tr>
+                    placeholder="Surname"></asp:TextBox></td>
+                <td><asp:CheckBox runat="server" Text="Visible by others" Checked="true" ID="fullnamecheck"/></td></tr>
 
             <tr><td class="auto-style10">Gender</td><td style="text-align:left" class="auto-style16">
                 <asp:RadioButton ID="RadioButton1" runat="server" OnCheckedChanged="RadioButton1_CheckedChanged" Text="Male" />
                 <asp:RadioButton ID="RadioButton2" runat="server" OnCheckedChanged="RadioButton2_CheckedChanged" Text="Female" />
-                </td></tr>
+                </td><td><asp:CheckBox runat="server" Text="Visible by others" Checked="true" ID="gendercheck"/></td></tr>
 
             <tr><td class="auto-style10"><asp:label runat="server" Text="Date of Birth"></asp:label></td>
                 <td class="auto-style16"><asp:TextBox runat="server" ID="TextBox1"
-                     textmode="Date"></asp:TextBox></td></tr>
+                     textmode="Date"></asp:TextBox></td><td><asp:CheckBox runat="server" Text="Visible by others" Checked="true" ID="birthdatecheck"/></td></tr>
 
             
             <tr><td class="auto-style3">Profile Image</td><td style="text-align:left" class="auto-style16">
@@ -103,7 +105,7 @@
                 <asp:Label ID="Label2" runat="server" Font-Size="Small" Text="click on the link button if you wish to confirm the inserted link:"></asp:Label>
                 <label><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">LinkButton</asp:LinkButton>
                 </label>
-                </td></tr>
+                </td><td><asp:CheckBox runat="server" Text="Visible by others" Checked="true" ID="pagelinkcheck"/></td></tr>
 
 
 

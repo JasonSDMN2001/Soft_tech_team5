@@ -19,29 +19,31 @@ namespace WebApplication3
 
         public Client()
         {
+
         }
 
         public void createProject(string title,string description,string proj_type,string offer_show,string category,string subcategory,string payment_method,string max_price,string interval,string uptime,string rec_tech,string client_username,string creation_date)
         {
             SQLiteConnection conn = new SQLiteConnection(db);
+            string dev = "mitsos";
             conn.Open();
-            SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into project(title,description,proj_type,offer_show,category,subcategory,payment_method,max_price,interval,uptime,rec_tech,client_username,dev_username,creation_date) Values("+
+            SQLiteCommand projectCreatecmd = new SQLiteCommand("Insert into project(title,description,proj_type,offer_show,category,subcategory,payment_method,max_price,interval,uptime,rec_tech,client_username,dev_username,creation_date) Values("+
                 "@title,@description,@proj_type,@offer_show,@category,@subcategory,@payment_method,@max_price,@interval,@uptime,@rec_tech,@client_username,@dev_username,@creation_date)", conn);
-            profileCreatecmd.Parameters.AddWithValue("@title", title);
-            profileCreatecmd.Parameters.AddWithValue("@description", description);
-            profileCreatecmd.Parameters.AddWithValue("@proj_type", proj_type);
-            profileCreatecmd.Parameters.AddWithValue("@offer_show", offer_show);
-            profileCreatecmd.Parameters.AddWithValue("@category", category);
-            profileCreatecmd.Parameters.AddWithValue("@subcategory", subcategory);
-            profileCreatecmd.Parameters.AddWithValue("@payment_method", payment_method);
-            profileCreatecmd.Parameters.AddWithValue("@max_price", max_price);
-            profileCreatecmd.Parameters.AddWithValue("@interval,", interval);
-            profileCreatecmd.Parameters.AddWithValue("@uptime", uptime);
-            profileCreatecmd.Parameters.AddWithValue("@rec_tech", rec_tech);
-            profileCreatecmd.Parameters.AddWithValue("@client_username", client_username);
-            profileCreatecmd.Parameters.AddWithValue("@dev_username", "mitsos");
-            profileCreatecmd.Parameters.AddWithValue("@creation_date", creation_date);
-            profileCreatecmd.ExecuteNonQuery();
+            projectCreatecmd.Parameters.AddWithValue("@title", title);
+            projectCreatecmd.Parameters.AddWithValue("@description", description);
+            projectCreatecmd.Parameters.AddWithValue("@proj_type", proj_type);
+            projectCreatecmd.Parameters.AddWithValue("@offer_show", offer_show);
+            projectCreatecmd.Parameters.AddWithValue("@category", category);
+            projectCreatecmd.Parameters.AddWithValue("@subcategory", subcategory);
+            projectCreatecmd.Parameters.AddWithValue("@payment_method", payment_method);
+            projectCreatecmd.Parameters.AddWithValue("@max_price", max_price);
+            projectCreatecmd.Parameters.AddWithValue("@interval", interval);
+            projectCreatecmd.Parameters.AddWithValue("@uptime", uptime);
+            projectCreatecmd.Parameters.AddWithValue("@rec_tech", rec_tech);
+            projectCreatecmd.Parameters.AddWithValue("@client_username", client_username);
+            projectCreatecmd.Parameters.AddWithValue("@dev_username", dev);
+            projectCreatecmd.Parameters.AddWithValue("@creation_date", creation_date);
+            projectCreatecmd.ExecuteNonQuery();
             conn.Close();
         }
 
@@ -84,9 +86,9 @@ namespace WebApplication3
         {
 
         }
-        public void profileCreateClient(String email, String username, String pass, String firstname, String lastname, Byte[] bytes, String gender, String birthdate, String desc, String link)
+        public void profileCreateClient(String email, String username, String pass, String firstname, String lastname, Byte[] bytes, String gender, String birthdate, String desc, String link, String emailcheck, String fullnamecheck, String gendercheck, String birthdatecheck, String pagelinkcheck)
         {
-            string creation_date = DateTime.Now.ToString("dd-mm-yyyy");
+            string creation_date = DateTime.Now.ToString("dd-MM-yyyy");
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
             SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into client(email,username,pass,firstname,lastname,gender,birthdate,pic,description,pagelink,creation_date) Values(@email,@username,@pass,@firstname,@lastname,@gender,@birthdate,@pic,@description,@pagelink,@creation_date)", conn);
@@ -102,7 +104,17 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@pagelink", link);
             profileCreatecmd.Parameters.AddWithValue("@creation_date", creation_date);
             profileCreatecmd.ExecuteNonQuery();
+            String queryV = "Insert into client_profile_hidden(email,fullname,gender,birthdate,pagelink,username) Values(@email,@fullname,@gender,@birthdate,@pagelink,@username)";
+            SQLiteCommand cmdvisible = new SQLiteCommand(queryV, conn);
+            cmdvisible.Parameters.AddWithValue("@email", emailcheck);
+            cmdvisible.Parameters.AddWithValue("@fullname", fullnamecheck);
+            cmdvisible.Parameters.AddWithValue("@gender", gendercheck);
+            cmdvisible.Parameters.AddWithValue("@birthdate", birthdatecheck);
+            cmdvisible.Parameters.AddWithValue("@pagelink", pagelinkcheck);
+            cmdvisible.Parameters.AddWithValue("@username", username);
+            cmdvisible.ExecuteNonQuery();
             conn.Close();
+
         }
 
         public void searchClient()

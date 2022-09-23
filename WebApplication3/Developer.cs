@@ -59,9 +59,10 @@ namespace WebApplication3
         }
         public void profileCreateDev(String email, String username, String pass, String firstname, String lastname, Byte[] bytes, Byte[] bytes2, String gender1, String skills, String port)
         {
+            string creation_date = DateTime.Now.ToString("dd-MM-yyyy");
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
-            SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into dev(email,username,pass,firstname,lastname,gender,pic,skills,bio,portfolio) Values(@email,@username,@pass,@firstname,@lastname,@gender,@pic,@skills,@bio,@portfolio)", conn);
+            SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into dev(email,username,pass,firstname,lastname,gender,pic,skills,bio,portfolio,creation_date) Values(@email,@username,@pass,@firstname,@lastname,@gender,@pic,@skills,@bio,@portfolio,@creation_date)", conn);
             profileCreatecmd.Parameters.AddWithValue("@email", email);
             profileCreatecmd.Parameters.AddWithValue("@username", username);
             profileCreatecmd.Parameters.AddWithValue("@pass", pass);
@@ -72,6 +73,7 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@skills", skills);
             profileCreatecmd.Parameters.AddWithValue("@bio", bytes2);
             profileCreatecmd.Parameters.AddWithValue("@portfolio", port);
+            profileCreatecmd.Parameters.AddWithValue("@creation_date", creation_date);
             profileCreatecmd.ExecuteNonQuery();
             conn.Close();
         }

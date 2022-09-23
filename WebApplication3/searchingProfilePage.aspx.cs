@@ -20,6 +20,10 @@ namespace WebApplication3
             SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
             conn.Open();
             String query1 = "Select email from client where username='" + SearchBox.Text + "'";
+            if (CheckBox1.Checked)
+            {
+                query1 += "Order by creation_date asc";
+            }
             SQLiteCommand cmd = new SQLiteCommand(query1, conn);
             SQLiteDataReader reader = cmd.ExecuteReader();
             string temp;

@@ -70,7 +70,7 @@
            <tr><td class="auto-style11"><asp:Label ID="Link1" runat="server" Text="Link:" /></td>
                 <td class="auto-style9"><asp:Label ID="pagelink" runat="server" Text="Link:" /></td>
             </tr>
-           <tr><td class="auto-style11"><asp:Label ID="Label2" runat="server" Text="Bio" /></td></tr>
+           <tr><td class="auto-style11"><asp:Label ID="Label2" runat="server" Text="Bio:" /></td></tr>
         </table>
         
         
