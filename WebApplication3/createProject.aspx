@@ -48,6 +48,7 @@
                     <asp:ListItem>1-3 months</asp:ListItem><asp:ListItem>3-6 months</asp:ListItem>
                     <asp:ListItem>6-12 months</asp:ListItem><asp:ListItem>Over a year</asp:ListItem><asp:ListItem>Indefinetely</asp:ListItem>
                                </asp:DropDownList></asp:TableCell></asp:TableRow>
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Suggest a language?:"/></asp:TableCell><asp:TableCell><asp:TextBox runat="server" ID="language"/></asp:TableCell></asp:TableRow>
 
         </asp:Table><asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" /></form>
     <h6>* these fields must be filled in order for the project to be submitted</h6>

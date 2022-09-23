@@ -43,7 +43,13 @@ namespace WebApplication3
                     }
                 }
             }
-            skills = skills + "," + TextBox3.Text;
+            string[] separatingStrings = { ";" };
+            string[] words = TextBox3.Text.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
+            foreach (var word in words)
+            {
+                skills = skills + "," + word.ToString();
+            }
+            
             string script = "alert(\"There is already an account with that E-mail address\");";
             if (email1.Text.Length == 0)//Zero length check
             {

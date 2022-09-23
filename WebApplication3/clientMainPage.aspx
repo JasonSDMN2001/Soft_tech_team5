@@ -22,7 +22,7 @@
             margin-bottom: 109px;
         }
         .auto-style1 {
-            height: 444px;
+            height: 458px;
         }
     </style>
 </head>

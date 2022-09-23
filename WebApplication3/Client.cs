@@ -22,13 +22,13 @@ namespace WebApplication3
 
         }
 
-        public void createProject(string title,string description,string proj_type,string offer_show,string category,string subcategory,string payment_method,string max_price,string interval,string uptime,string rec_tech,string client_username,string creation_date)
+        public void createProject(string title,string description,string proj_type,string offer_show,string category,string subcategory,string payment_method,string max_price,string interval,string uptime,string rec_tech,string client_username,string creation_date, string language)
         {
             SQLiteConnection conn = new SQLiteConnection(db);
             string dev = "mitsos";
             conn.Open();
-            SQLiteCommand projectCreatecmd = new SQLiteCommand("Insert into project(title,description,proj_type,offer_show,category,subcategory,payment_method,max_price,interval,uptime,rec_tech,client_username,dev_username,creation_date) Values("+
-                "@title,@description,@proj_type,@offer_show,@category,@subcategory,@payment_method,@max_price,@interval,@uptime,@rec_tech,@client_username,@dev_username,@creation_date)", conn);
+            SQLiteCommand projectCreatecmd = new SQLiteCommand("Insert into project(title,description,proj_type,offer_show,category,subcategory,payment_method,max_price,interval,uptime,rec_tech,client_username,dev_username,creation_date,language) Values("+
+                "@title,@description,@proj_type,@offer_show,@category,@subcategory,@payment_method,@max_price,@interval,@uptime,@rec_tech,@client_username,@dev_username,@creation_date,@language)", conn);
             projectCreatecmd.Parameters.AddWithValue("@title", title);
             projectCreatecmd.Parameters.AddWithValue("@description", description);
             projectCreatecmd.Parameters.AddWithValue("@proj_type", proj_type);
@@ -43,6 +43,7 @@ namespace WebApplication3
             projectCreatecmd.Parameters.AddWithValue("@client_username", client_username);
             projectCreatecmd.Parameters.AddWithValue("@dev_username", dev);
             projectCreatecmd.Parameters.AddWithValue("@creation_date", creation_date);
+            projectCreatecmd.Parameters.AddWithValue("@language", language);
             projectCreatecmd.ExecuteNonQuery();
             conn.Close();
         }
