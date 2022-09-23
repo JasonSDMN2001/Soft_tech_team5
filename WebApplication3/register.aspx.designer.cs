@@ -69,6 +69,15 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.TextBox email;
 
         /// <summary>
+        /// emailcheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox emailcheck;
+
+        /// <summary>
         /// firstname control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lastname;
+
+        /// <summary>
+        /// fullnamecheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox fullnamecheck;
 
         /// <summary>
         /// RadioButton1 control.
@@ -105,6 +123,15 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.RadioButton RadioButton2;
 
         /// <summary>
+        /// gendercheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox gendercheck;
+
+        /// <summary>
         /// TextBox1 control.
         /// </summary>
         /// <remarks>
@@ -112,6 +139,15 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
+
+        /// <summary>
+        /// birthdatecheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox birthdatecheck;
 
         /// <summary>
         /// FileUpload1 control.
@@ -157,6 +193,15 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+
+        /// <summary>
+        /// pagelinkcheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox pagelinkcheck;
 
         /// <summary>
         /// back control.

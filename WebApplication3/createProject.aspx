@@ -14,11 +14,11 @@
             <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Description:"/></asp:TableCell><asp:TableCell><asp:TextBox runat="server" ID="proj_description"/></asp:TableCell></asp:TableRow>
             
             <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Visible by others:"/></asp:TableCell><asp:TableCell><asp:RadioButtonList runat="server" ID="publicity">
-                    <asp:ListItem>Public</asp:ListItem><asp:ListItem>Private</asp:ListItem>
+                    <asp:ListItem Selected="True">Public</asp:ListItem><asp:ListItem>Private</asp:ListItem>
                                </asp:RadioButtonList></asp:TableCell></asp:TableRow>
 
             <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Do you want to view prices offered by developers?"/></asp:TableCell><asp:TableCell><asp:RadioButtonList runat="server" ID="view_offer">
-                    <asp:ListItem>Yes</asp:ListItem><asp:ListItem>No</asp:ListItem>
+                    <asp:ListItem Selected="True">Yes</asp:ListItem><asp:ListItem>No</asp:ListItem>
                                </asp:RadioButtonList></asp:TableCell></asp:TableRow>
 
             <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Category:"/></asp:TableCell><asp:TableCell><asp:DropDownList runat="server"  autopostback="true" onselectedindexchanged="category_SelectedIndexChanged" ID="category">
@@ -32,7 +32,7 @@
                                 </asp:DropDownList></asp:TableCell></asp:TableRow>
 
             <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Payment Method:"/></asp:TableCell><asp:TableCell><asp:RadioButtonList runat="server" ID="payment_method">
-                    <asp:ListItem>Hourly</asp:ListItem><asp:ListItem>Salary</asp:ListItem>
+                    <asp:ListItem Selected="True">Hourly</asp:ListItem><asp:ListItem>Salary</asp:ListItem>
                                </asp:RadioButtonList></asp:TableCell></asp:TableRow>
 
             <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Max Price:"/></asp:TableCell><asp:TableCell><asp:TextBox runat="server" ID="maxprice"/></asp:TableCell></asp:TableRow>
