@@ -21,7 +21,7 @@ namespace WebApplication3
             string[] words = language.Text.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
             foreach (var word in words)
             {
-                languages = languages + "," + word.ToString();
+                languages = languages + " " + word.ToString();
             }
             string user = Session["Username"].ToString();
             Client cproj = new Client();
