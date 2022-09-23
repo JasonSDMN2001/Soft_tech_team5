@@ -13,7 +13,7 @@ namespace WebApplication3
     public class Client : User , UnregisteredUser
     {
         private String birthdate;
-        private String description;
+        //private String description;
         private Uri link;
         
 
@@ -21,28 +21,29 @@ namespace WebApplication3
         {
         }
 
-        public void createProject(string title,string description,string proj_type,string offer_show,string category,string subcategory,string payment_method,string max_price,string interval,string uptime,string rec_tech,string client_username,string creation_date)
+        public void createProject(string title, string description, string proj_type, string offer_show, string category, string subcategory, string payment_method, string max_price, string interval,string uptime, string rec_tech, string client_username)
         {
-            SQLiteConnection conn = new SQLiteConnection(db);
-            conn.Open();
-            SQLiteCommand profileCreatecmd = new SQLiteCommand("Insert into project(title,description,proj_type,offer_show,category,subcategory,payment_method,max_price,interval,uptime,rec_tech,client_username,dev_username,creation_date) Values("+
-                "@title,@description,@proj_type,@offer_show,@category,@subcategory,@payment_method,@max_price,@interval,@uptime,@rec_tech,@client_username,@dev_username,@creation_date)", conn);
-            profileCreatecmd.Parameters.AddWithValue("@title", title);
-            profileCreatecmd.Parameters.AddWithValue("@description", description);
-            profileCreatecmd.Parameters.AddWithValue("@proj_type", proj_type);
-            profileCreatecmd.Parameters.AddWithValue("@offer_show", offer_show);
-            profileCreatecmd.Parameters.AddWithValue("@category", category);
-            profileCreatecmd.Parameters.AddWithValue("@subcategory", subcategory);
-            profileCreatecmd.Parameters.AddWithValue("@payment_method", payment_method);
-            profileCreatecmd.Parameters.AddWithValue("@max_price", max_price);
-            profileCreatecmd.Parameters.AddWithValue("@interval,", interval);
-            profileCreatecmd.Parameters.AddWithValue("@uptime", uptime);
-            profileCreatecmd.Parameters.AddWithValue("@rec_tech", rec_tech);
-            profileCreatecmd.Parameters.AddWithValue("@client_username", client_username);
-            profileCreatecmd.Parameters.AddWithValue("@dev_username", "mitsos");
-            profileCreatecmd.Parameters.AddWithValue("@creation_date", creation_date);
-            profileCreatecmd.ExecuteNonQuery();
-            conn.Close();
+            string creation_date = DateTime.Now.ToString("dd-MM-yyyy");
+            SQLiteConnection connC = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+            connC.Open();
+            string queryC = "Insert into project(title,description,proj_type,offer_show,category,subcategory,payment_method,max_price,interval,uptime,rec_tech,dev_username,client_username,creation_date) Values(@title,@description,@proj_type,@offer_show,@category,@subcategory,@payment_method,@max_price,@interval,@uptime,@rec_tech,@dev_username,@client_username,@creation_date)";
+            SQLiteCommand cmd4 = new SQLiteCommand(queryC, connC);          
+            cmd4.Parameters.AddWithValue("@title", title);
+            cmd4.Parameters.AddWithValue("@description", description);
+            cmd4.Parameters.AddWithValue("@proj_type", proj_type);
+            cmd4.Parameters.AddWithValue("@offer_show", offer_show);
+            cmd4.Parameters.AddWithValue("@category", category);
+            cmd4.Parameters.AddWithValue("@subcategory", subcategory);
+            cmd4.Parameters.AddWithValue("@payment_method", payment_method);
+            cmd4.Parameters.AddWithValue("@max_price", max_price);
+            cmd4.Parameters.AddWithValue("@interval", interval);
+            cmd4.Parameters.AddWithValue("@uptime", uptime); 
+            cmd4.Parameters.AddWithValue("@rec_tech", rec_tech);
+            cmd4.Parameters.AddWithValue("@client_username", client_username);
+            cmd4.Parameters.AddWithValue("@dev_username", "mitsos");
+            cmd4.Parameters.AddWithValue("@creation_date", creation_date);           
+            cmd4.ExecuteNonQuery();
+            connC.Close();
         }
 
         public void editProject()

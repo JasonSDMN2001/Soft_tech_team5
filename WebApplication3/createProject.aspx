@@ -37,7 +37,7 @@
 
             <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Max Price:"/></asp:TableCell><asp:TableCell><asp:TextBox runat="server" ID="maxprice"/></asp:TableCell></asp:TableRow>
             
-            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Duration of Development:"/></asp:TableCell><asp:TableCell><asp:DropDownList runat="server" ID="devduration">
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Duration of Development:"/></asp:TableCell><asp:TableCell><asp:DropDownList runat="server" ID="devdur">
                     <asp:ListItem>Less than a week</asp:ListItem><asp:ListItem>1-4 weeks</asp:ListItem>
                     <asp:ListItem>1-3 months</asp:ListItem><asp:ListItem>3-6 months</asp:ListItem>
                     <asp:ListItem>6-12 months</asp:ListItem><asp:ListItem>Over a year</asp:ListItem><asp:ListItem>I don't know</asp:ListItem>
