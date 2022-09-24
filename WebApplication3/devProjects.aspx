@@ -19,13 +19,18 @@
         <div class="auto-style1">
             <asp:Label ID="Label1" runat="server" Text="Choose your desired category:"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" CssClass="auto-style2" Height="61px" Width="105px">
+            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" CssClass="auto-style2" Height="61px" Width="105px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                 <asp:ListItem>Active</asp:ListItem>
                 <asp:ListItem>Inactive</asp:ListItem>
             </asp:DropDownList>
         </div>
-        <asp:Table ID="Table1" runat="server" Height="398px" Width="711px">
+        <asp:Table ID="Table1" runat="server" Height="492px" Width="711px">
         </asp:Table>
+        <asp:GridView ID="GridView1" runat="server" Height="183px">
+            <Columns>
+                <asp:BoundField HeaderText="Column3" />
+            </Columns>
+        </asp:GridView>
     </form>
 </body>
 </html>

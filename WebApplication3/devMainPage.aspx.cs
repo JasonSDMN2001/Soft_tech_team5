@@ -18,5 +18,10 @@ namespace WebApplication3
         {
             clientframe.Src = "devProfile.aspx";
         }
+
+        protected void projinprogress_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("devProjects.aspx");
+        }
     }
 }
