@@ -16,9 +16,17 @@ namespace WebApplication3
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            string languages="";
+            string[] separatingStrings = { ",",";"," " };
+            string[] words = language.Text.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
+            foreach (var word in words)
+            {
+                languages = languages + " " + word.ToString();
+            }
             string user = Session["Username"].ToString();
             Client cproj = new Client();
-            cproj.createProject(title.Text, proj_description.Text, publicity.SelectedItem.Text, view_offer.SelectedItem.Text, category.SelectedItem.Text, subcategory.SelectedItem.Text, payment_method.SelectedItem.Text,maxprice.Text, devdur.SelectedItem.Text, offerduration.SelectedItem.Text, "", user);
+            string creation_date = DateTime.Now.ToString("yyyy-MM-dd");
+            cproj.createProject(title.Text,proj_description.Text,publicity.SelectedItem.Text,view_offer.SelectedItem.Text,category.SelectedItem.Text,subcategory.SelectedItem.Text,payment_method.SelectedItem.Text,maxprice.Text, devdur.SelectedItem.Text,offerduration.SelectedItem.Text,"",user,creation_date,languages);
             string script = "alert(\"Project has been submitted successfully\");";
             ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
         }

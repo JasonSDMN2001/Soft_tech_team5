@@ -24,6 +24,8 @@
                 <asp:ListItem>Inactive</asp:ListItem>
             </asp:DropDownList>
         </div>
+        <asp:Table ID="Table1" runat="server" Height="398px" Width="711px">
+        </asp:Table>
     </form>
 </body>
 </html>

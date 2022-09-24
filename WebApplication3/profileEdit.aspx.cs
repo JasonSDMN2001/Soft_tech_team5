@@ -100,6 +100,14 @@ namespace WebApplication3
             cmd.Parameters.AddWithValue("@description", description.Text);
             Response.Write(firstname.Text);
             cmd.ExecuteNonQuery();
+            String queryV = "update client_profile_hidden set email=@email,fullname=@fullname,gender=@gender,birthdate=@birthdate,pagelink=@pagelink where username='"+user+"'";
+            SQLiteCommand cmdvisible = new SQLiteCommand(queryV, conU);
+            cmdvisible.Parameters.AddWithValue("@email",emailcheck.Checked.ToString());
+            cmdvisible.Parameters.AddWithValue("@fullname", fullnamecheck.Checked.ToString());
+            cmdvisible.Parameters.AddWithValue("@gender", gendercheck.Checked.ToString());
+            cmdvisible.Parameters.AddWithValue("@birthdate", birthdatecheck.Checked.ToString());
+            cmdvisible.Parameters.AddWithValue("@pagelink", pagelinkcheck.Checked.ToString());
+            cmdvisible.ExecuteNonQuery();
             conU.Close();
             Response.Redirect("clientProfile.aspx");
         }
