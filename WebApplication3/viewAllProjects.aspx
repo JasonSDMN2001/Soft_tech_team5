@@ -14,7 +14,7 @@
                     <asp:ListItem>Web Site</asp:ListItem><asp:ListItem>Database</asp:ListItem>
                     <asp:ListItem>Mobile app</asp:ListItem><asp:ListItem>Security</asp:ListItem></asp:DropDownList>
         <asp:Label runat="server" Text="Subcategory:   "/>
-        <asp:DropDownList runat="server" ID="subcategory" OnSelectedIndexChanged="subcategory_SelectedIndexChanged">
+        <asp:DropDownList runat="server" ID="subcategory" AutoPostBack="True" OnSelectedIndexChanged="subcategory_SelectedIndexChanged">
                     <asp:ListItem>Blog</asp:ListItem><asp:ListItem>Corporate</asp:ListItem>
                     <asp:ListItem>Ecommerce</asp:ListItem><asp:ListItem>Portal</asp:ListItem><asp:ListItem>Video Streaming</asp:ListItem>
 
