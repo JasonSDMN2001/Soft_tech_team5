@@ -248,6 +248,8 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="searchingDevProfilePage.aspx" />
     <Content Include="searchingProfilePage.aspx" />
+    <Content Include="searchingProjectPage.aspx" />
+    <Content Include="searchProject.aspx" />
     <Content Include="showClientProfile.aspx" />
     <Content Include="showDevProfile.aspx" />
     <Content Include="Site.Master" />
@@ -381,6 +383,20 @@
     </Compile>
     <Compile Include="searchingProfilePage.aspx.designer.cs">
       <DependentUpon>searchingProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="searchingProjectPage.aspx.cs">
+      <DependentUpon>searchingProjectPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="searchingProjectPage.aspx.designer.cs">
+      <DependentUpon>searchingProjectPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="searchProject.aspx.cs">
+      <DependentUpon>searchProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="searchProject.aspx.designer.cs">
+      <DependentUpon>searchProject.aspx</DependentUpon>
     </Compile>
     <Compile Include="showClientProfile.aspx.cs">
       <DependentUpon>showClientProfile.aspx</DependentUpon>
