@@ -253,6 +253,7 @@
     <Content Include="Site.Master" />
     <Content Include="style.css" />
     <Content Include="userprofile.html" />
+    <Content Include="viewAllProjects.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -411,6 +412,13 @@
     </Compile>
     <Compile Include="UnregisteredUser.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="viewAllProjects.aspx.cs">
+      <DependentUpon>viewAllProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewAllProjects.aspx.designer.cs">
+      <DependentUpon>viewAllProjects.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
