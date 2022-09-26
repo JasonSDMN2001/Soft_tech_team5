@@ -255,6 +255,7 @@
     <Content Include="searchProject.aspx" />
     <Content Include="showClientProfile.aspx" />
     <Content Include="showDevProfile.aspx" />
+    <Content Include="showProject.aspx" />
     <Content Include="Site.Master" />
     <Content Include="style.css" />
     <Content Include="userprofile.html" />
@@ -435,6 +436,13 @@
     </Compile>
     <Compile Include="showDevProfile.aspx.designer.cs">
       <DependentUpon>showDevProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="showProject.aspx.cs">
+      <DependentUpon>showProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="showProject.aspx.designer.cs">
+      <DependentUpon>showProject.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
