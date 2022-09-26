@@ -5,6 +5,7 @@ using System.Data.SQLite;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace WebApplication3
 {
@@ -54,6 +55,26 @@ namespace WebApplication3
                     offerbtn.Visible = true;
                 }
             }
+
+
+            SQLiteCommand offerViewcmd = new SQLiteCommand("Select name_offer, sum_offer, date_offer, devs_comment from offer where title ='" + titlename + "'", conn);
+            SQLiteDataReader reader = offerViewcmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader.GetString(1) == titlename)
+                {
+                    Label1.Visible = true;
+                }
+            }
+            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select name_offer,sum_offer,date_offer,devs_comment from offer where title='" + titlename + "'", conn);
+            DataSet ds = new System.Data.DataSet();
+            dataadapter.Fill(ds);
+            GridView1.DataSource = ds.Tables[0];
+            GridView1.DataBind();
+            
+
+
+
             conn.Close();
         }
     }
