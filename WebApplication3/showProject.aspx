@@ -10,7 +10,9 @@
     <form id="form1" runat="server">
         <table>
             <tr>
-                <td><asp:Label ID="title" runat="server" Text="Title" Font-Bold="True" Font-Size="15pt"></asp:Label></td></tr>
+                <td><asp:Label ID="title" runat="server" Text="Title" Font-Bold="True" Font-Size="15pt"></asp:Label></td>
+                <td><asp:Label runat="server" ID="complete" Visible="false" Text="Finished"/></td>
+            </tr>
             <tr><td><asp:Button runat="server" Text="Recommend to a developer" BackColor="#66FFCC" Width="200%" /></td></tr>
             <tr>
                 <td><asp:Table runat="server"><asp:TableFooterRow><asp:TableCell id="category" Text="Category"/></asp:TableFooterRow>

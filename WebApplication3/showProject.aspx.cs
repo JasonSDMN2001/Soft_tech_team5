@@ -25,10 +25,30 @@ namespace WebApplication3
                 category.Text = read.GetString(4);
                 subcategory.Text = read.GetString(5);
                 payment_method.Text = read.GetString(6);
-                max_price.Text = read.GetString(7);
+                string price = read.GetString(7);
+                if (price == "")
+                {
+                    max_price.Text = "Doesn't exist";
+                }
+                else
+                {
+                    max_price.Text = price;
+                }
                 interval.Text = read.GetString(8);
-                rec_tech.Text = read.GetString(10);
+                string lang = read.GetString(10);
+                if (lang == "") 
+                {
+                    rec_tech.Text = "Doesn't exist";
+                }
+                else
+                {
+                    rec_tech.Text = lang;
+                }
                 client_username.Text = "Submitted by:  " + read.GetString(12);
+                if (read.GetString(14) == "true" & read.GetString(15) == "true")
+                {
+                    complete.Visible = true;
+                }
             }
             conn.Close();
         }
