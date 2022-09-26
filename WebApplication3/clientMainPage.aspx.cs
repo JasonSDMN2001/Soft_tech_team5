@@ -28,5 +28,10 @@ namespace WebApplication3
         {
             clientframe.Src = "searchingProfilePage.aspx";
         }
+
+        protected void searchProject_Click(object sender, EventArgs e)
+        {
+            clientframe.Src = "searchProject.aspx";
+        }
     }
 }
