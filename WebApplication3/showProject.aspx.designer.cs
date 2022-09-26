@@ -51,22 +51,49 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.TableCell subcategory;
 
         /// <summary>
-        /// username control.
+        /// rec_tech control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label username;
+        protected global::System.Web.UI.WebControls.Label rec_tech;
 
         /// <summary>
-        /// email control.
+        /// client_username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label email;
+        protected global::System.Web.UI.WebControls.Label client_username;
+
+        /// <summary>
+        /// max_price control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label max_price;
+
+        /// <summary>
+        /// payment_method control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label payment_method;
+
+        /// <summary>
+        /// interval control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label interval;
 
         /// <summary>
         /// description control.
