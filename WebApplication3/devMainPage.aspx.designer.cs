@@ -78,12 +78,21 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Button searchProject;
 
         /// <summary>
-        /// clientframe control.
+        /// searchdev control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlIframe clientframe;
+        protected global::System.Web.UI.WebControls.Button searchdev;
+
+        /// <summary>
+        /// devframe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlIframe devframe;
     }
 }

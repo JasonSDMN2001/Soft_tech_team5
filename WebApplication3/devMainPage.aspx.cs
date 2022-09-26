@@ -16,12 +16,26 @@ namespace WebApplication3
 
         protected void profileShow_Click(object sender, EventArgs e)
         {
-            clientframe.Src = "devProfile.aspx";
+            devframe.Src = "devProfile.aspx";
         }
 
         protected void projinprogress_Click(object sender, EventArgs e)
         {
             Response.Redirect("devProjects.aspx");
+        }
+
+        protected void searchProject_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("devSearchProject.aspx");
+        }
+
+        protected void searchuser_Click(object sender, EventArgs e)
+        {
+            devframe.Src = "searchingProfilePage.aspx";
+        }
+        protected void searchdev_Click(object sender, EventArgs e)
+        {
+            devframe.Src = "searchingDevProfilePage.aspx";
         }
     }
 }
