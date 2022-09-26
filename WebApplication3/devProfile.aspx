@@ -42,6 +42,9 @@
         .auto-style12 {
             height: 935px;
         }
+        .auto-style16 {
+            width: 319px;
+        }
     </style>
 </head>
 <body>
@@ -68,7 +71,9 @@
                 <td class="auto-style9"><asp:Label ID="skills2" runat="server" Text="Skills:" /></td>
             </tr>
            <tr><td class="auto-style11"><asp:Label ID="Link1" runat="server" Text="Link:" /></td>
-                <td class="auto-style9"><asp:Label ID="pagelink" runat="server" Text="Link:" /></td>
+               <td><label><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">LinkButton</asp:LinkButton>
+                </label></td>
+               
             </tr>
            <tr><td class="auto-style11"><asp:Label ID="Label2" runat="server" Text="Bio:" /></td></tr>
         </table>

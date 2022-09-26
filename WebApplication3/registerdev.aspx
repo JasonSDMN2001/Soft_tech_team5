@@ -97,7 +97,7 @@
             
             <tr><td class="auto-style18"><asp:label runat="server" Text="E-mail" ID="label4"></asp:label>(*)</td>
                 <td class="auto-style8"><asp:TextBox runat="server" ID="email1"
-                    placeholder="E-mail"></asp:TextBox></td></tr>
+                    placeholder="E-mail"></asp:TextBox></td><td><asp:CheckBox runat="server" Text="Visible by others" Checked="true" ID="emailcheck"/></td></tr>
 
             <tr><td class="auto-style18"><asp:label runat="server" Text="Name" ID="label5"></asp:label></td>
                 <td class="auto-style8"><asp:TextBox runat="server" ID="firstname1"
@@ -105,11 +105,11 @@
 
             <tr><td class="auto-style1"><asp:label runat="server" Text="Surname" ID="label6"></asp:label></td>
                 <td class="auto-style9"><asp:TextBox runat="server" ID="lastname1"
-                    placeholder="Surname"></asp:TextBox></td></tr>
+                    placeholder="Surname"></asp:TextBox></td><td><asp:CheckBox runat="server" Text="Visible by others" Checked="true" ID="namecheck"/></td></tr>
             <tr><td class="auto-style1">Gender</td><td style="text-align:left" class="auto-style9">
                 <asp:RadioButton ID="RadioButton1" runat="server" OnCheckedChanged="RadioButton1_CheckedChanged" Text="Male" />
                 <asp:RadioButton ID="RadioButton2" runat="server" OnCheckedChanged="RadioButton2_CheckedChanged" Text="Female" />
-                </td></tr>
+                </td><td><asp:CheckBox runat="server" Text="Visible by others" Checked="true" ID="genderCheck"/></td></tr>
             <tr><td class="auto-style3">Profile Image</td><td class="auto-style10">
                 <asp:FileUpload ID="FileUpload1" runat="server" CssClass="auto-style4" />
                 
@@ -136,9 +136,9 @@
             <tr><td class="auto-style18">CV</td><td class="auto-style8">
                 <asp:FileUpload ID="FileUpload2" runat="server" CssClass="auto-style4" />
                 
-                </td></tr>
+                </td><td><asp:CheckBox runat="server" Text="Visible by others" Checked="true" ID="Cvcheck"/></td></tr>
             <tr><td class="auto-style16">Portfolio</td><td class="auto-style17">   <asp:TextBox runat="server" ID="port"
-                    placeholder="example.com" Height="73px" Width="279px"></asp:TextBox>   </td></tr>
+                    placeholder="example.com" Height="73px" Width="279px"></asp:TextBox>   </td><td><asp:CheckBox runat="server" Text="Visible by others" Checked="true" ID="portcheck"/></td></tr>
             <tr><td class="auto-style2">
                 <br />
                 </td><td class="auto-style12"><input type="checkbox" name="term" id="term">

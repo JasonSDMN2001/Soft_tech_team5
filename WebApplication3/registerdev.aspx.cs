@@ -12,8 +12,8 @@ namespace WebApplication3
     public partial class Registerdev : System.Web.UI.Page
     {
         
-        Byte[] bytes;
-        Byte[] bytes2;
+        Byte[] bytes=null;
+        Byte[] bytes2=null;
         string gender1;
         bool bol = true;
         bool bol1 = true;
@@ -130,7 +130,7 @@ namespace WebApplication3
             if (bol && bol1 && bol2) 
             {
                 Developer d0 = new Developer();
-                d0.profileCreateDev(email1.Text, username1.Text, pass1.Text, firstname1.Text, lastname1.Text, bytes, bytes2, gender1, skills, port.Text);
+                d0.profileCreateDev(email1.Text, username1.Text, pass1.Text, firstname1.Text, lastname1.Text, bytes, bytes2, gender1, skills, port.Text,emailcheck.Checked.ToString(),namecheck.Checked.ToString(),genderCheck.Checked.ToString(),portcheck.Checked.ToString(),Cvcheck.Checked.ToString());
                 Response.Redirect("index.aspx");
             }
 

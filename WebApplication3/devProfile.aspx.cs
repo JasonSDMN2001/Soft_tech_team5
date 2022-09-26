@@ -38,9 +38,12 @@ namespace WebApplication3
                     ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
                 }   
                 skills2.Text = reader.GetString(7);
-                byte[] byteArray = (byte[])reader["bio"];
-                pdfframe.Src = GetDocument(byteArray).ToString();
-                //pagelink.NavigateUrl = reader.GetString(9);
+                if (reader["bio"].ToString() != "")
+                {
+                    byte[] byteArray = (byte[])reader["bio"];
+                    pdfframe.Src = GetDocument(byteArray).ToString();
+                }
+                LinkButton1.Text = reader.GetString(9);
             }
             conn.Close();
         }
@@ -60,6 +63,11 @@ namespace WebApplication3
 
 
 
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            LinkButton1.PostBackUrl = LinkButton1.Text;
         }
     }
 }
