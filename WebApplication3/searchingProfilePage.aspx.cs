@@ -32,7 +32,7 @@ namespace WebApplication3
                 temp = reader.GetString(0);
                 TableRow row = new TableRow();
                 TableCell cell = new TableCell();
-                cell.Controls.Add(new LiteralControl("<iframe id=" + temp + " width='100%' height='100%' src='showClientProfile.aspx?emailID=" + temp + "'></iframe>"));
+                cell.Controls.Add(new LiteralControl("<iframe id=" + temp + " width='100%' height='100%' src='showProject.aspx?emailID=" + temp + "'></iframe>"));
                 row.Cells.Add(cell);
                 TableShow.Rows.Add(row);
             }
