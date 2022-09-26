@@ -31,7 +31,7 @@ namespace WebApplication3
 
         protected void searchProject_Click(object sender, EventArgs e)
         {
-            clientframe.Src = "searchProject.aspx";
+            clientframe.Src = "devSearchProject.aspx";
         }
 
         protected void searchDev_Click(object sender, EventArgs e)

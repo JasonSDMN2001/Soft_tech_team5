@@ -34,11 +34,11 @@ namespace WebApplication3
             devframe.Src = "searchingDevProfilePage.aspx";
         }
 
-        protected void searchProject_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("devSearchProject.aspx");
-        }
+       
 
-      
+        protected void searchProject_Click1(object sender, EventArgs e)
+        {
+            devframe.Src="devSearchProject.aspx";
+        }
     }
 }

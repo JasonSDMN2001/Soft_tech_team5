@@ -11,7 +11,7 @@ namespace WebApplication3
 {
     public partial class devViewAllProjects : System.Web.UI.Page
     {
-        private String browsequery = "Select title,creation_date,max_price,language,num_offers from project";
+        private String browsequery = "Select title,creation_date,max_price,rec_tech,num_offers from project where category='Web Site' and subcategory='Blog' and offer_show='Yes' ";
         private String db = "Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;";
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,24 +53,45 @@ namespace WebApplication3
                     subcategory.Items.Add("Malware Removal");
                     break;
             }
-            browsequery = "Select title,creation_date,max_price,language,num_offers from project where category='" + category.SelectedValue + "'";
+            browsequery = "Select title,creation_date,max_price,rec_tech,num_offers from project where offer_show='Yes' and category='" + category.SelectedValue + "'";
             browseResults();
         }
 
         protected void subcategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            browsequery = "Select title,creation_date,max_price,language,num_offers from project where subcategory='" + subcategory.SelectedValue + "'";
+            browsequery = "Select title,creation_date,max_price,rec_tech,num_offers from project where offer_show='Yes' and subcategory='" + subcategory.SelectedValue + "'";
             browseResults();
         }
 
         protected void browseResults()
         {
-            
+           // String browsequery1 = "Insert into project(max_price) values(@max_price='Doesn't exist')";
+          //  String browsequery2 = "Insert into project(language)  values(@language='Doesn't exist')";
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
             SQLiteCommand browsecmd = new SQLiteCommand(browsequery, conn);
             SQLiteDataReader reader = browsecmd.ExecuteReader();
-
+            /*  string price, language;
+                while (reader.Read())
+              {
+                  price = reader.GetString(2);
+                  language = reader.GetString(3);
+                  if(price == "")
+                  {
+                      SQLiteConnection conn2 = new SQLiteConnection(db);
+                      conn2.Open();
+                      SQLiteCommand browse1cmd = new SQLiteCommand(browsequery1, conn2);
+                      SQLiteDataReader reader2 = browse1cmd.ExecuteReader();
+                      conn2.Close();
+                      //price = "Doesn't exist";
+                  }
+                  if (language == "")
+                  {
+                      SQLiteCommand browse2cmd = new SQLiteCommand(browsequery2, conn);
+                     // language = "Doesn't exist";
+                  } 
+              }*/
+          
             SQLiteDataAdapter dataadapter = new SQLiteDataAdapter(browsequery, conn);
             DataSet ds = new System.Data.DataSet();
             dataadapter.Fill(ds);

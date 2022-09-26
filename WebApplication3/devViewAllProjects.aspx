@@ -34,6 +34,9 @@
             <SortedAscendingHeaderStyle BackColor="#6D95E1" />
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
+            <Columns>
+                <asp:HyperLinkField Text="Show" DataNavigateUrlFields="title" DataNavigateUrlFormatString="showProject.aspx?titlename={0}" />
+            </Columns>
         </asp:GridView>
     </form>
 </body>

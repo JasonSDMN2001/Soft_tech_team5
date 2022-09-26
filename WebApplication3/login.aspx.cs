@@ -37,6 +37,7 @@ namespace WebApplication3
                 else
                 {
                     Session["Username"] = name1.Text;
+                    Session["Type"] = "Client";
                     Response.Redirect("clientMainPage.aspx");
                 }
                 SQLiteConnection conn2 = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
@@ -59,6 +60,7 @@ namespace WebApplication3
                 else
                 {
                     Session["Username"] = name1.Text;
+                    Session["Type"] = "Developer";
                     Response.Redirect("devMainPage.aspx");
                 }
                 
