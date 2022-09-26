@@ -20,6 +20,10 @@ namespace WebApplication3
             SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
             conn.Open();
             String query1 = "Select email from dev where username='" + SearchBox.Text + "'";
+            if (CheckBox2.Checked)
+            {
+                query1 = "select email from dev where skills like '%" + subcategory.SelectedItem.Text + "%'";
+            }
             if (CheckBox1.Checked)
             {
                 query1 += "Order by creation_date asc";
