@@ -8,22 +8,21 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            Project Data:<br />
-&nbsp;</div>
-        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-            <AlternatingRowStyle BackColor="White" />
-            <EditRowStyle BackColor="#2461BF" />
-            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#EFF3FB" />
-            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-            <SortedAscendingCellStyle BackColor="#F5F7FB" />
-            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-            <SortedDescendingCellStyle BackColor="#E9EBEF" />
-            <SortedDescendingHeaderStyle BackColor="#4870BE" />
-        </asp:GridView>
+        <table>
+            <tr>
+                <td><asp:Label ID="title" runat="server" Text="Title" Font-Bold="True" Font-Size="15pt"></asp:Label></td></tr>
+            <tr><td><asp:Button runat="server" Text="Recommend to a developer" BackColor="#66FFCC" Width="200%" /></td></tr>
+            <tr>
+                <td><asp:Table runat="server"><asp:TableFooterRow><asp:TableCell id="category" Text="Category"/></asp:TableFooterRow>
+                    <asp:TableFooterRow><asp:TableCell id="subcategory" Text="Subcategory"/></asp:TableFooterRow></asp:Table></td>
+                <td><asp:Label runat="server" ID="rec_tech" Text="Doesn't exist"/></td>
+                <td><asp:Label runat="server" ID="client_username" Text="Submitted by:"/></td>
+            </tr>
+            <tr><td><asp:Label ID="max_price" runat="server" Text="Price" /></td>
+                <td><asp:Label ID="payment_method" runat="server" Text="Payment method" /></td>
+            <td><asp:Label ID="interval" runat="server" Text="" /></td></tr>
+            <tr><td><asp:Label runat="server" ID="description"/></td></tr>
+        </table>
     </form>
 </body>
 </html>

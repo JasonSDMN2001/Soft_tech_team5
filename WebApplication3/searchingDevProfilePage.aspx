@@ -12,6 +12,13 @@
         <asp:TextBox ID="SearchBox" runat="server"></asp:TextBox>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Search" />
         <asp:CheckBox ID="CheckBox1" runat="server" Text="Sort By Joined Date" />
+        <asp:CheckBox ID="CheckBox2" runat="server" Text="Sort By Skills" />
+        <asp:DropDownList runat="server" ID="subcategory">
+                    <asp:ListItem>C#</asp:ListItem><asp:ListItem>Java</asp:ListItem>
+                    <asp:ListItem>c++</asp:ListItem><asp:ListItem>php</asp:ListItem><asp:ListItem>Python</asp:ListItem>
+                    <asp:ListItem>HTML 5</asp:ListItem><asp:ListItem>CSS</asp:ListItem><asp:ListItem>web designer</asp:ListItem>
+                    <asp:ListItem>web developer</asp:ListItem><asp:ListItem>algorythms</asp:ListItem>
+        </asp:DropDownList>
         <asp:Panel ID="MotherPanel" runat="server" Height="248px">
             <asp:Table ID="TableShow" runat="server" Height="243px" Width="961px">
             </asp:Table>
