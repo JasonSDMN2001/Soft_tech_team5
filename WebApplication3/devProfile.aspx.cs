@@ -38,8 +38,11 @@ namespace WebApplication3
                     ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
                 }   
                 skills2.Text = reader.GetString(7);
-                byte[] byteArray = (byte[])reader["bio"];
-                pdfframe.Src = GetDocument(byteArray).ToString();
+                try{
+                    byte[] byteArray = (byte[])reader["bio"];
+                    pdfframe.Src = GetDocument(byteArray).ToString();
+                }
+                catch { }
                 //pagelink.NavigateUrl = reader.GetString(9);
             }
             conn.Close();
