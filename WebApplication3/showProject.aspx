@@ -13,7 +13,7 @@
                 <td><asp:Label ID="title" runat="server" Text="Title" Font-Bold="True" Font-Size="15pt"></asp:Label></td>
                 <td><asp:Label runat="server" ID="complete" Visible="False" Text="Finished" BackColor="#FFCC66"/></td>
             </tr>
-            <tr><td><asp:Button runat="server" Text="Recommend to a developer" BackColor="#66FFCC" Width="200%" /></td></tr>
+            <tr><td><asp:Button runat="server" Text="Recommend to a developer" BackColor="#66FFCC" Width="100%" /></td></tr>
             <tr>
                 <td><asp:Table runat="server"><asp:TableFooterRow><asp:TableCell id="category" Text="Category"/></asp:TableFooterRow>
                     <asp:TableFooterRow><asp:TableCell id="subcategory" Text="Subcategory"/></asp:TableFooterRow></asp:Table></td>
@@ -23,8 +23,9 @@
             <tr><td><asp:Label ID="max_price" runat="server" Text="Price" /></td>
                 <td><asp:Label ID="payment_method" runat="server" Text="Payment method" /></td>
             <td><asp:Label ID="interval" runat="server" Text="" /></td></tr>
-            <tr><td><asp:Label runat="server" ID="description"/></td></tr>
+            <tr><td><asp:Button runat="server" ID="offerbtn" Text="Make an offer" BackColor="#66FFCC" Width="100%" Visible="false"/></td></tr>
         </table>
+        <asp:Label runat="server" ID="description"/>
     </form>
 </body>
 </html>
