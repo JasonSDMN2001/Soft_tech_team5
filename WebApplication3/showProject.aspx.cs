@@ -45,9 +45,13 @@ namespace WebApplication3
                     rec_tech.Text = lang;
                 }
                 client_username.Text = "Submitted by:  " + read.GetString(12);
-                if (read.GetString(14) == "true" & read.GetString(15) == "true")
+                if (read.GetString(16) == "Yes" & read.GetString(17) == "Yes")
                 {
                     complete.Visible = true;
+                }
+                else if((String)Session["Type"]=="Developer")
+                {
+                    offerbtn.Visible = true;
                 }
             }
             conn.Close();
