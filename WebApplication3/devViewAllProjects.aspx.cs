@@ -11,7 +11,7 @@ namespace WebApplication3
 {
     public partial class devViewAllProjects : System.Web.UI.Page
     {
-        private String browsequery = "Select title,creation_date,max_price,rec_tech,num_offers from project";
+        private String browsequery = "Select title,creation_date,max_price,language,num_offers from project";
         private String db = "Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;";
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,13 +53,13 @@ namespace WebApplication3
                     subcategory.Items.Add("Malware Removal");
                     break;
             }
-            browsequery = "Select title,creation_date,max_price,rec_tech,num_offers from project where category='" + category.SelectedValue + "'";
+            browsequery = "Select title,creation_date,max_price,language,num_offers from project where category='" + category.SelectedValue + "'";
             browseResults();
         }
 
         protected void subcategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            browsequery = "Select title,creation_date,max_price,rec_tech,num_offers from project where subcategory='" + subcategory.SelectedValue + "'";
+            browsequery = "Select title,creation_date,max_price,language,num_offers from project where subcategory='" + subcategory.SelectedValue + "'";
             browseResults();
         }
 

@@ -21,7 +21,17 @@ namespace WebApplication3
 
         protected void projinprogress_Click(object sender, EventArgs e)
         {
-            Response.Redirect("devProjects.aspx");
+            devframe.Src = "devProjects.aspx";
+        }
+
+        protected void searchuser_Click(object sender, EventArgs e)
+        {
+            devframe.Src = "searchingProfilePage.aspx";
+        }
+
+        protected void searchdev_Click(object sender, EventArgs e)
+        {
+            devframe.Src = "searchingDevProfilePage.aspx";
         }
 
         protected void searchProject_Click(object sender, EventArgs e)
@@ -29,13 +39,6 @@ namespace WebApplication3
             Response.Redirect("devSearchProject.aspx");
         }
 
-        protected void searchuser_Click(object sender, EventArgs e)
-        {
-            devframe.Src = "searchingProfilePage.aspx";
-        }
-        protected void searchdev_Click(object sender, EventArgs e)
-        {
-            devframe.Src = "searchingDevProfilePage.aspx";
-        }
+      
     }
 }
