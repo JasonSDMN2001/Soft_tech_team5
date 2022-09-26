@@ -35,10 +35,11 @@
                 <td><asp:Button runat="server" Text="rating" ID="rating" class="opt" /></td>
                 <td><asp:Button runat="server" Text="Edit submitted offers" ID="editoffers" class="opt" /></td></tr>
                 <tr><td><asp:Button runat="server" Text="Projects in progress" ID="projinprogress" class="opt" OnClick="projinprogress_Click" /></td>
-                    <td><asp:Button runat="server" Text="Search another User" ID="searchuser" class="opt" /></td>
+                    <td><asp:Button runat="server" Text="Search another User" ID="searchuser" class="opt" OnClick="searchuser_Click" /></td>
                 <td><asp:Button runat="server" Text="Search a Project" ID="searchProject" class="opt" /></td></tr>
+            <tr><td><asp:Button runat="server" Text="Search another Developer" ID="searchdev" class="opt" OnClick="searchdev_Click" /></td><td></td><td></td></tr>
             </table>
-            <iframe runat="server" id="clientframe" width="100%" class="auto-style1"></iframe>
+            <iframe runat="server" id="devframe" width="100%" class="auto-style1"></iframe>
     </form>
 </body>
 </html>
