@@ -20,20 +20,10 @@ namespace WebApplication3
         public int interval;
         public int uptime;
         public String rec_tech;
-        public String db = "Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;";
 
         public Project()
         {
         }
 
-        public SQLiteDataReader viewProject(String title)
-        {
-            SQLiteConnection conn = new SQLiteConnection(db);
-            conn.Open();
-            SQLiteCommand projectViewcmd = new SQLiteCommand("select * from project where title="+title+"", conn);
-            SQLiteDataReader reader = projectViewcmd.ExecuteReader();
-            conn.Close();
-            return reader;
-        }
     }
 }
