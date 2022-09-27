@@ -46,7 +46,7 @@ namespace WebApplication3
                     rec_tech.Text = "Recommended Technologies to use:"+lang;
                 }
                 client_username.Text = "Submitted by:  " + read.GetString(12);
-                if (read.GetString(16) == "Yes" & read.GetString(17) == "Yes")
+                if (read.GetString(17) == "Yes" & read.GetString(18) == "Yes")
                 {
                     complete.Visible = true;
                 }
@@ -57,7 +57,7 @@ namespace WebApplication3
             }
 
 
-            SQLiteCommand offerViewcmd = new SQLiteCommand("Select name_offer, sum_offer, date_offer, devs_comment from offer where title ='" + titlename + "'", conn);
+           /* SQLiteCommand offerViewcmd = new SQLiteCommand("Select name_offer, sum_offer, date_offer, devs_comment from suboffer where title ='" + titlename + "'", conn);
             SQLiteDataReader reader = offerViewcmd.ExecuteReader();
             while (reader.Read())
             {
@@ -70,7 +70,7 @@ namespace WebApplication3
             DataSet ds = new System.Data.DataSet();
             dataadapter.Fill(ds);
             GridView1.DataSource = ds.Tables[0];
-            GridView1.DataBind();
+            GridView1.DataBind(); */
             
 
 
