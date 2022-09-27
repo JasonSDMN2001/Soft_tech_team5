@@ -10,30 +10,32 @@ namespace WebApplication3
 {
     public partial class submitOffer : System.Web.UI.Page
     {
-        
+        string title;
+        string user;
+        string date;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string value = Request.QueryString["titlename"].ToString();
-            //string value = Request.Params["titlename"].ToString();
-            
-            //string title = Session["value"].ToString();
-            //Response.Write(Request.QueryString["val"]);
+            title = Session["value"].ToString();
+            user = Session["Username"].ToString();
+            date = DateTime.Now.ToString("dd-MM-yyyy");
         }
             
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //title = Request.Params["title"];
-            string title = Session["value"].ToString();
-            string user = Session["Username"].ToString();
-            string date = DateTime.Now.ToString("dd-MM-yyyy");
-       
-            Developer devoffer = new Developer();
-            devoffer.submitProjectOffer(user,title,TextBox1.Text,date,TextBox2.Text);
-            //devoffer.submitProjectOffer(date);
-
-            //string script = "alert(\"Offer has been submitted successfully\");";
-           // ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true); 
+            
+            
+            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+            conn.Open();
+            SQLiteCommand offerCreatecmd = new SQLiteCommand("Insert into offer(username,title,sum_offer,date_offer,comments) Values(@username,@title,@sum_offer,@date_offer,@comments)", conn);
+            offerCreatecmd.Parameters.AddWithValue("@username", user);
+            offerCreatecmd.Parameters.AddWithValue("@title", title);
+            offerCreatecmd.Parameters.AddWithValue("@sum_offer", TextBox1.Text);
+            offerCreatecmd.Parameters.AddWithValue("@date_offer", date);
+            offerCreatecmd.Parameters.AddWithValue("@comments", TextBox2.Text);
+            offerCreatecmd.ExecuteNonQuery();
+            conn.Close();
+            Response.Redirect("showProject.aspx");
         }
     }
 }
