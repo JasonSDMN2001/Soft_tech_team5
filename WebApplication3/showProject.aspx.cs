@@ -84,5 +84,11 @@ namespace WebApplication3
             Response.Redirect("submitOffer.aspx");
            
         }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            Session["value"] = titlename;
+            Response.Redirect("Recommend.aspx");
+        }
     }
 }

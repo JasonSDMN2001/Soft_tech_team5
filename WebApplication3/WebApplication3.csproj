@@ -215,6 +215,7 @@
     <Content Include="devProfileEdit.aspx" />
     <Content Include="login.aspx" />
     <Content Include="profileEdit.aspx" />
+    <Content Include="Recommend.aspx" />
     <Content Include="register.aspx" />
     <Content Include="mode_registration.aspx" />
     <Content Include="registerdev.aspx" />
@@ -389,6 +390,13 @@
     </Compile>
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recommend.aspx.cs">
+      <DependentUpon>Recommend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recommend.aspx.designer.cs">
+      <DependentUpon>Recommend.aspx</DependentUpon>
+    </Compile>
     <Compile Include="register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
