@@ -23,7 +23,7 @@
             <tr><td><asp:Label ID="max_price" runat="server" Text="Price" /></td>
                 <td><asp:Label ID="payment_method" runat="server" Text="Payment method" /></td>
             <td><asp:Label ID="interval" runat="server" Text="" /></td></tr>
-            <tr><td><asp:Button runat="server" ID="offerbtn" Text="Make an offer" BackColor="#66FFCC" Width="100%" Visible="false"/></td></tr>
+            <tr><td><asp:Button runat="server" ID="offerbtn" Text="Make an offer" BackColor="#66FFCC" Width="100%" Visible="false" OnClick="offerbtn_Click" /></td></tr>
         </table>
         <asp:Label runat="server" ID="description"/>
         <p>

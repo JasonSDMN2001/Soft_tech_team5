@@ -18,8 +18,23 @@ namespace WebApplication3
         {
         }
 
-        public void submitProjectOffer()
+        public void submitProjectOffer(String name,String titlos,String sum,String offerdate,String comments)
         {
+           // SQLiteConnection conn = new SQLiteConnection(db);
+            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+           
+            conn.Open();
+            //SQLiteCommand offerCreatecmd = new SQLiteCommand("Insert into offer(name_offer,title,sum_offer,date_offer,devs_comment) Values(@name_offer='" + name + "',@title='" + titlos + "',@sum_offer='" + sum + "',@date_offer='" + offerdate + "',@devs_comment='" + comments + "')", conn);
+            SQLiteCommand offerCreatecmd = new SQLiteCommand("Insert into suboffer(username,title,sum,date_offer,comments) Values(@username,@title,@sum,@date_offer,@comments)", conn);
+
+            offerCreatecmd.Parameters.AddWithValue("@username", name);
+            offerCreatecmd.Parameters.AddWithValue("@title", titlos);
+            offerCreatecmd.Parameters.AddWithValue("@sum", sum);
+            offerCreatecmd.Parameters.AddWithValue("@date_offer", offerdate);
+            offerCreatecmd.Parameters.AddWithValue("@comments", comments); 
+            offerCreatecmd.ExecuteNonQuery();
+            conn.Close();
+
         }
 
         public void addProjectCategory()

@@ -258,6 +258,7 @@
     <Content Include="showProject.aspx" />
     <Content Include="Site.Master" />
     <Content Include="style.css" />
+    <Content Include="submitOffer.aspx" />
     <Content Include="userprofile.html" />
     <Content Include="viewAllProjects.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -457,6 +458,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="submitOffer.aspx.cs">
+      <DependentUpon>submitOffer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="submitOffer.aspx.designer.cs">
+      <DependentUpon>submitOffer.aspx</DependentUpon>
     </Compile>
     <Compile Include="UnregisteredUser.cs" />
     <Compile Include="User.cs" />

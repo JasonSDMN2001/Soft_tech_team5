@@ -77,5 +77,12 @@ namespace WebApplication3
 
             conn.Close();
         }
+
+        protected void offerbtn_Click(object sender, EventArgs e)
+        {
+            Session["value"] = titlename;
+            Response.Redirect("submitOffer.aspx");
+           
+        }
     }
 }
