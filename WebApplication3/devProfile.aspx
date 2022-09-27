@@ -49,7 +49,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <table class="auto-style1" id="TableNotifications"></table>
+        <asp:Table class="auto-style1" ID="TableNotifications" runat="server"></asp:Table>
        <table class="auto-style1">
             <tr><td class="auto-style10"><asp:Image ID="ImageID" runat="server" Height="119px" Width="39%" /></td>
              

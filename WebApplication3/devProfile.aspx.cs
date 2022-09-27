@@ -45,11 +45,17 @@ namespace WebApplication3
                 }
                 LinkButton1.Text = reader.GetString(9);
             }
-            String query2 = "Select * from recommendation where dev_name='" + user + "'";
+            String query2 = "Select * from recommendation where dev_name='" + user + "' and viewed='No'";
             SQLiteCommand cmd2 = new SQLiteCommand(query2, conn);
             SQLiteDataReader reader2 = cmd.ExecuteReader();
-            while (reader.Read())
+            while (reader2.Read())
             {
+                TableRow row = new TableRow();
+                TableCell cell = new TableCell();
+                cell.Controls.Add(new LiteralControl("<>" +"<>"));
+                row.Cells.Add(cell);
+                TableNotifications.Rows.Add(row);
+            }
                 conn.Close();
         }
 
