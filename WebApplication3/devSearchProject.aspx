@@ -18,7 +18,7 @@
             <asp:Button ID="browsebtn" runat="server" BackColor="White" Enabled="False" Text="Browse Projects" OnClick="browsebtn_Click" />
             <asp:Button ID="searchbtn" runat="server" BorderColor="Gray" OnClick="searchbtn_Click" Text="Search a Project" BackColor="Gray" />
         </div>
-        <iframe runat="server" id="projframe" width="100%" class="auto-style1" src="devViewAllProjects.aspx" name="I1"></iframe>
+       <iframe runat="server" id="projframe" width="100%" class="auto-style1" src="devViewAllProjects.aspx" name="I1"></iframe>
     </form>
     
 </body>
