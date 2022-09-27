@@ -45,7 +45,12 @@ namespace WebApplication3
                 }
                 LinkButton1.Text = reader.GetString(9);
             }
-            conn.Close();
+            String query2 = "Select * from recommendation where dev_name='" + user + "'";
+            SQLiteCommand cmd2 = new SQLiteCommand(query2, conn);
+            SQLiteDataReader reader2 = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                conn.Close();
         }
 
 

@@ -49,6 +49,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <table class="auto-style1" id="TableNotifications"></table>
        <table class="auto-style1">
             <tr><td class="auto-style10"><asp:Image ID="ImageID" runat="server" Height="119px" Width="39%" /></td>
              
@@ -77,8 +78,6 @@
             </tr>
            <tr><td class="auto-style11"><asp:Label ID="Label2" runat="server" Text="Bio:" /></td></tr>
         </table>
-        
-        
     </form>
     <iframe runat="server" id="pdfframe" width="100%" class="auto-style12"></iframe>
 </body>
