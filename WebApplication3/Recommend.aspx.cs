@@ -38,12 +38,9 @@ namespace WebApplication3
                 String user = Session["Username"].ToString();
                 int idx = Convert.ToInt32(e.CommandArgument);
                 GridViewRow row = GridView1.Rows[idx];
-                SQLiteConnection conn = new SQLiteConnection(db);
                 string recdev = row.Cells[1].Text;
-                conn.Open();
                 User userrec = new User();
                 userrec.projectRecommend(recdev, title, user);
-                conn.Close();
                 row.Cells.Clear();
             }
         }

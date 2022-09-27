@@ -14,6 +14,7 @@ namespace WebApplication3
 {
     public partial class devProfile : System.Web.UI.Page
     {
+        Boolean anyNotifications = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             string user = Session["Username"].ToString();
@@ -45,9 +46,28 @@ namespace WebApplication3
                 }
                 LinkButton1.Text = reader.GetString(9);
             }
+            String query2 = "Select * from recommendation where dev_name='" + user + "' and viewed='No'";
+            SQLiteCommand cmd2 = new SQLiteCommand(query2, conn);
+            SQLiteDataReader reader2 = cmd2.ExecuteReader();
+            while (reader2.Read())
+            {
+                anyNotifications = true;
+                String notified = reader2.GetString(0)+" recommended you to check out the project '"+reader2.GetString(1)+"'";
+                TableRow row = new TableRow();
+                TableCell cell = new TableCell();
+                cell.Controls.Add(new LiteralControl("<label>• " + notified+ "</label>"));
+                row.Cells.Add(cell);
+                TableNotifications.Rows.Add(row);
+            }
+            if (!anyNotifications)
+            {
+                TableNotifications.Visible = false;
+            }
+            String query3 = "Delete from recommendation where dev_name='"+user+"'";
+            SQLiteCommand cmd3 = new SQLiteCommand(query3, conn);
+            cmd3.ExecuteNonQuery();
             conn.Close();
         }
-
 
 
         public object GetDocument(byte[] byteArray)
@@ -60,9 +80,6 @@ namespace WebApplication3
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("devProfileEdit.aspx");
-
-
-
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
