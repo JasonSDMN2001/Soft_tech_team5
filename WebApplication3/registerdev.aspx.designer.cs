@@ -105,6 +105,15 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.TextBox email1;
 
         /// <summary>
+        /// emailcheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox emailcheck;
+
+        /// <summary>
         /// label5 control.
         /// </summary>
         /// <remarks>
@@ -141,6 +150,15 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.TextBox lastname1;
 
         /// <summary>
+        /// namecheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox namecheck;
+
+        /// <summary>
         /// RadioButton1 control.
         /// </summary>
         /// <remarks>
@@ -157,6 +175,15 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton RadioButton2;
+
+        /// <summary>
+        /// genderCheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox genderCheck;
 
         /// <summary>
         /// FileUpload1 control.
@@ -195,6 +222,15 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
 
         /// <summary>
+        /// Cvcheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox Cvcheck;
+
+        /// <summary>
         /// port control.
         /// </summary>
         /// <remarks>
@@ -202,6 +238,15 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox port;
+
+        /// <summary>
+        /// portcheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox portcheck;
 
         /// <summary>
         /// Label7 control.

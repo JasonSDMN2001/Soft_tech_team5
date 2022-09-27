@@ -72,7 +72,7 @@ namespace WebApplication3
         public void searchClient()
         {
         }
-        public void profileCreateDev(String email, String username, String pass, String firstname, String lastname, Byte[] bytes, Byte[] bytes2, String gender1, String skills, String port)
+        public void profileCreateDev(String email, String username, String pass, String firstname, String lastname, Byte[] bytes, Byte[] bytes2, String gender1, String skills, String port,String emailcheck,String namecheck,String gendercheck,String portcheck,String cvcheck)
         {
             string creation_date = DateTime.Now.ToString("dd-MM-yyyy");
             SQLiteConnection conn = new SQLiteConnection(db);
@@ -90,6 +90,15 @@ namespace WebApplication3
             profileCreatecmd.Parameters.AddWithValue("@portfolio", port);
             profileCreatecmd.Parameters.AddWithValue("@creation_date", creation_date);
             profileCreatecmd.ExecuteNonQuery();
+            String queryV = "Insert into dev_profile_hidden(email,fullname,gender,username,port,cv) Values(@email,@fullname,@gender,@username,@port,@cv)";
+            SQLiteCommand cmdvisible = new SQLiteCommand(queryV, conn);
+            cmdvisible.Parameters.AddWithValue("@email", emailcheck);
+            cmdvisible.Parameters.AddWithValue("@fullname", namecheck);
+            cmdvisible.Parameters.AddWithValue("@gender", gendercheck);
+            cmdvisible.Parameters.AddWithValue("@port", portcheck);
+            cmdvisible.Parameters.AddWithValue("@cv", cvcheck);
+            cmdvisible.Parameters.AddWithValue("@username", username);
+            cmdvisible.ExecuteNonQuery();
             conn.Close();
         }
     }

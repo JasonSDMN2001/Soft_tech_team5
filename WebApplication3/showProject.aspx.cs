@@ -25,7 +25,7 @@ namespace WebApplication3
                 description.Text = read.GetString(1);
                 category.Text = read.GetString(4);
                 subcategory.Text = read.GetString(5);
-                payment_method.Text = read.GetString(6);
+                payment_method.Text = "Payment Method"+read.GetString(6);
                 string price = read.GetString(7);
                 if (price == "")
                 {
@@ -43,7 +43,7 @@ namespace WebApplication3
                 }
                 else
                 {
-                    rec_tech.Text = lang;
+                    rec_tech.Text = "Recommended Technologies to use:"+lang;
                 }
                 client_username.Text = "Submitted by:  " + read.GetString(12);
                 if (read.GetString(16) == "Yes" & read.GetString(17) == "Yes")

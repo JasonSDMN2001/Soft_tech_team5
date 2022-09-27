@@ -38,7 +38,7 @@ namespace WebApplication3
 
         protected void searchProject_Click1(object sender, EventArgs e)
         {
-            Response.Redirect("devSearchProject.aspx");
+            devframe.Src="devSearchProject.aspx";
         }
     }
 }
