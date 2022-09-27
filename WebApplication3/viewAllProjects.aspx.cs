@@ -85,7 +85,7 @@ namespace WebApplication3
                 }
                 TableRow row = new TableRow();
                 TableCell cell = new TableCell();
-                cell.Controls.Add(new LiteralControl("<a href=\"showClientProfile.aspx?titleID=" + title + "\">" + title + "</a>"));
+                cell.Controls.Add(new LiteralControl("<a href=\"showProject.aspx?titleID=" + title + "\">" + title + "</a>"));
                 TableCell cell1 = new TableCell();
                 row.Cells.Add(cell);
                 cell1.Controls.Add(new LiteralControl("<label>   Submitted on:" + reader.GetString(1) + ",</label>"));
