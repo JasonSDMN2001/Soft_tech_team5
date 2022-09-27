@@ -20,7 +20,7 @@ namespace WebApplication3
             browsebtn.Enabled = false;
             searchbtn.BackColor = System.Drawing.Color.Gray;
             browsebtn.BackColor = System.Drawing.Color.White;
-            projframe.Src = "devViewAllProjects.aspx";
+            projframe.Src="devViewAllProjects.aspx";
         }
 
         protected void searchbtn_Click(object sender, EventArgs e)

@@ -23,6 +23,17 @@
             <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Larger" Text="Make an offer"></asp:Label>
         </div>
         <p>
+
+            <asp:Label ID="Label4" runat="server" Text="Username:"></asp:Label>
+            <asp:TextBox ID="TextBox3" runat="server" CssClass="auto-style1" Width="85px"></asp:TextBox>
+        </p>
+        <p>
+
+            <asp:Label ID="Label5" runat="server" Text="Project Title"></asp:Label>
+            <asp:TextBox ID="TextBox4" runat="server" CssClass="auto-style1" Width="85px"></asp:TextBox>
+        </p>
+        <p>
+
             <asp:Label ID="Label2" runat="server" Text="Fill the sum:"></asp:Label>
             <asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style1" Width="85px"></asp:TextBox>
         </p>
