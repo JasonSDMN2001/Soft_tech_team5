@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Linq;
 using System.Web;
@@ -8,13 +9,13 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication3
 {
-    public partial class viewAllProjects : System.Web.UI.Page
+    public partial class devViewAllProjectsUnreg : System.Web.UI.Page
     {
-        private String browsequery = "Select title,creation_date,max_price,rec_tech from project";
+        private String browsequery = "Select title,creation_date,max_price,rec_tech,num_offers from project where category='Web Site' and subcategory='Blog' and offer_show='Yes' ";
         private String db = "Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;";
         protected void Page_Load(object sender, EventArgs e)
         {
-            browseResults();
+           // browseResults();
         }
 
         protected void category_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,50 +53,30 @@ namespace WebApplication3
                     subcategory.Items.Add("Malware Removal");
                     break;
             }
-            browsequery = "Select title,creation_date,max_price,rec_tech from project where category='" + category.SelectedValue+"'";
+            browsequery = "Select title,creation_date,max_price,rec_tech,num_offers from project where offer_show='Yes' and category='" + category.SelectedValue + "'";
             browseResults();
         }
 
         protected void subcategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            browsequery = "Select title,creation_date,max_price,rec_tech from project where subcategory='" + subcategory.SelectedValue + "'";
+            browsequery = "Select title,creation_date,max_price,rec_tech,num_offers from project where offer_show='Yes' and subcategory='" + subcategory.SelectedValue + "'";
             browseResults();
         }
 
         protected void browseResults()
         {
-            TableID.Controls.Clear();
+            GridView1.Visible = true;
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
-            SQLiteCommand browsecmd = new SQLiteCommand(browsequery, conn);
-            SQLiteDataReader reader = browsecmd.ExecuteReader();
-            string title, price, rec_tech;
-            while (reader.Read())
-            {
-                title = reader.GetString(0);
-                price = reader.GetString(2);
-                rec_tech = reader.GetString(3);
-                if (price == "")
-                {
-                    price = " Doesn't exist";
-                }
-                if (rec_tech=="")
-                {
-                    rec_tech = " Doesn't exist";
-                }
-                TableRow row = new TableRow();
-                TableCell cell = new TableCell();
-                cell.Controls.Add(new LiteralControl("<a href=\"showProject.aspx?titleID=" + title + "\">" + title + "</a>"));
-                TableCell cell1 = new TableCell();
-                row.Cells.Add(cell);
-                cell1.Controls.Add(new LiteralControl("<label>   Submitted on:" + reader.GetString(1) + ",</label>"));
-                cell1.Controls.Add(new LiteralControl("<label>   Payment: " + price + "€, </label>"));
-                row.Cells.Add(cell1);
-                TableCell cell2 = new TableCell();
-                cell2.Controls.Add(new LiteralControl("<label>   Recommended technolgy:" + rec_tech + "</label>"));
-                row.Cells.Add(cell2);
-                TableID.Rows.Add(row);
-            }
+            
+
+            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter(browsequery, conn);
+            DataSet ds = new System.Data.DataSet();
+            dataadapter.Fill(ds);
+            GridView1.DataSource = ds.Tables[0];
+            GridView1.DataBind();
+
+           
             conn.Close();
         }
     }

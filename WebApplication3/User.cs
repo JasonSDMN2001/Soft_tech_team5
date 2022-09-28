@@ -34,8 +34,13 @@ namespace WebApplication3
         {
         }
 
-        public void projectRecommend()
+        public void projectRecommend(String dev_title, String project_title, String recommended_by)
         {
+            SQLiteConnection conn = new SQLiteConnection(db);
+            conn.Open();
+            SQLiteCommand projectReccmd = new SQLiteCommand("Insert into recommendation(dev_name, project_title, recommended_by, viewed) Values('" + dev_title+"','"+project_title+ "','" + recommended_by +"','No')", conn);
+            projectReccmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public void profileCreate()

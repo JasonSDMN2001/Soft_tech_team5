@@ -69,8 +69,8 @@ namespace WebApplication3
           //  String browsequery2 = "Insert into project(language)  values(@language='Doesn't exist')";
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
-            SQLiteCommand browsecmd = new SQLiteCommand(browsequery, conn);
-            SQLiteDataReader reader = browsecmd.ExecuteReader();
+            //SQLiteCommand browsecmd = new SQLiteCommand(browsequery, conn);
+            //SQLiteDataReader reader = browsecmd.ExecuteReader();
             /*  string price, language;
                 while (reader.Read())
               {

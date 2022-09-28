@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="devSearchProject.aspx.cs" Inherits="WebApplication3.devSearchProject" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="devSearchProjectUnreg.aspx.cs" Inherits="WebApplication3.devSearchProjectUnreg" %>
 
 <!DOCTYPE html>
 
@@ -15,8 +15,8 @@
 <body>
     <form id="form2" runat="server">
         <div>
-            <asp:Button ID="browsebtn" runat="server" BackColor="White" Enabled="False" Text="Browse Projects" OnClick="browsebtn_Click" />
-            <asp:Button ID="searchbtn" runat="server" BorderColor="Gray" OnClick="searchbtn_Click" Text="Search a Project" BackColor="Gray" />
+            <asp:Button ID="browsebtn" runat="server" BackColor="White"  Text="Browse Projects" OnClick="browsebtn_Click" />
+            <asp:Button ID="searchbtn" runat="server" BorderColor="Gray" Enabled="False" OnClick="searchbtn_Click" Text="Search a Project" BackColor="Gray" />
         </div>
        <iframe runat="server" id="projframe" width="100%" class="auto-style1" src="devViewAllProjects.aspx" name="I1"></iframe>
     </form>

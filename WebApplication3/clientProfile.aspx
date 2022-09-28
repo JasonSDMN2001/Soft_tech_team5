@@ -21,6 +21,7 @@
             <td><asp:HyperLink ID="pagelink" runat="server" Text="Find me elsewhere" NavigateUrl="."></asp:HyperLink></td></tr>
             <tr><td><asp:Label ID="description" runat="server" Text="Description" /></td></tr>
         </table>
+        <asp:Table runat="server" BackColor="#99FFCC" ID="projectTable"><asp:TableRow><asp:TableHeaderCell>Submitted Projects:</asp:TableHeaderCell></asp:TableRow></asp:Table>
     </form>
 </body>
 </html>

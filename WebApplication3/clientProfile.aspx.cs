@@ -40,6 +40,32 @@ namespace WebApplication3
                 description.Text = reader.GetString(8);
                 pagelink.NavigateUrl = reader.GetString(9);
             }
+            String query2 = "Select title,proj_type,client_done,dev_done from project where client_username='" + user + "'";
+            SQLiteCommand cmd2 = new SQLiteCommand(query2, conn);
+            SQLiteDataReader reader2 = cmd2.ExecuteReader();
+            while (reader2.Read())
+            {
+                String projectcell;
+                TableRow row = new TableRow();
+                TableCell cell = new TableCell();
+                cell.Controls.Add(new LiteralControl("<label>• " + reader2.GetString(0)));
+                TableCell cell1 = new TableCell();
+                cell1.Controls.Add(new LiteralControl(reader2.GetString(1)));
+                row.Cells.Add(cell);
+                row.Cells.Add(cell1);
+                if (reader2.GetString(2) == "Yes" & reader2.GetString(3) == "Yes")
+                {
+                    projectcell = "Completed";
+                }
+                else
+                {
+                    projectcell = "Active";
+                }
+                TableCell cell2 = new TableCell();
+                cell2.Controls.Add(new LiteralControl(projectcell + "</label>"));
+                row.Cells.Add(cell2);
+                projectTable.Rows.Add(row);
+            }
             conn.Close();
         }
 

@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication3
 {
-    public partial class devSearchProject : System.Web.UI.Page
+    public partial class devSearchProjectUnreg : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            projframe.Src = "devViewAllProjectsUnreg.aspx";
         }
 
         protected void browsebtn_Click(object sender, EventArgs e)
@@ -20,7 +20,7 @@ namespace WebApplication3
             browsebtn.Enabled = false;
             searchbtn.BackColor = System.Drawing.Color.Gray;
             browsebtn.BackColor = System.Drawing.Color.White;
-            projframe.Src="devViewAllProjects.aspx";
+            projframe.Src="devViewAllProjectsUnreg.aspx";
         }
 
         protected void searchbtn_Click(object sender, EventArgs e)

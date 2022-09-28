@@ -197,6 +197,7 @@
     <Content Include="devMainPage.aspx" />
     <Content Include="devProfile.aspx" />
     <Content Include="devProjects.aspx" />
+    <Content Include="devSearchProjectUnreg.aspx" />
     <Content Include="devSearchProject.aspx" />
     <Content Include="devViewAllProjects.aspx" />
     <Content Include="favicon.ico" />
@@ -215,6 +216,7 @@
     <Content Include="devProfileEdit.aspx" />
     <Content Include="login.aspx" />
     <Content Include="profileEdit.aspx" />
+    <Content Include="Recommend.aspx" />
     <Content Include="register.aspx" />
     <Content Include="mode_registration.aspx" />
     <Content Include="registerdev.aspx" />
@@ -252,14 +254,17 @@
     <Content Include="searchingDevProfilePage.aspx" />
     <Content Include="searchingProfilePage.aspx" />
     <Content Include="searchingProjectPage.aspx" />
+    <Content Include="searchProjectUnregister.aspx" />
     <Content Include="searchProject.aspx" />
     <Content Include="showClientProfile.aspx" />
     <Content Include="showDevProfile.aspx" />
+    <Content Include="showProjectUnreg.aspx" />
     <Content Include="showProject.aspx" />
     <Content Include="Site.Master" />
     <Content Include="style.css" />
     <Content Include="submitOffer.aspx" />
     <Content Include="userprofile.html" />
+    <Content Include="devViewAllProjectsUnreg.aspx" />
     <Content Include="viewAllProjects.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -335,6 +340,13 @@
     <Compile Include="devProjects.aspx.designer.cs">
       <DependentUpon>devProjects.aspx</DependentUpon>
     </Compile>
+    <Compile Include="devSearchProjectUnreg.aspx.cs">
+      <DependentUpon>devSearchProjectUnreg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devSearchProjectUnreg.aspx.designer.cs">
+      <DependentUpon>devSearchProjectUnreg.aspx</DependentUpon>
+    </Compile>
     <Compile Include="devSearchProject.aspx.cs">
       <DependentUpon>devSearchProject.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -389,6 +401,13 @@
     </Compile>
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recommend.aspx.cs">
+      <DependentUpon>Recommend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recommend.aspx.designer.cs">
+      <DependentUpon>Recommend.aspx</DependentUpon>
+    </Compile>
     <Compile Include="register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -417,6 +436,13 @@
     <Compile Include="searchingProjectPage.aspx.designer.cs">
       <DependentUpon>searchingProjectPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="searchProjectUnregister.aspx.cs">
+      <DependentUpon>searchProjectUnregister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="searchProjectUnregister.aspx.designer.cs">
+      <DependentUpon>searchProjectUnregister.aspx</DependentUpon>
+    </Compile>
     <Compile Include="searchProject.aspx.cs">
       <DependentUpon>searchProject.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -437,6 +463,13 @@
     </Compile>
     <Compile Include="showDevProfile.aspx.designer.cs">
       <DependentUpon>showDevProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="showProjectUnreg.aspx.cs">
+      <DependentUpon>showProjectUnreg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="showProjectUnreg.aspx.designer.cs">
+      <DependentUpon>showProjectUnreg.aspx</DependentUpon>
     </Compile>
     <Compile Include="showProject.aspx.cs">
       <DependentUpon>showProject.aspx</DependentUpon>
@@ -468,6 +501,13 @@
     </Compile>
     <Compile Include="UnregisteredUser.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="devViewAllProjectsUnreg.aspx.cs">
+      <DependentUpon>devViewAllProjectsUnreg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="devViewAllProjectsUnreg.aspx.designer.cs">
+      <DependentUpon>devViewAllProjectsUnreg.aspx</DependentUpon>
+    </Compile>
     <Compile Include="viewAllProjects.aspx.cs">
       <DependentUpon>viewAllProjects.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

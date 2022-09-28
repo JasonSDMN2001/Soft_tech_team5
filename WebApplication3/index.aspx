@@ -28,16 +28,38 @@
         </table>
     </form>
     <br />
-    <form action="" style="background-color: lightseagreen;text-align:center">
-        <h1 style="color: white">Find someone to help you create your dream project</h1>
-        <input type="text" id="userid" name="user">
-        <input type="submit" id="user" value="Search" style="border: none;background-color:white;font-size: 15px;">
+    <h1 style="color: white; background-color: lightseagreen;text-align:center">Find someone to help you create your dream project</h1>
+    <form action="searchingDevProfilePage.aspx" >
+        
+        <table class="table1">
+            <tr>
+                <td>
+                    <button class="editbtn">Search</button>
+                </td>
+            </tr>
+        </table>
     </form>
     <br />
-    <form action="" style="background-color: lightseagreen;text-align:center">
-        <h1 style="color: white">Find a project to contribute on</h1>
-        <input type="text" id="projectid" name="project">
-        <input type="submit" id="project" value="Search" style="border: none;background-color:white;font-size: 15px;">
+    <h1 style="color: white;background-color: lightseagreen;text-align:center">Find a Project</h1>
+    <form action="devSearchProjectUnreg.aspx">
+        <table class="table1">
+            <tr>
+                <td>
+                    <button class="editbtn">Search</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <h1 style="color: white; background-color: lightseagreen;text-align:center">Search a User</h1>
+    <form action="searchingProfilePage.aspx" >
+        
+        <table class="table1">
+            <tr>
+                <td>
+                    <button class="editbtn">Search</button>
+                </td>
+            </tr>
+        </table>
     </form>
     <br />
 </body>

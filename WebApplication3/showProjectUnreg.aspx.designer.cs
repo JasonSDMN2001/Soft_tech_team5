@@ -11,7 +11,7 @@ namespace WebApplication3
 {
 
 
-    public partial class clientProfile
+    public partial class showProjectUnreg
     {
 
         /// <summary>
@@ -24,76 +24,76 @@ namespace WebApplication3
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// ImageID control.
+        /// title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImageID;
+        protected global::System.Web.UI.WebControls.Label title;
 
         /// <summary>
-        /// fullname control.
+        /// category control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fullname;
+        protected global::System.Web.UI.WebControls.TableCell category;
 
         /// <summary>
-        /// gender control.
+        /// subcategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TableHeaderCell gender;
+        protected global::System.Web.UI.WebControls.TableCell subcategory;
 
         /// <summary>
-        /// birthdate control.
+        /// rec_tech control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell birthdate;
+        protected global::System.Web.UI.WebControls.Label rec_tech;
 
         /// <summary>
-        /// Button1 control.
+        /// client_username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label client_username;
 
         /// <summary>
-        /// username control.
+        /// max_price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label username;
+        protected global::System.Web.UI.WebControls.Label max_price;
 
         /// <summary>
-        /// email control.
+        /// payment_method control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label email;
+        protected global::System.Web.UI.WebControls.Label payment_method;
 
         /// <summary>
-        /// pagelink control.
+        /// interval control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink pagelink;
+        protected global::System.Web.UI.WebControls.Label interval;
 
         /// <summary>
         /// description control.
@@ -103,14 +103,5 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label description;
-
-        /// <summary>
-        /// projectTable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table projectTable;
     }
 }

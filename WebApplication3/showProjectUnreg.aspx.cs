@@ -9,7 +9,7 @@ using System.Data;
 
 namespace WebApplication3
 {
-    public partial class showProject : System.Web.UI.Page
+    public partial class showProjectUnreg : System.Web.UI.Page
     {
         private String titlename;
         protected void Page_Load(object sender, EventArgs e)
@@ -46,49 +46,10 @@ namespace WebApplication3
                     rec_tech.Text = "Recommended Technologies to use:"+lang;
                 }
                 client_username.Text = "Submitted by:  " + read.GetString(12);
-                if (read.GetString(17) == "Yes" & read.GetString(18) == "Yes")
-                {
-                    complete.Visible = true;
-                }
-                else if((String)Session["Type"]=="Developer")
-                {
-                    offerbtn.Visible = true;
-                }
+                
             }
-
-
-           /* SQLiteCommand offerViewcmd = new SQLiteCommand("Select name_offer, sum_offer, date_offer, devs_comment from suboffer where title ='" + titlename + "'", conn);
-            SQLiteDataReader reader = offerViewcmd.ExecuteReader();
-            while (reader.Read())
-            {
-                if (reader.GetString(1) == titlename)
-                {
-                    Label1.Visible = true;
-                }
-            }
-            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select name_offer,sum_offer,date_offer,devs_comment from offer where title='" + titlename + "'", conn);
-            DataSet ds = new System.Data.DataSet();
-            dataadapter.Fill(ds);
-            GridView1.DataSource = ds.Tables[0];
-            GridView1.DataBind(); */
-            
-
-
-
             conn.Close();
         }
 
-        protected void offerbtn_Click(object sender, EventArgs e)
-        {
-            Session["value"] = titlename;
-            Response.Redirect("submitOffer.aspx");
-           
-        }
-
-        protected void Unnamed1_Click(object sender, EventArgs e)
-        {
-            Session["value"] = titlename;
-            Response.Redirect("Recommend.aspx");
-        }
     }
 }

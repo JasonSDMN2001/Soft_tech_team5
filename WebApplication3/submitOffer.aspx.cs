@@ -15,21 +15,21 @@ namespace WebApplication3
         string date;
         protected void Page_Load(object sender, EventArgs e)
         {
-            title = Session["value"].ToString();
-            user = Session["Username"].ToString();
-            date = DateTime.Now.ToString("dd-MM-yyyy");
+            TextBox3.Text = Session["Username"].ToString();
+            TextBox4.Text = Session["value"].ToString();
         }
             
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             
-            
+            date = DateTime.Now.ToString("dd-MM-yyyy");
             SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
             conn.Open();
-            SQLiteCommand offerCreatecmd = new SQLiteCommand("Insert into offer(username,title,sum_offer,date_offer,comments) Values(@username,@title,@sum_offer,@date_offer,@comments)", conn);
-            offerCreatecmd.Parameters.AddWithValue("@username", user);
-            offerCreatecmd.Parameters.AddWithValue("@title", title);
+
+            SQLiteCommand offerCreatecmd = new SQLiteCommand("Insert into dev_offer(username,title,sum_offer,date_offer,comments) Values(@username,@title,@sum_offer,@date_offer,@comments)", conn);
+            offerCreatecmd.Parameters.AddWithValue("@username", TextBox3.Text);
+            offerCreatecmd.Parameters.AddWithValue("@title", TextBox4.Text);
             offerCreatecmd.Parameters.AddWithValue("@sum_offer", TextBox1.Text);
             offerCreatecmd.Parameters.AddWithValue("@date_offer", date);
             offerCreatecmd.Parameters.AddWithValue("@comments", TextBox2.Text);
