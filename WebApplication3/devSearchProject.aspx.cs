@@ -29,7 +29,7 @@ namespace WebApplication3
             browsebtn.Enabled = true;
             searchbtn.BackColor = System.Drawing.Color.White;
             browsebtn.BackColor = System.Drawing.Color.Gray;
-            //projframe.Src = "searchingProjectPage.aspx";
+            projframe.Src = "searchingProjectPage.aspx";
         }
     }
 }
