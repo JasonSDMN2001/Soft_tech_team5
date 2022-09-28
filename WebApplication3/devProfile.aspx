@@ -68,7 +68,11 @@
                 <td class="auto-style9"><asp:Label ID="skills2" runat="server" Text="Skills:" /></td>
             </tr>
            <tr><td class="auto-style11"><asp:Label ID="Link1" runat="server" Text="Link:" /></td>
-               <td><label><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">LinkButton</asp:LinkButton></label></td></tr><tr><td class="auto-style11"><asp:Label ID="Label2" runat="server" Text="Bio:" /></td></tr>
+               <td><label><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">LinkButton</asp:LinkButton></label></td></tr>
+                <tr><td class="auto-style11"><asp:Label ID="Label1" runat="server" Text="Rating:" />
+                    <asp:GridView ID="GridView1" runat="server"></asp:GridView></td>
+                    <td><asp:Label ID="Label3" runat="server" Text="Finished Projects:" /><asp:GridView ID="GridView2" runat="server"></asp:GridView></td></tr>
+                <tr><td class="auto-style11"><asp:Label ID="Label2" runat="server" Text="Bio:" /></td></tr>
         </table>
     </form>
     <iframe runat="server" id="pdfframe" width="100%" class="auto-style12"></iframe>

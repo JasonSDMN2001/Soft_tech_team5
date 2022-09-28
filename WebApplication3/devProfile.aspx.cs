@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
@@ -46,26 +47,45 @@ namespace WebApplication3
                 }
                 LinkButton1.Text = reader.GetString(9);
             }
-            String query2 = "Select * from recommendation where dev_name='" + user + "' and viewed='No'";
-            SQLiteCommand cmd2 = new SQLiteCommand(query2, conn);
-            SQLiteDataReader reader2 = cmd2.ExecuteReader();
-            while (reader2.Read())
+            try
             {
-                anyNotifications = true;
-                String notified = reader2.GetString(0)+" recommended you to check out the project '"+reader2.GetString(1)+"'";
+                String query2 = "Select * from recommendation where dev_name='" + user + "' and viewed='No'";
+                SQLiteCommand cmd2 = new SQLiteCommand(query2, conn);
+                SQLiteDataReader reader2 = cmd2.ExecuteReader();
+                while (reader2.Read())
+                {
+                    anyNotifications = true;
+                    String notified = reader2.GetString(0) + " recommended you to check out the project '" + reader2.GetString(1) + "'";
+                    TableRow row = new TableRow();
+                    TableCell cell = new TableCell();
+                    cell.Controls.Add(new LiteralControl("<label>• " + notified + "</label>"));
+                    row.Cells.Add(cell);
+                    TableNotifications.Rows.Add(row);
+                }
+                if (!anyNotifications)
+                {
+                    TableNotifications.Visible = false;
+                }
+                String query3 = "Delete from recommendation where dev_name='" + user + "'";
+                SQLiteCommand cmd3 = new SQLiteCommand(query3, conn);
+                cmd3.ExecuteNonQuery();
+            }
+            catch
+            {
                 TableRow row = new TableRow();
                 TableCell cell = new TableCell();
-                cell.Controls.Add(new LiteralControl("<label>• " + notified+ "</label>"));
-                row.Cells.Add(cell);
-                TableNotifications.Rows.Add(row);
+                cell.Controls.Add(new LiteralControl("<label>• " + "no new notifications" + "</label>"));
             }
-            if (!anyNotifications)
-            {
-                TableNotifications.Visible = false;
-            }
-            String query3 = "Delete from recommendation where dev_name='"+user+"'";
-            SQLiteCommand cmd3 = new SQLiteCommand(query3, conn);
-            cmd3.ExecuteNonQuery();
+            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("select stars,title from review where dev_username='"+user+"'", conn);
+            DataSet ds = new System.Data.DataSet();
+            dataadapter.Fill(ds);
+            GridView1.DataSource = ds.Tables[0];
+            GridView1.DataBind();
+            SQLiteDataAdapter dataadapter2 = new SQLiteDataAdapter("select title from project where dev_username='" + user + "' and client_done='Yes' and dev_done='Yes'", conn);
+            DataSet ds2 = new System.Data.DataSet();
+            dataadapter2.Fill(ds2);
+            GridView2.DataSource = ds2.Tables[0];
+            GridView2.DataBind();
             conn.Close();
         }
 

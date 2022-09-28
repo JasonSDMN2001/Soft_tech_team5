@@ -46,5 +46,10 @@ namespace WebApplication3
         public void profileCreate()
         {
         }
+
+        public void searchProject()
+        {
+
+        }
     }
 }
