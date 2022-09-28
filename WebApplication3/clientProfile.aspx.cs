@@ -53,16 +53,17 @@ namespace WebApplication3
                 cell1.Controls.Add(new LiteralControl(reader2.GetString(1)));
                 row.Cells.Add(cell);
                 row.Cells.Add(cell1);
+                TableCell cell2 = new TableCell();
                 if (reader2.GetString(2) == "Yes" & reader2.GetString(3) == "Yes")
                 {
                     projectcell = "Completed";
+                    cell2.Controls.Add(new LiteralControl(projectcell + "</label>"));
                 }
                 else
                 {
                     projectcell = "Active";
+                    cell2.Controls.Add(new LiteralControl("</label><a href=\"projectEdit?ogtitle="+reader2.GetString(0)+"\">" + projectcell + "</a>"));
                 }
-                TableCell cell2 = new TableCell();
-                cell2.Controls.Add(new LiteralControl(projectcell + "</label>"));
                 row.Cells.Add(cell2);
                 projectTable.Rows.Add(row);
             }

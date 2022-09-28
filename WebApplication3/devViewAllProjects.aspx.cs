@@ -11,7 +11,7 @@ namespace WebApplication3
 {
     public partial class devViewAllProjects : System.Web.UI.Page
     {
-        private String browsequery = "Select title,creation_date,max_price,rec_tech,num_offers from project where category='Web Site' and subcategory='Blog' and offer_show='Yes' ";
+        private String browsequery = "Select title,creation_date,max_price,rec_tech,num_offers from project where category='Web Site' and subcategory='Blog' and proj_type='Public' ";
         private String db = "Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;";
         protected void Page_Load(object sender, EventArgs e)
         {
