@@ -65,12 +65,12 @@ namespace WebApplication3
                 {
                     Label1.Visible = true;
                 }
-            }
-            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select name_offer,sum_offer,date_offer,devs_comment from offer where title='" + titlename + "'", conn);
+            } */
+            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select username,sum_offer,date_offer,comments from dev_offer where title='" + titlename + "'", conn);
             DataSet ds = new System.Data.DataSet();
             dataadapter.Fill(ds);
             GridView1.DataSource = ds.Tables[0];
-            GridView1.DataBind(); */
+            GridView1.DataBind(); 
             
 
 

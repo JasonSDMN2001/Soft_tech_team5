@@ -33,7 +33,7 @@
         <table width="100%" style="background-color:cornflowerblue">
                 <tr><td><asp:Button runat="server" Text="Your Profile" ID="profileShow" class="opt" OnClick="profileShow_Click" /></td>
                 <td><asp:Button runat="server" Text="rating" ID="rating" class="opt" /></td>
-                <td><asp:Button runat="server" Text="Edit submitted offers" ID="editoffers" class="opt" /></td></tr>
+                <td><asp:Button runat="server" Text="Edit submitted offers" ID="editoffers" class="opt" OnClick="editoffers_Click" /></td></tr>
                 <tr><td><asp:Button runat="server" Text="Projects in progress" ID="projinprogress" class="opt" OnClick="projinprogress_Click" /></td>
                     <td><asp:Button runat="server" Text="Search another User" ID="searchuser" class="opt" OnClick="searchuser_Click" /></td>
                 <td><asp:Button runat="server" Text="Search a Project" ID="searchProject" class="opt" OnClick="searchProject_Click1" /></td></tr>

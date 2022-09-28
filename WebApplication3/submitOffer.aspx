@@ -15,6 +15,12 @@
         .auto-style3 {
             margin-left: 355px;
         }
+        .auto-style4 {
+            margin-left: 235px;
+        }
+        .auto-style5 {
+            margin-left: 221px;
+        }
     </style>
 </head>
 <body>
@@ -25,17 +31,17 @@
         <p>
 
             <asp:Label ID="Label4" runat="server" Text="Username:"></asp:Label>
-            <asp:TextBox ID="TextBox3" runat="server" CssClass="auto-style1" Width="85px"></asp:TextBox>
+            <asp:TextBox ID="TextBox3" runat="server" CssClass="auto-style4" Width="85px" ReadOnly="True"></asp:TextBox>
         </p>
         <p>
 
             <asp:Label ID="Label5" runat="server" Text="Project Title"></asp:Label>
-            <asp:TextBox ID="TextBox4" runat="server" CssClass="auto-style1" Width="85px"></asp:TextBox>
+            <asp:TextBox ID="TextBox4" runat="server" CssClass="auto-style1" Width="85px" ReadOnly="True"></asp:TextBox>
         </p>
         <p>
 
             <asp:Label ID="Label2" runat="server" Text="Fill the sum:"></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style1" Width="85px"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style5" Width="85px"></asp:TextBox>
         </p>
         <p>
             <asp:Label ID="Label3" runat="server" Text="Comments:"></asp:Label>

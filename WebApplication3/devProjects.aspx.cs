@@ -30,7 +30,7 @@ namespace WebApplication3
                     cmd.Parameters.AddWithValue("@dev_done", "Yes");
                    // SQLiteDataReader reader = cmd.ExecuteReader();
 
-                      SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,language,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='No' or dev_done='No' ", conn);
+                      SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,rec_tech,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='No' or dev_done='No' ", conn);
                       DataSet ds = new System.Data.DataSet();
                       dataadapter.Fill(ds);
                       GridView1.DataSource = ds.Tables[0];
@@ -60,7 +60,7 @@ namespace WebApplication3
                 cmd.Parameters.AddWithValue("@dev_done", "Yes");
                 // SQLiteDataReader reader = cmd.ExecuteReader();
 
-                SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,language,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='No' or dev_done='No' ", conn);
+                SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,rec_tech,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='No' or dev_done='No' ", conn);
                 DataSet ds = new System.Data.DataSet();
                 dataadapter.Fill(ds);
                 GridView1.DataSource = ds.Tables[0];
@@ -84,7 +84,7 @@ namespace WebApplication3
                 cmd.Parameters.AddWithValue("@dev_done", "Yes");
                 // SQLiteDataReader reader = cmd.ExecuteReader();
 
-                SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,language,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='Yes' and dev_done='Yes' ", conn);
+                SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,rec_tech,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='Yes' and dev_done='Yes' ", conn);
                 DataSet ds = new System.Data.DataSet();
                 dataadapter.Fill(ds);
                 GridView1.DataSource = ds.Tables[0];

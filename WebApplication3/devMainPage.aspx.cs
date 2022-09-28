@@ -40,5 +40,10 @@ namespace WebApplication3
         {
             devframe.Src="devSearchProject.aspx";
         }
+
+        protected void editoffers_Click(object sender, EventArgs e)
+        {
+            devframe.Src = "viewDevOffers.aspx";
+        }
     }
 }

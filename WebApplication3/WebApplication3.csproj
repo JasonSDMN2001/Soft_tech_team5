@@ -200,6 +200,7 @@
     <Content Include="devSearchProjectUnreg.aspx" />
     <Content Include="devSearchProject.aspx" />
     <Content Include="devViewAllProjects.aspx" />
+    <Content Include="editOffer.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -266,6 +267,7 @@
     <Content Include="userprofile.html" />
     <Content Include="devViewAllProjectsUnreg.aspx" />
     <Content Include="viewAllProjects.aspx" />
+    <Content Include="viewDevOffers.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -360,6 +362,13 @@
     </Compile>
     <Compile Include="devViewAllProjects.aspx.designer.cs">
       <DependentUpon>devViewAllProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editOffer.aspx.cs">
+      <DependentUpon>editOffer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editOffer.aspx.designer.cs">
+      <DependentUpon>editOffer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -514,6 +523,13 @@
     </Compile>
     <Compile Include="viewAllProjects.aspx.designer.cs">
       <DependentUpon>viewAllProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewDevOffers.aspx.cs">
+      <DependentUpon>viewDevOffers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewDevOffers.aspx.designer.cs">
+      <DependentUpon>viewDevOffers.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
