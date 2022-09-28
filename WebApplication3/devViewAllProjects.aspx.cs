@@ -61,60 +61,44 @@ namespace WebApplication3
         {
             browsequery = "Select title,creation_date,max_price,rec_tech,num_offers from project where offer_show='Yes' and subcategory='" + subcategory.SelectedValue + "'";
             browseResults();
+            
         }
 
         protected void browseResults()
         {
-           // String browsequery1 = "Insert into project(max_price) values(@max_price='Doesn't exist')";
-          //  String browsequery2 = "Insert into project(language)  values(@language='Doesn't exist')";
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
-            //SQLiteCommand browsecmd = new SQLiteCommand(browsequery, conn);
-            //SQLiteDataReader reader = browsecmd.ExecuteReader();
-            /*  string price, language;
-                while (reader.Read())
-              {
-                  price = reader.GetString(2);
-                  language = reader.GetString(3);
-                  if(price == "")
-                  {
-                      SQLiteConnection conn2 = new SQLiteConnection(db);
-                      conn2.Open();
-                      SQLiteCommand browse1cmd = new SQLiteCommand(browsequery1, conn2);
-                      SQLiteDataReader reader2 = browse1cmd.ExecuteReader();
-                      conn2.Close();
-                      //price = "Doesn't exist";
-                  }
-                  if (language == "")
-                  {
-                      SQLiteCommand browse2cmd = new SQLiteCommand(browsequery2, conn);
-                     // language = "Doesn't exist";
-                  } 
-              }*/
-          
             SQLiteDataAdapter dataadapter = new SQLiteDataAdapter(browsequery, conn);
             DataSet ds = new System.Data.DataSet();
             dataadapter.Fill(ds);
             GridView1.DataSource = ds.Tables[0];
             GridView1.DataBind();
-
-           /* string title, price, rec_tech;
-            while (reader.Read())
-            {
-                title = reader.GetString(0);
-                price = reader.GetString(2);
-                rec_tech = reader.GetString(3);
-                if (price == "")
-                {
-                    price = " Doesn't exist";
-                }
-                if (rec_tech == "")
-                {
-                    rec_tech = " Doesn't exist";
-                }
-               
-            } */
             conn.Close();
+            
+        }
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                for (int i = 3; i < 5; i++)
+                {
+                    foreach (Control control in e.Row.Cells[i].Controls)
+                    {
+                        if (control.GetType().Name == "Label")
+                        {
+                            if (string.IsNullOrEmpty((control as Label).Text))
+                            {
+                                e.Row.Cells[i].Text = "Doesn't exist";
+                            }
+                        }
+                    }
+                    if (e.Row.Cells[i].Text == "&nbsp;")
+                    {
+                        e.Row.Cells[i].Text = "Doesn't exist";
+                    }
+                }
+            }
         }
     }
 }
