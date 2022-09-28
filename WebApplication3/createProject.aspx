@@ -5,13 +5,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style>
+        .auto-style17 {
+            width: 292px;
+            height: 106px;
+        }
+    </style>
 </head>
 <body>
     <form id="createProject" runat="server">
         <h2>Create your own Project</h2>
         <asp:Table runat="server">
             <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Title:"/></asp:TableCell><asp:TableCell><asp:TextBox runat="server" ID="title"/></asp:TableCell></asp:TableRow>
-            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Description:"/></asp:TableCell><asp:TableCell><asp:TextBox runat="server" ID="proj_description"/></asp:TableCell></asp:TableRow>
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Description:"/></asp:TableCell><asp:TableCell><asp:TextBox runat="server" class="auto-style17" ID="proj_description"/></asp:TableCell></asp:TableRow>
             
             <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="*Visible by others:"/></asp:TableCell><asp:TableCell><asp:RadioButtonList runat="server" ID="publicity">
                     <asp:ListItem Selected="True">Public</asp:ListItem><asp:ListItem>Private</asp:ListItem>
