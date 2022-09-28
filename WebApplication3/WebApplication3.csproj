@@ -194,6 +194,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="createProject.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="deleteOffer.aspx" />
     <Content Include="devMainPage.aspx" />
     <Content Include="devProfile.aspx" />
     <Content Include="devProjects.aspx" />
@@ -320,6 +321,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deleteOffer.aspx.cs">
+      <DependentUpon>deleteOffer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deleteOffer.aspx.designer.cs">
+      <DependentUpon>deleteOffer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Developer.cs" />
     <Compile Include="devMainPage.aspx.cs">

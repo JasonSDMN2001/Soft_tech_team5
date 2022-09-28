@@ -30,6 +30,6 @@ namespace WebApplication3
             GridView1.DataBind();
             conn.Close();
         }
-        
+
     }
 }

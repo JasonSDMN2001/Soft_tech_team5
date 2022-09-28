@@ -23,6 +23,7 @@
             <SortedDescendingHeaderStyle BackColor="#33276A" />
             <Columns>
                 <asp:HyperLinkField Text="Edit" DataNavigateUrlFields="title" DataNavigateUrlFormatString="editOffer.aspx?titlename={0}" />
+                <asp:HyperLinkField Text="Cancel" DataNavigateUrlFields="title" DataNavigateUrlFormatString="deleteOffer.aspx?titlename={0}" />
             </Columns>
         </asp:GridView>
     </form>
