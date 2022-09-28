@@ -9,7 +9,12 @@
 <body>
     <form id="searchform" runat="server">
         <h2>Search a Project</h2>
-        <asp:TextBox runat="server" /><asp:Button runat="server" Text="Search"/>
+        <table>
+            <tr><td><asp:Label runat="server" Text="Title: "/></td><td><asp:TextBox runat="server" id="title"/></td></tr>
+            <tr><td><asp:Label runat="server" Text="Description: "/></td><td><asp:TextBox runat="server" id="description"/></td></tr>
+            <tr><td><asp:Label runat="server" Text="Recommended Technology: "/></td><td><asp:TextBox runat="server" id="rec_tech"/></td></tr>
+            <tr><td><asp:Button runat="server" Text="Search" ID="searchprojectbtn" OnClick="searchprojectbtn_Click"/></td><td><asp:CheckBox ID="CheckBox1" runat="server" Text="Sort By Oldest" /></td></tr>    
+        </table>
         <br />
         <asp:Label runat="server" Text="Category:   "/>
         <asp:DropDownList runat="server" ID="category">
