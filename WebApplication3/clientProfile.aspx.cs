@@ -45,7 +45,7 @@ namespace WebApplication3
             SQLiteDataReader reader2 = cmd2.ExecuteReader();
             while (reader2.Read())
             {
-                String projectcell = "";
+                String projectcell;
                 TableRow row = new TableRow();
                 TableCell cell = new TableCell();
                 cell.Controls.Add(new LiteralControl("<label>• " + reader2.GetString(0)));
@@ -56,6 +56,10 @@ namespace WebApplication3
                 if (reader2.GetString(2) == "Yes" & reader2.GetString(3) == "Yes")
                 {
                     projectcell = "Completed";
+                }
+                else
+                {
+                    projectcell = "Active";
                 }
                 TableCell cell2 = new TableCell();
                 cell2.Controls.Add(new LiteralControl(projectcell + "</label>"));
