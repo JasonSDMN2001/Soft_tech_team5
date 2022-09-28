@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.SQLite;
@@ -46,9 +46,9 @@ namespace WebApplication3
                     rec_tech.Text = "Recommended Technologies to use:"+lang;
                 }
                 client_username.Text = "Submitted by:  " + read.GetString(12);
-                if (read.GetString(17) == "Yes" & read.GetString(18) == "Yes")
+                if (read.GetString(16) == "Yes" & read.GetString(17) == "Yes")
                 {
-                    complete.Visible = true;
+                    complete1.Visible = true;
                 }
                 else if((String)Session["Type"]=="Developer")
                 {
@@ -89,6 +89,12 @@ namespace WebApplication3
         {
             Session["value"] = titlename;
             Response.Redirect("Recommend.aspx");
+        }
+
+        protected void complete1_Click(object sender, EventArgs e)
+        {
+            Session["value"] = titlename;
+            Response.Redirect("review.aspx");
         }
     }
 }
