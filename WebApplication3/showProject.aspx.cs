@@ -49,6 +49,7 @@ namespace WebApplication3
                 if (read.GetString(17) == "Yes" & read.GetString(18) == "Yes")
                 {
                     complete.Visible = true;
+                    rec_btn.Visible = false;
                 }
                 else if((String)Session["Type"]=="Developer")
                 {
