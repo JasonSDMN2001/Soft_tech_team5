@@ -6,17 +6,11 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .auto-style4 {
-            margin-left: 235px;
-        }
-        .auto-style1 {
-            margin-left: 219px;
-        }
         .auto-style5 {
             margin-left: 184px;
         }
         .auto-style2 {
-            margin-left: 230px;
+            margin-left: 195px;
         }
         .auto-style3 {
             margin-left: 355px;
@@ -30,13 +24,15 @@
         </div>
         <p>
 
-            <asp:Label ID="Label4" runat="server" Text="Username:"></asp:Label>
-            <asp:TextBox ID="TextBox3" runat="server" CssClass="auto-style4" Width="85px" ReadOnly="True"></asp:TextBox>
+            <asp:Label ID="Label4" runat="server" Text="sum:"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
         </p>
         <p>
 
-            <asp:Label ID="Label5" runat="server" Text="Project Title"></asp:Label>
-            <asp:TextBox ID="TextBox4" runat="server" CssClass="auto-style1" Width="85px" ReadOnly="True"></asp:TextBox>
+            <asp:Label ID="Label5" runat="server" Text="Comments:"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
         </p>
         <p>
 
@@ -44,13 +40,13 @@
             <asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style5" Width="85px"></asp:TextBox>
         </p>
         <p>
-            <asp:Label ID="Label3" runat="server" Text="Comments:"></asp:Label>
+            <asp:Label ID="Label3" runat="server" Text="new Comments:"></asp:Label>
             <asp:TextBox ID="TextBox2" runat="server" CssClass="auto-style2" Height="72px" Width="208px"></asp:TextBox>
         </p>
         <p>
             &nbsp;</p>
         <p>
-            <asp:Button ID="Button1" runat="server" CssClass="auto-style3" OnClick="Button1_Click" Text="Submit " />
+            <asp:Button ID="Button1" runat="server" CssClass="auto-style3" OnClick="Button1_Click" Text="Edit" Width="68px" />
         </p>
     </form>
     
