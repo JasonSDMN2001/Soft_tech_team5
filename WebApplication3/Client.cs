@@ -47,8 +47,24 @@ namespace WebApplication3
             conn.Close();
         }
 
-        public void editProject()
+        public void editProject(string previoustitle, string title, string description, string proj_type, string offer_show, string category, string subcategory, string payment_method, string max_price, string interval, string uptime, string rec_tech)
         {
+            SQLiteConnection conn = new SQLiteConnection(db);
+            conn.Open();
+            SQLiteCommand projectCreatecmd = new SQLiteCommand("UPDATE project SET title=@title,description=@description,proj_type=@proj_type,offer_show=@offer_show,category=@category,subcategory=@subcategory,payment_method=@payment_method,max_price=@max_price,interval=@interval,uptime=@uptime,rec_tech=@rec_tech where title ='"+previoustitle+"'", conn);
+            projectCreatecmd.Parameters.AddWithValue("@title", title);
+            projectCreatecmd.Parameters.AddWithValue("@description", description);
+            projectCreatecmd.Parameters.AddWithValue("@proj_type", proj_type);
+            projectCreatecmd.Parameters.AddWithValue("@offer_show", offer_show);
+            projectCreatecmd.Parameters.AddWithValue("@category", category);
+            projectCreatecmd.Parameters.AddWithValue("@subcategory", subcategory);
+            projectCreatecmd.Parameters.AddWithValue("@payment_method", payment_method);
+            projectCreatecmd.Parameters.AddWithValue("@max_price", max_price);
+            projectCreatecmd.Parameters.AddWithValue("@interval", interval);
+            projectCreatecmd.Parameters.AddWithValue("@uptime", uptime);
+            projectCreatecmd.Parameters.AddWithValue("@rec_tech", rec_tech);
+            projectCreatecmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public void assignProject()

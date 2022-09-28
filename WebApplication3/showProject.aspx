@@ -11,9 +11,11 @@
         <table>
             <tr>
                 <td><asp:Label ID="title" runat="server" Text="Title" Font-Bold="True" Font-Size="15pt"></asp:Label></td>
-                <td><asp:Label runat="server" ID="complete" Visible="False" Text="Finished" BackColor="#FFCC66"/></td>
+                <td>
+                    <asp:Button ID="complete1" runat="server" Visible="false" Text="Finished" BackColor="#FFCC66" OnClick="complete1_Click" />
+                </td>
             </tr>
-            <tr><td><asp:Button runat="server" Text="Recommend to a developer" BackColor="#66FFCC" Width="100%" OnClick="Unnamed1_Click" /></td></tr>
+            <tr><td><asp:Button runat="server" Text="Recommend to a developer" BackColor="#66FFCC" Width="100%" OnClick="Unnamed1_Click" ID="rec_btn" /></td></tr>
             <tr>
                 <td><asp:Table runat="server"><asp:TableFooterRow><asp:TableCell id="category" Text="Category"/></asp:TableFooterRow>
                     <asp:TableFooterRow><asp:TableCell id="subcategory" Text="Subcategory"/></asp:TableFooterRow></asp:Table></td>
@@ -21,7 +23,7 @@
                 <td><asp:Label runat="server" ID="client_username" Text="Submitted by:"/></td>
             </tr>
             <tr><td><asp:Label ID="max_price" runat="server" Text="Price" /></td>
-                <td><asp:Label ID="payment_method" runat="server" Text="Payment method" /></td>
+                <td><asp:Label ID="payment_method" runat="server" Text="Payment method: " /></td>
             <td><asp:Label ID="interval" runat="server" Text="" /></td></tr>
             <tr><td><asp:Button runat="server" ID="offerbtn" Text="Make an offer" BackColor="#66FFCC" Width="100%" Visible="false" OnClick="offerbtn_Click" /></td></tr>
         </table>
