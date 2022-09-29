@@ -183,7 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="admintLogIn.html" />
+    <Content Include="adminDeleteClient.aspx" />
+    <Content Include="adminLogin.aspx" />
+    <Content Include="adminMainPage.aspx" />
     <Content Include="clientMainPage.aspx" />
     <Content Include="clientProfile.aspx" />
     <Content Include="Contact.aspx" />
@@ -277,6 +279,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
+    <Compile Include="adminDeleteClient.aspx.cs">
+      <DependentUpon>adminDeleteClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminDeleteClient.aspx.designer.cs">
+      <DependentUpon>adminDeleteClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminLogin.aspx.cs">
+      <DependentUpon>adminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminLogin.aspx.designer.cs">
+      <DependentUpon>adminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminMainPage.aspx.cs">
+      <DependentUpon>adminMainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminMainPage.aspx.designer.cs">
+      <DependentUpon>adminMainPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>

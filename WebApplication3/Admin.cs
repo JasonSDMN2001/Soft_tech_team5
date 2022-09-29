@@ -25,21 +25,5 @@ namespace WebApplication3
         void searchProject()
         {
         }
-
-        void searchDev()
-        {
-        }
-
-        void projectDescShow()
-        {
-        }
-
-        void profileShow()
-        {
-        }
-
-        void searchClient()
-        {
-        }
     }
 }

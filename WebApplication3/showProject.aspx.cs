@@ -120,6 +120,7 @@ namespace WebApplication3
                 SQLiteCommand ucmd = new SQLiteCommand("Update dev_offer set accepted='Yes',available='No' where title='" + title + "' and sum_offer='"+sum+"' and date_offer='"+date+"' and comments='"+com+"'", conn);
                 ucmd.ExecuteNonQuery();
                 row.Cells.Clear();
+                conn.Close();
             }
         }
 
