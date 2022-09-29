@@ -33,13 +33,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Button profileShow;
 
         /// <summary>
-        /// rating control.
+        /// searchdev control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button rating;
+        protected global::System.Web.UI.WebControls.Button searchdev;
 
         /// <summary>
         /// editoffers control.
@@ -76,15 +76,6 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button searchProject;
-
-        /// <summary>
-        /// searchdev control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button searchdev;
 
         /// <summary>
         /// devframe control.

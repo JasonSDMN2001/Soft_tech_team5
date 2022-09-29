@@ -71,10 +71,20 @@ namespace WebApplication3
                     btnM.Click += new System.EventHandler(this.btnM_Click);
                     cell2.Controls.Add(btnM);
                 }
+                else if (reader2.GetString(2) == "No" & reader2.GetString(3) == "No")
+                {
+                    projectcell = "Active";
+                    cell2.Controls.Add(new LiteralControl(projectcell + "</label>"));
+                }
                 row.Cells.Add(cell2);
                 TableCell cell3 = new TableCell();
+                
                 cell3.Controls.Add(new LiteralControl("<a href=\"showProject.aspx?titlename=" + title + "\">" + title + "</a>"));
                 row.Cells.Add(cell3);
+                TableCell cell4 = new TableCell();
+                cell4.Controls.Add(new LiteralControl("<a href=\"projectEdit.aspx?ogtitle=" + title + "\">Edit</a>"));
+                row.Cells.Add(cell4);
+
                 projectTable.Rows.Add(row);
             }
             conn.Close();
@@ -87,9 +97,8 @@ namespace WebApplication3
             string query3 = "Update project set client_done='Yes' where client_username='"+user+"'";
             SQLiteCommand cmd3 = new SQLiteCommand(query3, conn);
             cmd3.ExecuteNonQuery();
-            conn.Clone();
-            Session["username"] = user;
-            Session["value"] = title;
+            conn.Close();
+            
             Response.Redirect("review.aspx");
         }
 

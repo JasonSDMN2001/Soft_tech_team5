@@ -27,8 +27,8 @@ namespace WebApplication3
             SQLiteConnection conn = new SQLiteConnection(db);
             string dev = "mitsos";
             conn.Open();
-            SQLiteCommand projectCreatecmd = new SQLiteCommand("Insert into project(title,description,proj_type,offer_show,category,subcategory,payment_method,max_price,interval,uptime,rec_tech,client_username,dev_username,creation_date) Values("+
-                "@title,@description,@proj_type,@offer_show,@category,@subcategory,@payment_method,@max_price,@interval,@uptime,@rec_tech,@client_username,@dev_username,@creation_date)", conn);
+            SQLiteCommand projectCreatecmd = new SQLiteCommand("Insert into project(title,description,proj_type,offer_show,category,subcategory,payment_method,max_price,interval,uptime,rec_tech,client_username,dev_username,creation_date,dev_done,client_done) Values("+
+                "@title,@description,@proj_type,@offer_show,@category,@subcategory,@payment_method,@max_price,@interval,@uptime,@rec_tech,@client_username,@dev_username,@creation_date,'No','No')", conn);
             projectCreatecmd.Parameters.AddWithValue("@title", title);
             projectCreatecmd.Parameters.AddWithValue("@description", description);
             projectCreatecmd.Parameters.AddWithValue("@proj_type", proj_type);
