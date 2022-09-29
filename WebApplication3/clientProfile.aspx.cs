@@ -13,9 +13,10 @@ namespace WebApplication3
     public partial class clientProfile : System.Web.UI.Page
     {
         private string title;
+        private string user;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string user = Session["Username"].ToString();
+            user = Session["Username"].ToString();
             SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
             conn.Open();
             String query1 = "Select * from client where username='" + user + "'";
@@ -61,10 +62,14 @@ namespace WebApplication3
                     projectcell = "Completed";
                     cell2.Controls.Add(new LiteralControl(projectcell + "</label>"));
                 }
-                else
+                else if(reader2.GetString(2) == "No" & reader2.GetString(3) == "Yes")
                 {
-                    projectcell = "Active";
-                    cell2.Controls.Add(new LiteralControl("</label><a href=\"projectEdit?ogtitle="+reader2.GetString(0)+"\">" + projectcell + "</a>"));
+                    projectcell = "Active,press to finish";
+                    LinkButton btnM = new LinkButton();
+                    btnM.Text = "Complete";
+                    btnM.Enabled = true;
+                    btnM.Click += new System.EventHandler(this.btnM_Click);
+                    cell2.Controls.Add(btnM);
                 }
                 row.Cells.Add(cell2);
                 TableCell cell3 = new TableCell();
@@ -75,7 +80,18 @@ namespace WebApplication3
             conn.Close();
         }
 
-
+        protected void btnM_Click(object sender, EventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+            conn.Open();
+            string query3 = "Update project set client_done='Yes' where client_username='"+user+"'";
+            SQLiteCommand cmd3 = new SQLiteCommand(query3, conn);
+            cmd3.ExecuteNonQuery();
+            conn.Clone();
+            Session["username"] = user;
+            Session["value"] = title;
+            Response.Redirect("review.aspx");
+        }
 
         protected void Button1_Click(object sender, EventArgs e)
         {

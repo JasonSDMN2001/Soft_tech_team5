@@ -44,7 +44,7 @@ namespace WebApplication3
             reviewcmd.Parameters.AddWithValue("@comment", TextBox2.Text);
             reviewcmd.ExecuteNonQuery();
             conn.Close();
-            Response.Redirect("showProject.aspx");
+            Response.Redirect("clientProfile.aspx");
         }
     }
 }
