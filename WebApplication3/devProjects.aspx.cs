@@ -11,33 +11,38 @@ namespace WebApplication3
 {
     public partial class devProjects : System.Web.UI.Page
     {
+        private string accepted;
+        private string titlename;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-
-
-                if (DropDownList1.SelectedItem.Text == "Active")
+                string user = Session["Username"].ToString();
+                SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+                conn.Open();
+                SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,rec_tech,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='No' and dev_done='No' ", conn);
+                DataSet ds = new System.Data.DataSet();
+                dataadapter.Fill(ds);
+                GridView1.DataSource = ds.Tables[0];
+                GridView1.DataBind();
+                conn.Close();
+                
+                /*conn.Open();
+                SQLiteCommand titlecmd = new SQLiteCommand("Select title from project where dev_username='" + user + "' and client_done='No' or dev_done='No' ", conn);
+                SQLiteDataReader reader = titlecmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    string user = Session["Username"].ToString();
-                    SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
-                    conn.Open();
-                    String query1 = "Select title,description,category,subcategory,client_username,language,dev_price,client_done,dev_done from project where dev_username=@dev_username and client_done=@client_done and dev_done=@dev_done";
-                    
-                    SQLiteCommand cmd = new SQLiteCommand(query1, conn);
-                    cmd.Parameters.AddWithValue("@dev_username", user);
-                    cmd.Parameters.AddWithValue("@client_done", "Yes");
-                    cmd.Parameters.AddWithValue("@dev_done", "Yes");
-                   // SQLiteDataReader reader = cmd.ExecuteReader();
-
-                      SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,rec_tech,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='No' or dev_done='No' ", conn);
-                      DataSet ds = new System.Data.DataSet();
-                      dataadapter.Fill(ds);
-                      GridView1.DataSource = ds.Tables[0];
-                      GridView1.DataBind();
- 
-                    conn.Close();
+                    titlename = reader.GetString(0);
                 }
+                SQLiteCommand offercmd = new SQLiteCommand("Select accepted from dev_offer where username='" +user + "' and title='"+titlename+"'", conn);
+                SQLiteDataReader read = offercmd.ExecuteReader();
+                while (read.Read())
+                {
+                    accepted = read.GetString(0);
+                }
+                conn.Close();*/
+                
             }
         }
 
@@ -49,16 +54,7 @@ namespace WebApplication3
                 string user = Session["Username"].ToString();
                 SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
                 conn.Open();
-                String query1 = "Select title,description,category,subcategory,client_username,language,dev_price,client_done,dev_done from project where dev_username=@dev_username and client_done=@client_done and dev_done=@dev_done";
-                /*  if (CheckBox1.Checked)
-                  {
-                      query1 += "Order by creation_date asc";
-                  } */
-                SQLiteCommand cmd = new SQLiteCommand(query1, conn);
-                cmd.Parameters.AddWithValue("@dev_username", user);
-                cmd.Parameters.AddWithValue("@client_done", "Yes");
-                cmd.Parameters.AddWithValue("@dev_done", "Yes");
-                // SQLiteDataReader reader = cmd.ExecuteReader();
+                
 
                 SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,rec_tech,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='No' or dev_done='No' ", conn);
                 DataSet ds = new System.Data.DataSet();
@@ -67,23 +63,14 @@ namespace WebApplication3
                 GridView1.DataBind();
 
                 conn.Close();
+                
             }
             else if(DropDownList1.SelectedItem.Text == "Inactive")
             {
                 string user = Session["Username"].ToString();
                 SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
                 conn.Open();
-                String query1 = "Select title,description,category,subcategory,client_username,language,dev_price,client_done,dev_done from project where dev_username=@dev_username and client_done=@client_done and dev_done=@dev_done";
-                /*  if (CheckBox1.Checked)
-                  {
-                      query1 += "Order by creation_date asc";
-                  } */
-                SQLiteCommand cmd = new SQLiteCommand(query1, conn);
-                cmd.Parameters.AddWithValue("@dev_username", user);
-                cmd.Parameters.AddWithValue("@client_done", "Yes");
-                cmd.Parameters.AddWithValue("@dev_done", "Yes");
-                // SQLiteDataReader reader = cmd.ExecuteReader();
-
+                
                 SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,rec_tech,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='Yes' and dev_done='Yes' ", conn);
                 DataSet ds = new System.Data.DataSet();
                 dataadapter.Fill(ds);
@@ -91,6 +78,26 @@ namespace WebApplication3
                 GridView1.DataBind();
 
                 conn.Close();
+            }
+        }
+
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "dev_done")
+            {
+                String dev = Session["Username"].ToString();
+                int idx = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = GridView1.Rows[idx];
+                string title = row.Cells[1].Text;
+                
+                SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+                conn.Open();
+                SQLiteCommand cmd = new SQLiteCommand("Update project set dev_done='Yes' where title='" + title +"' and dev_username='"+dev+"'", conn);
+                cmd.Parameters.AddWithValue("@dev", dev);
+                cmd.ExecuteNonQuery();
+                
+                row.Cells.Clear();
+
             }
         }
     }
