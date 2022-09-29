@@ -12,6 +12,9 @@
         <asp:TextBox ID="SearchBox" runat="server"></asp:TextBox>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Search" />
         <asp:CheckBox ID="CheckBox1" runat="server" Text="Sort By Joined Date" />
+        <asp:CheckBox ID="CheckBox2" runat="server" Text="Sort By Description" />
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+
         <asp:Panel ID="MotherPanel" runat="server" Height="248px">
             <asp:Table ID="TableShow" runat="server" Height="243px" Width="961px">
             </asp:Table>

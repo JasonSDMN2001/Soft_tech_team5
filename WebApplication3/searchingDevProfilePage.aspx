@@ -19,6 +19,27 @@
                     <asp:ListItem>HTML 5</asp:ListItem><asp:ListItem>CSS</asp:ListItem><asp:ListItem>web designer</asp:ListItem>
                     <asp:ListItem>web developer</asp:ListItem><asp:ListItem>algorythms</asp:ListItem>
         </asp:DropDownList>
+        <asp:CheckBox ID="CheckBox3" runat="server" Text="Sort By Rating" />
+         <asp:DropDownList runat="server" ID="DropDownList1">
+             <asp:ListItem>1</asp:ListItem>
+             <asp:ListItem>2</asp:ListItem>
+             <asp:ListItem>3</asp:ListItem>
+             <asp:ListItem>4</asp:ListItem>
+             <asp:ListItem>5</asp:ListItem>
+         </asp:DropDownList>
+         <asp:DropDownList runat="server" ID="DropDownList2">
+             <asp:ListItem>1</asp:ListItem>
+             <asp:ListItem>2</asp:ListItem>
+             <asp:ListItem>3</asp:ListItem>
+             <asp:ListItem>4</asp:ListItem>
+             <asp:ListItem>5</asp:ListItem>
+         </asp:DropDownList>
+         
+         <br />
+         <asp:CheckBox ID="CheckBox4" runat="server" Text="Sort By # of Projects" />
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+          <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+
         <asp:Panel ID="MotherPanel" runat="server" Height="248px">
             <asp:Table ID="TableShow" runat="server" Height="243px" Width="961px">
             </asp:Table>

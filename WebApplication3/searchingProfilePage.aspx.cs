@@ -24,6 +24,10 @@ namespace WebApplication3
             {
                 query1 += "Order by creation_date asc";
             }
+            if (CheckBox2.Checked)
+            {
+                query1 = "select email from client where description like '%" + TextBox1.Text + "%'";
+            }
             SQLiteCommand cmd = new SQLiteCommand(query1, conn);
             SQLiteDataReader reader = cmd.ExecuteReader();
             string temp;
