@@ -44,6 +44,9 @@ namespace WebApplication3
             editOffer2cmd.ExecuteNonQuery();
             conn.Close();
             Response.Redirect("viewDevOffers.aspx");
+            
+
+
         }
     }
 }
