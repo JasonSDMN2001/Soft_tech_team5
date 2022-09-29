@@ -1,28 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="WebApplication3.login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="adminLogin.aspx.cs" Inherits="WebApplication3.adminLogin" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Log In</title>
-    <style>
-        table {
-            width: 80%
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <fieldset>
-            <table>
+        <table>
                 <tr>
-                    <td style="background-color:lightseagreen;">
+                    <td style="background-color:limegreen;">
                         <h3 style="text-align:center">
-                            Log in form
+                            Log in as an Admin
                         </h3>
                     </td>
-                    <td style="background-color:lightseagreen"></td>
+                    <td style="background-color:limegreen"></td>
                 </tr>
 
                 <tr>
@@ -45,10 +38,6 @@
 
                 <tr><td><asp:Button runat="server" class="editbtn" Text="Login" OnClick="Unnamed1_Click"/></td></tr>
             </table>
-            </fieldset>
-        </div>
-        <asp:HyperLink runat="server" text="Log in as an Admin" NavigateUrl="adminLogin.aspx"/>
-        <!--<iframe id="testframe" src="indexing.aspx" height="100%" width="80%"></iframe>-->
     </form>
 </body>
 </html>
