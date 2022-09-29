@@ -33,8 +33,9 @@
         <p>
             <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Large" Text="Developers offer:" Visible="False"></asp:Label>
         </p>
-        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand">
             <AlternatingRowStyle BackColor="White" />
+            
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -45,6 +46,9 @@
             <SortedAscendingHeaderStyle BackColor="#246B61" />
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
+            <Columns>
+                <asp:ButtonField ButtonType="Button" CausesValidation="True"  CommandName="offering" Text="Accept Offer"/>
+            </Columns>
         </asp:GridView>
     </form>
 </body>

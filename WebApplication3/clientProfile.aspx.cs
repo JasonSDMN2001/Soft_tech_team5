@@ -12,6 +12,7 @@ namespace WebApplication3
 {
     public partial class clientProfile : System.Web.UI.Page
     {
+        private string title;
         protected void Page_Load(object sender, EventArgs e)
         {
             string user = Session["Username"].ToString();
@@ -45,6 +46,7 @@ namespace WebApplication3
             SQLiteDataReader reader2 = cmd2.ExecuteReader();
             while (reader2.Read())
             {
+                title= reader2.GetString(0);
                 String projectcell;
                 TableRow row = new TableRow();
                 TableCell cell = new TableCell();
@@ -65,6 +67,9 @@ namespace WebApplication3
                     cell2.Controls.Add(new LiteralControl("</label><a href=\"projectEdit?ogtitle="+reader2.GetString(0)+"\">" + projectcell + "</a>"));
                 }
                 row.Cells.Add(cell2);
+                TableCell cell3 = new TableCell();
+                cell3.Controls.Add(new LiteralControl("<a href=\"showProject.aspx?titlename=" + title + "\">" + title + "</a>"));
+                row.Cells.Add(cell3);
                 projectTable.Rows.Add(row);
             }
             conn.Close();

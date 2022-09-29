@@ -27,7 +27,7 @@ namespace WebApplication3
             SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
             conn.Open();
 
-            SQLiteCommand offerCreatecmd = new SQLiteCommand("Insert into dev_offer(username,title,sum_offer,date_offer,comments) Values(@username,@title,@sum_offer,@date_offer,@comments)", conn);
+            SQLiteCommand offerCreatecmd = new SQLiteCommand("Insert into dev_offer(username,title,sum_offer,date_offer,comments,available,accepted) Values(@username,@title,@sum_offer,@date_offer,@comments,'Yes','No')", conn);
             offerCreatecmd.Parameters.AddWithValue("@username", TextBox3.Text);
             offerCreatecmd.Parameters.AddWithValue("@title", TextBox4.Text);
             offerCreatecmd.Parameters.AddWithValue("@sum_offer", TextBox1.Text);
