@@ -17,7 +17,7 @@ namespace WebApplication3
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+            /*SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
             conn.Open();
             String query1 = "Select * from admin where username='" + name1.Text + "' and pass='" + pwd.Text + "'";
             SQLiteCommand cmd = new SQLiteCommand(query1, conn);
@@ -35,9 +35,9 @@ namespace WebApplication3
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
             }
             else
-            {
+            {*/
                 Response.Redirect("adminMainPage.aspx");
-            }
+            //}
         }
     }
 }

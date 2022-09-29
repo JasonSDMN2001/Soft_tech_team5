@@ -184,6 +184,8 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="adminDeleteClient.aspx" />
+    <Content Include="adminDeleteDev.aspx" />
+    <Content Include="adminDeleteProject.aspx" />
     <Content Include="adminLogin.aspx" />
     <Content Include="adminMainPage.aspx" />
     <Content Include="clientMainPage.aspx" />
@@ -285,6 +287,20 @@
     </Compile>
     <Compile Include="adminDeleteClient.aspx.designer.cs">
       <DependentUpon>adminDeleteClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminDeleteDev.aspx.cs">
+      <DependentUpon>adminDeleteDev.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminDeleteDev.aspx.designer.cs">
+      <DependentUpon>adminDeleteDev.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminDeleteProject.aspx.cs">
+      <DependentUpon>adminDeleteProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminDeleteProject.aspx.designer.cs">
+      <DependentUpon>adminDeleteProject.aspx</DependentUpon>
     </Compile>
     <Compile Include="adminLogin.aspx.cs">
       <DependentUpon>adminLogin.aspx</DependentUpon>
