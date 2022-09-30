@@ -182,7 +182,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="adminDeleteClient.aspx" />
     <Content Include="adminDeleteDev.aspx" />
     <Content Include="adminDeleteProject.aspx" />
@@ -319,13 +318,6 @@
       <DependentUpon>adminMainPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="clientMainPage.aspx.cs">
