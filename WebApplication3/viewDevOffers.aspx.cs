@@ -15,31 +15,7 @@ namespace WebApplication3
         private String db = "Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;";
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*if (!IsPostBack)
-            {
-                if (DropDownList1.SelectedItem.Text == "Active Projects")
-                {
-                    string user = Session["Username"].ToString();
-                    SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
-                    conn.Open();
-                    String query1 = "Select title from project where dev_username='' ";
-                    SQLiteCommand cmd = new SQLiteCommand(query1, conn);
-                    SQLiteDataReader reader = cmd.ExecuteReader();
-                    string [] title = new string[];
-                    int i = 0;
-                    while (reader.Read())
-                    {
-                        title[i] = reader.GetString(0);
-                        //if (title != null)
-                       // {
-                        //    browseOffers(title);
-                        //}
-                        i = i + 1;
-                    }
-                    conn.Close();
-                    //browseOffers();
-                }
-            } */
+            
             browseOffers();
                 
         }

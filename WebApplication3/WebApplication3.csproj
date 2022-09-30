@@ -218,9 +218,11 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="incomingOffers.aspx" />
     <Content Include="index.aspx" />
     <Content Include="devProfileEdit.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="offerNews.aspx" />
     <Content Include="profileEdit.aspx" />
     <Content Include="projectEdit.aspx" />
     <Content Include="Recommend.aspx" />
@@ -421,6 +423,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="incomingOffers.aspx.cs">
+      <DependentUpon>incomingOffers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="incomingOffers.aspx.designer.cs">
+      <DependentUpon>incomingOffers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -434,6 +443,13 @@
     </Compile>
     <Compile Include="devProfileEdit.aspx.designer.cs">
       <DependentUpon>devProfileEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="offerNews.aspx.cs">
+      <DependentUpon>offerNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="offerNews.aspx.designer.cs">
+      <DependentUpon>offerNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="review.aspx.cs">
       <DependentUpon>review.aspx</DependentUpon>

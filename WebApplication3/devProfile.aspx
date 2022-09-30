@@ -41,15 +41,15 @@
         .auto-style12 {
             height: 935px;
         }
-        .auto-style16 {
-            width: 319px;
+        .auto-style17 {
+            margin-left: 397px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:Table class="auto-style1" ID="TableNotifications" runat="server" Height="57px" BackColor="#DFFFFF">
-            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Notifications: "/></asp:TableCell></asp:TableRow></asp:Table><table class="auto-style1">
+            <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Notifications: "/></asp:TableCell></asp:TableRow></asp:Table><asp:Button ID="Button2" runat="server" BackColor="#FF3300" CssClass="auto-style17" OnClick="Button2_Click" Text="News" Width="90px" /><table class="auto-style1">
             <tr><td class="auto-style10"><asp:Image ID="ImageID" runat="server" Height="119px" Width="39%" /></td>
              
             <td class="auto-style2">
@@ -68,8 +68,7 @@
                 <td class="auto-style9"><asp:Label ID="skills2" runat="server" Text="Skills:" /></td>
             </tr>
            <tr><td class="auto-style11"><asp:Label ID="Link1" runat="server" Text="Link:" /></td>
-               <td><label><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">LinkButton</asp:LinkButton></label></td></tr>
-                <tr><td class="auto-style11"><asp:Label ID="Label1" runat="server" Text="Rating:" />
+               <td><label><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">LinkButton</asp:LinkButton></label></td></tr><tr><td class="auto-style11"><asp:Label ID="Label1" runat="server" Text="Rating:" />
                     <asp:GridView ID="GridView1" runat="server"></asp:GridView></td>
                     <td><asp:Label ID="Label3" runat="server" Text="Finished Projects:" /><asp:GridView ID="GridView2" runat="server"></asp:GridView></td></tr>
                 <tr><td class="auto-style11"><asp:Label ID="Label2" runat="server" Text="Bio:" /></td></tr>

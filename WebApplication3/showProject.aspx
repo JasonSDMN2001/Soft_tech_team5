@@ -12,8 +12,7 @@
             <tr>
                 <td><asp:Label ID="title" runat="server" Text="Title" Font-Bold="True" Font-Size="15pt"></asp:Label></td>
                 <td>
-                    <asp:Button ID="complete1" runat="server" Visible="false" Text="Finished" BackColor="#FFCC66" OnClick="complete1_Click" />
-                </td>
+                    <asp:Label ID="complete" Visible="false" runat="server" Text="Finished" Font-Bold="True" Font-Size="15pt" BackColor="OrangeRed"></asp:Label></td>
             </tr>
             <tr><td><asp:Button runat="server" Text="Recommend to a developer" BackColor="#66FFCC" Width="100%" OnClick="Unnamed1_Click" ID="rec_btn" /></td></tr>
             <tr>

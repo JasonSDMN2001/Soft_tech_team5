@@ -11,6 +11,8 @@ namespace WebApplication3
 {
     public partial class Recommend : System.Web.UI.Page
     {
+        private String title;
+        private String user;
         protected String db = "Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;";
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -34,8 +36,8 @@ namespace WebApplication3
         {
             if (e.CommandName == "Recommending")
             {
-                String title = Session["value"].ToString();
-                String user = Session["Username"].ToString();
+                title = Session["value"].ToString();
+                user = Session["Username"].ToString();
                 int idx = Convert.ToInt32(e.CommandArgument);
                 GridViewRow row = GridView1.Rows[idx];
                 string recdev = row.Cells[1].Text;

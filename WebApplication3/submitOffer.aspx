@@ -50,7 +50,7 @@
         <p>
             &nbsp;</p>
         <p>
-            <asp:Button ID="Button1" runat="server" CssClass="auto-style3" OnClick="Button1_Click" Text="Submit " />
+            <asp:Button ID="Button1" runat="server" CssClass="auto-style3" OnClick="Button1_Click" Text="Submit " DataNavigateUrlFormatString="showProject.aspx?titlename={0}"/>
         </p>
     </form>
 </body>

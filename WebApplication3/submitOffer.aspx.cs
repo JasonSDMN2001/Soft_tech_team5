@@ -34,7 +34,11 @@ namespace WebApplication3
             offerCreatecmd.Parameters.AddWithValue("@date_offer", date);
             offerCreatecmd.Parameters.AddWithValue("@comments", TextBox2.Text);
             offerCreatecmd.ExecuteNonQuery();
-            conn.Close();
+
+            String query = "update project set num_offers = num_offers + 1 where title='" + TextBox4.Text + "'";
+            SQLiteCommand increasecmd = new SQLiteCommand(query, conn);
+            increasecmd.ExecuteNonQuery();
+            conn.Close(); 
             Response.Redirect("showProject.aspx");
         }
     }

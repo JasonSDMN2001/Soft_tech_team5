@@ -50,7 +50,7 @@ namespace WebApplication3
                     client_username.Text = "Submitted by:  " + read.GetString(12);
                     if (read.GetString(16) == "Yes" & read.GetString(17) == "Yes")
                     {
-                        //complete1.Visible = true;
+                        complete.Visible = true;
                         rec_btn.Visible = false;
                     }
                     else if ((String)Session["Type"] == "Developer")
@@ -84,14 +84,15 @@ namespace WebApplication3
 
         protected void offerbtn_Click(object sender, EventArgs e)
         {
-            Session["value"] = titlename;
+            Session["value"] = Request.Params["titlename"];
             Response.Redirect("submitOffer.aspx");
            
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            Session["value"] = titlename;
+            
+            Session["value"] = Request.Params["titlename"];
             Response.Redirect("Recommend.aspx");
         }
 
