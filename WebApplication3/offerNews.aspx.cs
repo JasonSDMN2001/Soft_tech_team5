@@ -21,7 +21,7 @@ namespace WebApplication3
             conn.Open();
             try
             {
-                String query = "Select title from dev_offer where username= '" + user + "' and status='accepted' ";
+                String query = "Select title from dev_offer where username= '" + user + "' and accepted='Yes' ";
                 SQLiteCommand cmd = new SQLiteCommand(query, conn);
                 SQLiteDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -44,9 +44,9 @@ namespace WebApplication3
                 {
                     TableNotifications.Visible = false;
                 }
-                String query3 = "Delete from dev_offer where username='" + user + "' and status='accepted' ";
-                SQLiteCommand cmd3 = new SQLiteCommand(query3, conn);
-                cmd3.ExecuteNonQuery(); 
+                //String query3 = "Delete from dev_offer where username='" + user + "' and accepted='Yes' ";
+                //SQLiteCommand cmd3 = new SQLiteCommand(query3, conn);
+                //cmd3.ExecuteNonQuery(); 
             }
             catch
             {
@@ -62,7 +62,7 @@ namespace WebApplication3
             string user = Session["Username"].ToString();
             SQLiteConnection conn = new SQLiteConnection(db);
             conn.Open();
-            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,sum_offer,date_offer,comments,status from dev_offer where username= '" + user + "'", conn);
+            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,sum_offer,date_offer,comments,accepted from dev_offer where username= '" + user + "'", conn);
             DataSet ds = new System.Data.DataSet();
             dataadapter.Fill(ds);
             GridView1.DataSource = ds.Tables[0];
