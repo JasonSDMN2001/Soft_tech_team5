@@ -47,6 +47,7 @@
             </table>
             </fieldset>
         </div>
+        <asp:HyperLink runat="server" text="Log in as an Admin" NavigateUrl="adminLogin.aspx"/>
         <!--<iframe id="testframe" src="indexing.aspx" height="100%" width="80%"></iframe>-->
     </form>
 </body>

@@ -12,8 +12,7 @@
             <tr>
                 <td><asp:Label ID="title" runat="server" Text="Title" Font-Bold="True" Font-Size="15pt"></asp:Label></td>
                 <td>
-                    <asp:Button ID="complete1" runat="server" Visible="false" Text="Finished" BackColor="#FFCC66" OnClick="complete1_Click" />
-                </td>
+                    <asp:Label ID="complete" Visible="false" runat="server" Text="Finished" Font-Bold="True" Font-Size="15pt" BackColor="OrangeRed"></asp:Label></td>
             </tr>
             <tr><td><asp:Button runat="server" Text="Recommend to a developer" BackColor="#66FFCC" Width="100%" OnClick="Unnamed1_Click" ID="rec_btn" /></td></tr>
             <tr>
@@ -33,8 +32,9 @@
         <p>
             <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Large" Text="Developers offer:" Visible="False"></asp:Label>
         </p>
-        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand">
             <AlternatingRowStyle BackColor="White" />
+            
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -45,6 +45,9 @@
             <SortedAscendingHeaderStyle BackColor="#246B61" />
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
+            <Columns>
+                <asp:ButtonField ButtonType="Button" CausesValidation="True"  CommandName="offering" Text="Accept Offer"/>
+            </Columns>
         </asp:GridView>
     </form>
 </body>

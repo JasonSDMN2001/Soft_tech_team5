@@ -38,5 +38,9 @@ namespace WebApplication3
         {
             clientframe.Src = "searchingDevProfilePage.aspx";
         }
+
+        protected void editProject_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
