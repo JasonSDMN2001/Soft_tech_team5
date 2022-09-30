@@ -55,7 +55,7 @@ namespace WebApplication3
                 while (reader2.Read())
                 {
                     anyNotifications = true;
-                    String notified = reader2.GetString(0) + " recommended you to check out the project '" + reader2.GetString(1) + "'";
+                    String notified = reader2.GetString(2) + " recommended you to check out the project '" + reader2.GetString(1) + "'";
                     TableRow row = new TableRow();
                     TableCell cell = new TableCell();
                     cell.Controls.Add(new LiteralControl("<label>• " + notified + "</label>"));
@@ -105,6 +105,12 @@ namespace WebApplication3
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             LinkButton1.PostBackUrl = LinkButton1.Text;
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            
+            Response.Redirect("offerNews.aspx");
         }
     }
 }

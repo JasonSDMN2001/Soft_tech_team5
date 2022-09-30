@@ -217,6 +217,7 @@
     <Content Include="index.aspx" />
     <Content Include="devProfileEdit.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="offerNews.aspx" />
     <Content Include="profileEdit.aspx" />
     <Content Include="projectEdit.aspx" />
     <Content Include="Recommend.aspx" />
@@ -395,6 +396,13 @@
     </Compile>
     <Compile Include="devProfileEdit.aspx.designer.cs">
       <DependentUpon>devProfileEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="offerNews.aspx.cs">
+      <DependentUpon>offerNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="offerNews.aspx.designer.cs">
+      <DependentUpon>offerNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="review.aspx.cs">
       <DependentUpon>review.aspx</DependentUpon>

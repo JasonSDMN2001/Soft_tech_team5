@@ -12,6 +12,7 @@ namespace WebApplication3
 {
     public partial class clientProfile : System.Web.UI.Page
     {
+        Boolean anyNotifications = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             string user = Session["Username"].ToString();
@@ -66,7 +67,10 @@ namespace WebApplication3
                 }
                 row.Cells.Add(cell2);
                 projectTable.Rows.Add(row);
+
+
             }
+
             conn.Close();
         }
 
