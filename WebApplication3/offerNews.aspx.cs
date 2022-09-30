@@ -69,5 +69,29 @@ namespace WebApplication3
             GridView1.DataBind();
             conn.Close();
         }
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                for (int i = 4; i < 5; i++)
+                {
+                    foreach (Control control in e.Row.Cells[i].Controls)
+                    {
+                        if (control.GetType().Name == "Label")
+                        {
+                            if (string.IsNullOrEmpty((control as Label).Text))
+                            {
+                                e.Row.Cells[i].Text = "unknown";
+                            }
+                        }
+                    }
+                    if (e.Row.Cells[i].Text == "&nbsp;")
+                    {
+                        e.Row.Cells[i].Text = "unknown";
+                    }
+                }
+            }
+        }
     }
 }

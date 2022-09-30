@@ -42,7 +42,7 @@
             height: 935px;
         }
         .auto-style17 {
-            margin-left: 1248px;
+            margin-left: 397px;
         }
     </style>
 </head>

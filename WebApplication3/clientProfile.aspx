@@ -12,7 +12,7 @@
         .auto-style2 {
             height: 435px;
         }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server" class="auto-style2">

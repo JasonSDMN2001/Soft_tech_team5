@@ -12,8 +12,7 @@
             <asp:TableRow><asp:TableCell><asp:Label runat="server" Text="Notifications: "/></asp:TableCell></asp:TableRow></asp:Table><p>
             &nbsp;</p><p>
             &nbsp;<asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Browse submitted offers"></asp:Label></p><p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p><asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None" Height="199px" Width="409px">
-            <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p><asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" GridLines="None" Height="199px" Width="409px" OnRowDataBound="GridView1_RowDataBound"><FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
             <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
             <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
             <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
