@@ -14,7 +14,7 @@ namespace WebApplication3
 
         void projectDescShow();
 
-        void profileShow();
+        //void profileShow();
 
         void profileCreate(String email, String username, String pass, String firstname, String lastname);
 

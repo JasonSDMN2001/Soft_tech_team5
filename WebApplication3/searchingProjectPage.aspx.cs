@@ -40,6 +40,8 @@ namespace WebApplication3
             {
                 datecheck = "Order by creation_date asc";
             }
+      
+  
             searchquery = "Select title,creation_date,max_price,rec_tech from project where title like '%"+title.Text+"%' and description like '%"+description.Text+"%' and rec_tech like '%"+rec_tech.Text+"%' and proj_type='Public'"+ViewState["categorycheck"]+ ViewState["subcategorycheck"] + datecheck;
             SQLiteDataAdapter dataadapter = new SQLiteDataAdapter(searchquery, conn);
             DataSet ds = new DataSet();

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Web.UI;
 
 namespace WebApplication3
 {
@@ -18,18 +20,79 @@ namespace WebApplication3
         {
         }
 
+        public SQLiteDataAdapter viewDevOffers(string username)
+        {
+            SQLiteConnection conn = new SQLiteConnection(db);
+            conn.Open();
+            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,sum_offer,date_offer,comments from dev_offer where username= '" + username + "'", conn);
+            conn.Close();
+            return dataadapter;
+        }
+
+        
         public void submitProjectOffer(String name,String titlos,String sum,String offerdate,String comments)
         {
-           
+            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+            conn.Open();
 
+            SQLiteCommand offerCreatecmd = new SQLiteCommand("Insert into dev_offer(username,title,sum_offer,date_offer,comments,available,accepted) Values(@username,@title,@sum_offer,@date_offer,@comments,'Yes','No')", conn);
+            offerCreatecmd.Parameters.AddWithValue("@username", name);
+            offerCreatecmd.Parameters.AddWithValue("@title", titlos);
+            offerCreatecmd.Parameters.AddWithValue("@sum_offer", sum);
+            offerCreatecmd.Parameters.AddWithValue("@date_offer", offerdate);
+            offerCreatecmd.Parameters.AddWithValue("@comments", comments);
+            offerCreatecmd.ExecuteNonQuery();
+
+            String query = "update project set num_offers = num_offers + 1 where title='" + titlos + "'";
+            SQLiteCommand increasecmd = new SQLiteCommand(query, conn);
+            increasecmd.ExecuteNonQuery();
+            conn.Close();
+
+        }
+
+        public SQLiteDataAdapter devInactiveProjects(string username)
+        {
+            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+            conn.Open();
+            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,rec_tech,dev_price,client_done,dev_done from project where dev_username='" + username + "' and client_done='Yes' and dev_done='Yes' ", conn);
+            conn.Close();
+            return dataadapter;
+        }
+
+        public SQLiteDataAdapter devActiveProjects(string username)
+        {
+            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+            conn.Open();
+            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,rec_tech,dev_price,client_done,dev_done from project where dev_username='" + username + "' and client_done='No' or dev_done='No' ", conn);
+            conn.Close();
+            return dataadapter;
         }
 
         public void addProjectCategory()
         {
         }
 
-        public void editCancelOffer()
+        public void editOffer(string username,string titlos,string poso,string comments,string day)
         {
+            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+            conn.Open();
+            String query = "update dev_offer set sum_offer=@sum_offer,date_offer=@date_offer,comments=@comments where username='" + username + "' and title='" + titlos + "'";
+            SQLiteCommand editOffer2cmd = new SQLiteCommand(query, conn);
+            editOffer2cmd.Parameters.AddWithValue("@sum_offer", poso);
+            editOffer2cmd.Parameters.AddWithValue("@date_offer", day);
+            editOffer2cmd.Parameters.AddWithValue("@comments", comments);
+            editOffer2cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void cancelOffer(string username,string titlos)
+        {
+            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+            conn.Open();
+            string query = "Delete from dev_offer where username='" + username + "' and title='" + titlos + "';";
+            SQLiteCommand deletecmd = new SQLiteCommand(query, conn);
+            deletecmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public void acceptProject()
@@ -43,10 +106,49 @@ namespace WebApplication3
 
         public void projectDescShow()
         {
+
         }
 
-        public void profileShow()
+        public string[] profileShow(string username,Image ImageID, System.Web.UI.HtmlControls.HtmlIframe pdfframe)
         {
+            string []arr = new string[6];
+            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+            conn.Open();
+            String query1 = "Select * from dev where username='" + username + "'";
+            SQLiteCommand cmd = new SQLiteCommand(query1, conn);
+            SQLiteDataReader reader22 = cmd.ExecuteReader();
+            while (reader22.Read())
+            {
+                
+                arr[0] = reader22.GetString(0);
+                arr[1] = reader22.GetString(1) + "    ";
+                arr[2] = "   " + reader22.GetString(3) + " " + reader22.GetString(4);
+                arr[3] = "     " + reader22.GetString(5);
+                if (reader22["pic"].ToString() == "")
+                {
+                    ImageID.ImageUrl = "";
+                }
+                else
+                {
+                    byte[] bytes = (byte[])reader22["pic"];
+                    ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
+                }
+                arr[4] = reader22.GetString(7);
+                if (reader22["bio"].ToString() != "")
+                {
+                    byte[] byteArray = (byte[])reader22["bio"];
+                    pdfframe.Src = GetDocument(byteArray).ToString();
+                }
+                arr[5] = reader22.GetString(9);
+            }
+            conn.Close();
+            
+            return arr;
+           
+        }
+        public object GetDocument(byte[] byteArray)
+        {
+            return "data:application/pdf;base64," + Convert.ToBase64String(byteArray);
         }
 
         public void profileCreate(String email, String username, String pass, String firstname, String lastname)

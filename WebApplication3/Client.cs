@@ -71,9 +71,20 @@ namespace WebApplication3
         {
         }
 
-        public void submitReview()
+        public void submitReview(string username,string dev,string title,int list,string comment)
         {
+            SQLiteConnection conn = new SQLiteConnection(db);
+            conn.Open();
+            SQLiteCommand reviewcmd = new SQLiteCommand("Insert into review(cli_username,dev_username,title,stars,comment) Values(@cli_username,@dev_username,@title,@stars,@comment)", conn);
+            reviewcmd.Parameters.AddWithValue("@cli_username", username);
+            reviewcmd.Parameters.AddWithValue("@dev_username", dev);
+            reviewcmd.Parameters.AddWithValue("@title", title);
+            reviewcmd.Parameters.AddWithValue("@stars", list);
+            reviewcmd.Parameters.AddWithValue("@comment", comment);
+            reviewcmd.ExecuteNonQuery();
+            conn.Close();
         }
+
 
         public void submitRating()
         {
@@ -85,14 +96,43 @@ namespace WebApplication3
 
         public void searchDev()
         {
+          
         }
 
         public void projectDescShow()
         {
         }
 
-        public void profileShow()
+        public string[] profileShow(string username, Image ImageID, HyperLink pagelink)
         {
+            string[] arr = new string[6];
+            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+            conn.Open();
+            String query1 = "Select * from client where username='" + username + "'";
+            SQLiteCommand cmd = new SQLiteCommand(query1, conn);
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                arr[0] = reader.GetString(0);
+                arr[1] = reader.GetString(1) + "    ";
+                arr[2] = "   " + reader.GetString(3) + " " + reader.GetString(4);
+                arr[3] = "     " + reader.GetString(5);
+                arr[4] = "     " + reader.GetString(6);
+
+                if (reader["pic"].ToString() == "")
+                {
+                    ImageID.ImageUrl = "";
+                }
+                else
+                {
+                    byte[] bytes = (byte[])reader["pic"];
+                    ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
+                }
+                arr[5] = reader.GetString(8);
+                pagelink.NavigateUrl = reader.GetString(9);
+            }
+            conn.Close();
+            return arr;
         }
         public void profileCreate(String email,String username,String pass,String firstname,String lastname)
         {

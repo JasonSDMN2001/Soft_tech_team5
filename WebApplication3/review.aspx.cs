@@ -35,14 +35,11 @@ namespace WebApplication3
             {
                 dev = reader.GetString(0);
             }
+
+            Client c2 = new Client();
+            c2.submitReview(user,dev,title,Int32.Parse(DropDownList1.SelectedValue),TextBox2.Text);
             
-            SQLiteCommand reviewcmd = new SQLiteCommand("Insert into review(cli_username,dev_username,title,stars,comment) Values(@cli_username,@dev_username,@title,@stars,@comment)", conn);
-            reviewcmd.Parameters.AddWithValue("@cli_username",user);
-            reviewcmd.Parameters.AddWithValue("@dev_username", dev);
-            reviewcmd.Parameters.AddWithValue("@title", title);
-            reviewcmd.Parameters.AddWithValue("@stars", Int32.Parse(DropDownList1.SelectedValue));
-            reviewcmd.Parameters.AddWithValue("@comment", TextBox2.Text);
-            reviewcmd.ExecuteNonQuery();
+            
             conn.Close();
             Response.Redirect("clientProfile.aspx");
         }

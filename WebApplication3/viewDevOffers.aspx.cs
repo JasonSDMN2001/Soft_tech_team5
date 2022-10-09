@@ -23,14 +23,14 @@ namespace WebApplication3
         protected void browseOffers()
         {
             string user = Session["Username"].ToString();
-            SQLiteConnection conn = new SQLiteConnection(db);
-            conn.Open();
-            SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,sum_offer,date_offer,comments from dev_offer where username= '" + user + "'", conn);
+            Developer d2 = new Developer();
+           // d2.viewDevOffers(user);
+    
             DataSet ds = new System.Data.DataSet();
-            dataadapter.Fill(ds);
+            d2.viewDevOffers(user).Fill(ds);
             GridView1.DataSource = ds.Tables[0];
             GridView1.DataBind();
-            conn.Close();
+            
         }
 
     }

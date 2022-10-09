@@ -79,15 +79,9 @@ namespace WebApplication3
             string sum = TextBox1.Text;
             string comm = TextBox2.Text;
             date = DateTime.Now.ToString("dd-MM-yyyy");
-            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
-            conn.Open(); 
-            String query = "update dev_offer set sum_offer=@sum_offer,date_offer=@date_offer,comments=@comments where username='" + user + "' and title='" + title + "'";
-            SQLiteCommand editOffer2cmd = new SQLiteCommand(query, conn);
-            editOffer2cmd.Parameters.AddWithValue("@sum_offer", sum);
-            editOffer2cmd.Parameters.AddWithValue("@date_offer", date);
-            editOffer2cmd.Parameters.AddWithValue("@comments", comm);
-            editOffer2cmd.ExecuteNonQuery();
-            conn.Close();
+            Developer d3 = new Developer();
+            d3.editOffer(user,title,sum,comm,date);
+            
             Response.Redirect("viewDevOffers.aspx");
             
 

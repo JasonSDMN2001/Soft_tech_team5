@@ -17,31 +17,43 @@ namespace WebApplication3
         protected void Page_Load(object sender, EventArgs e)
         {
             user = Session["Username"].ToString();
+            Client c1 = new Client();
+            string[] arr = c1.profileShow(user, ImageID, pagelink);
+
+            email.Text = arr[0];
+            username.Text = arr[1];
+            fullname.Text = arr[2];
+            gender.Text = arr[3];
+            birthdate.Text = arr[4];
+            description.Text = arr[5];
+            // SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+            // conn.Open();
+            /* String query1 = "Select * from client where username='" + user + "'";
+             SQLiteCommand cmd = new SQLiteCommand(query1, conn);
+             SQLiteDataReader reader = cmd.ExecuteReader();
+             while (reader.Read())
+             {
+                 email.Text = reader.GetString(0);
+                 username.Text = reader.GetString(1) + "    ";
+                 fullname.Text = "   " + reader.GetString(3) + " " + reader.GetString(4);
+                 gender.Text = "     " + reader.GetString(5);
+                 birthdate.Text = "     " + reader.GetString(6);
+
+                 if (reader["pic"].ToString() == "")
+                 {
+                     ImageID.ImageUrl = "";
+                 }
+                 else
+                 {
+                     byte[] bytes = (byte[])reader["pic"];
+                     ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
+                 }
+                 description.Text = reader.GetString(8);
+                 pagelink.NavigateUrl = reader.GetString(9);
+             } */
+
             SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
             conn.Open();
-            String query1 = "Select * from client where username='" + user + "'";
-            SQLiteCommand cmd = new SQLiteCommand(query1, conn);
-            SQLiteDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                email.Text = reader.GetString(0);
-                username.Text = reader.GetString(1) + "    ";
-                fullname.Text = "   " + reader.GetString(3) + " " + reader.GetString(4);
-                gender.Text = "     " + reader.GetString(5);
-                birthdate.Text = "     " + reader.GetString(6);
-
-                if (reader["pic"].ToString() == "")
-                {
-                    ImageID.ImageUrl = "";
-                }
-                else
-                {
-                    byte[] bytes = (byte[])reader["pic"];
-                    ImageID.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
-                }
-                description.Text = reader.GetString(8);
-                pagelink.NavigateUrl = reader.GetString(9);
-            }
             String query2 = "Select title,proj_type,client_done,dev_done from project where client_username='" + user + "'";
             SQLiteCommand cmd2 = new SQLiteCommand(query2, conn);
             SQLiteDataReader reader2 = cmd2.ExecuteReader();

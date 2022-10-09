@@ -3,44 +3,44 @@
   <Class Name="WebApplication3.Admin">
     <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAEAgAAAAAAAAAAgAAAAAEAAAAEAAAAAAAEAgAAAAQ=</HashCode>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAEAAAAAAAAAAAAEAgAAAAQ=</HashCode>
       <FileName>Admin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WebApplication3.User">
     <Position X="0.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAgAAAEgIAAAgAEAAAAEAQgAAAAAAgAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAgQAAEgIAAAwAEAAAAEAQgAAAAEAgAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WebApplication3.Client">
-    <Position X="6.25" Y="0.5" Width="1.5" />
+    <Position X="4.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAEAAAAAIAAAAwgpAAAQAABAAAEAAAAAAAEAAAAAEA=</HashCode>
+      <HashCode>IAAEAAAAAIAAAAwgpAAAQAABAAAEAAgAAAAAAAAAAEA=</HashCode>
       <FileName>Client.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WebApplication3.Developer">
-    <Position X="5.5" Y="6" Width="1.5" />
+    <Position X="6" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAEABAQAAAIAAAAgAAAQgAAAAAEAAAAYAAEAIAAAAA=</HashCode>
+      <HashCode>IAAEABAQAAAIAAAAgAECQwAAAAAEAgABYAgAABAAAAA=</HashCode>
       <FileName>Developer.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WebApplication3.Project">
-    <Position X="7.5" Y="5.75" Width="1.5" />
+    <Position X="8" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACUAAAAAABIAAAAACACAABAAAAAIAIAAAAAgA=</HashCode>
       <FileName>Project.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="WebApplication3.UnregisteredUser">
-    <Position X="3.5" Y="5.25" Width="1.5" />
+    <Position X="3" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAEAAAAAAAAAAAAgAAAQAAAAAAEAAAAAAAEAAAAAAA=</HashCode>
+      <HashCode>AAAEAAAAAAAAAAAAgAAAQAAAAAAEAAAAAAAEAAAAAAA=</HashCode>
       <FileName>UnregisteredUser.cs</FileName>
     </TypeIdentifier>
   </Interface>

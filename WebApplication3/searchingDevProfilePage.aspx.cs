@@ -66,6 +66,8 @@ namespace WebApplication3
                 }
 
             }
+           // Client c1 = new Client();
+           // c1.searchDev(query1);
             SQLiteCommand cmd = new SQLiteCommand(query1, conn);
             SQLiteDataReader reader = cmd.ExecuteReader();
             string temp;

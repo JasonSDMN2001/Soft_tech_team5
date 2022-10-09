@@ -31,15 +31,12 @@ namespace WebApplication3
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string query;
+            //string query;
             string user = Session["Username"].ToString();
             string title = Request.Params["titlename"];
-            SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
-            conn.Open();
-            query = "Delete from dev_offer where username='" + user + "' and title='" + title + "';";
-            SQLiteCommand deletecmd = new SQLiteCommand(query, conn);
-            deletecmd.ExecuteNonQuery();
-            conn.Close();
+            Developer d4 = new Developer();
+            d4.cancelOffer(user,title);
+            
             Response.Redirect("viewDevOffers.aspx");
         }
     }

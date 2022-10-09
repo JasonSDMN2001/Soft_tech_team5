@@ -19,15 +19,21 @@ namespace WebApplication3
             if (!IsPostBack)
             {
                 string user = Session["Username"].ToString();
-                SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+                Developer d9 = new Developer();
+                SQLiteDataAdapter dataadapter2 = d9.devActiveProjects(user);
+                DataSet ds = new System.Data.DataSet();
+                dataadapter2.Fill(ds);
+                GridView1.DataSource = ds.Tables[0];
+                GridView1.DataBind();
+                /*SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
                 conn.Open();
                 SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,rec_tech,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='No' and dev_done='No' ", conn);
                 DataSet ds = new System.Data.DataSet();
                 dataadapter.Fill(ds);
                 GridView1.DataSource = ds.Tables[0];
                 GridView1.DataBind();
-                conn.Close();
-                
+                conn.Close(); */
+
                 /*conn.Open();
                 SQLiteCommand titlecmd = new SQLiteCommand("Select title from project where dev_username='" + user + "' and client_done='No' or dev_done='No' ", conn);
                 SQLiteDataReader reader = titlecmd.ExecuteReader();
@@ -42,7 +48,7 @@ namespace WebApplication3
                     accepted = read.GetString(0);
                 }
                 conn.Close();*/
-                
+
             }
         }
 
@@ -52,7 +58,13 @@ namespace WebApplication3
             if (DropDownList1.SelectedItem.Text == "Active")
             {
                 string user = Session["Username"].ToString();
-                SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+                Developer d9 = new Developer();
+                SQLiteDataAdapter dataadapter2 = d9.devActiveProjects(user);
+                DataSet ds = new System.Data.DataSet();
+                dataadapter2.Fill(ds);
+                GridView1.DataSource = ds.Tables[0];
+                GridView1.DataBind();
+               /* SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
                 conn.Open();
                 
 
@@ -62,22 +74,30 @@ namespace WebApplication3
                 GridView1.DataSource = ds.Tables[0];
                 GridView1.DataBind();
 
-                conn.Close();
+                conn.Close();*/
                 
             }
             else if(DropDownList1.SelectedItem.Text == "Inactive")
             {
                 string user = Session["Username"].ToString();
-                SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
-                conn.Open();
-                
-                SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,rec_tech,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='Yes' and dev_done='Yes' ", conn);
+                /* SQLiteConnection conn = new SQLiteConnection("Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "hire_dev.client.db;Version=3;");
+                 conn.Open();
+
+                 SQLiteDataAdapter dataadapter = new SQLiteDataAdapter("Select title,description,category,subcategory,client_username,rec_tech,dev_price,client_done,dev_done from project where dev_username='" + user + "' and client_done='Yes' and dev_done='Yes' ", conn);
+                 DataSet ds = new System.Data.DataSet();
+                 dataadapter.Fill(ds);
+                 GridView1.DataSource = ds.Tables[0];
+                 GridView1.DataBind();
+
+                 conn.Close(); */
+                Developer d9 = new Developer();
+                SQLiteDataAdapter dataadapter2 = d9.devInactiveProjects(user);
                 DataSet ds = new System.Data.DataSet();
-                dataadapter.Fill(ds);
+                dataadapter2.Fill(ds);
                 GridView1.DataSource = ds.Tables[0];
                 GridView1.DataBind();
 
-                conn.Close();
+
             }
         }
 
