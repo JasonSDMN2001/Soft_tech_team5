@@ -45,5 +45,11 @@ namespace WebApplication3
         {
             devframe.Src = "viewDevOffers.aspx";
         }
+
+        protected void editProject_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("login.aspx");
+
+        }
     }
 }

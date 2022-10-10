@@ -38,6 +38,7 @@
                 <tr><td><asp:Button runat="server" Text="Projects in progress" ID="projinprogress" class="opt" OnClick="projinprogress_Click" /></td>
                     <td><asp:Button runat="server" Text="Search another User" ID="searchuser" class="opt" OnClick="searchuser_Click" /></td>
                 <td><asp:Button runat="server" Text="Search a Project" ID="searchProject" class="opt" OnClick="searchProject_Click1" /></td></tr>
+            <tr><td><asp:Button runat="server" Text="log in" ID="editProject" class="opt" OnClick="editProject_Click" /></td></tr>
             </table>
             <iframe runat="server" id="devframe" width="100%" class="auto-style1"></iframe>
     </form>
